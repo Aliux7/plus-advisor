@@ -116,15 +116,29 @@ export default function Header({ dict, lang }: Props) {
         }`}
       >
         <nav className="flex flex-col px-6 sm:px-8 md:px-10 py-4">
-          {navLinks.map((link) => (
-            <a
+          {navLinks.map((link, i) => (
+            <div
               key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="py-4 border-b border-gold/50 px-3 text-base text-navy transition-colors hover:text-gold"
+              style={{
+                opacity: open ? 1 : 0,
+                transform: open
+                  ? "translate3d(0, 0, 0)"
+                  : "translate3d(-30px, 0, 0)",
+                transition: open
+                  ? `opacity 600ms ease-out ${200 + i * 100}ms, transform 600ms ease-out ${200 + i * 100}ms`
+                  : `opacity 250ms ease-in, transform 250ms ease-in`,
+                willChange: "opacity, transform",
+              }}
+              className="border-b border-gold/50"
             >
-              {link.label}
-            </a>
+              <a
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block py-4 px-3 text-base text-navy transition-colors duration-300 ease-in-out hover:text-gold"
+              >
+                {link.label}
+              </a>
+            </div>
           ))}
         </nav>
       </div>
