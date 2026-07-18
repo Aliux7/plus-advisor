@@ -71,7 +71,7 @@ export default function Footer({ dict }: Props) {
             >
               <Image
                 src="/badge-25-years.svg"
-                alt={dict.badge}
+                alt=""
                 width={260}
                 height={60}
                 className="w-40 md:w-48 lg:w-65 h-auto"
