@@ -1,6 +1,4 @@
 import { notFound } from "next/navigation";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Hero from "../components/home/Hero";
 import FamilyLegacy from "../components/home/FamilyLegacy";
 import WealthPlanning from "../components/home/WealthPlanning";
@@ -12,20 +10,16 @@ import { getDictionary, hasLocale } from "./dictionaries";
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+  const { home } = await getDictionary(lang);
 
   return (
-    <div id="top" className="flex flex-1 flex-col overflow-x-hidden">
-      <Header dict={dict.header} lang={lang} />
-      <main className="flex flex-1 flex-col">
-        <Hero dict={dict.hero} />
-        <FamilyLegacy dict={dict.familyLegacy} />
-        <WealthPlanning dict={dict.wealthPlanning} />
-        <BeyondFinancialAdvice dict={dict.beyondFinancialAdvice} />
-        <Quote dict={dict.quote} />
-        <FeaturedJournals dict={dict.featuredJournals} />
-      </main>
-      <Footer dict={dict.footer} />
-    </div>
+    <>
+      <Hero dict={home.hero} />
+      <FamilyLegacy dict={home.familyLegacy} />
+      <WealthPlanning dict={home.wealthPlanning} />
+      <BeyondFinancialAdvice dict={home.beyondFinancialAdvice} />
+      <Quote dict={home.quote} />
+      <FeaturedJournals dict={home.featuredJournals} />
+    </>
   );
 }

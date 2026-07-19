@@ -1,9 +1,9 @@
 import Image from "next/image";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { QuoteDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: Dictionary["quote"] };
+type Props = { dict: QuoteDict };
 
 export default function Quote({ dict }: Props) {
   return (
@@ -18,7 +18,7 @@ export default function Quote({ dict }: Props) {
           duration={1600}
           className="pointer-events-none absolute aspect-square opacity-80 sm:opacity-100 size-20 sm:size-32 md:size-40 lg:size-45 xl:size-51 -left-4 sm:left-8 md:left-10 lg:left-14 top-44 sm:top-20 md:top-24 lg:top-28 xl:top-32.5 bg-white z-10 rounded-full"
         >
-          <Parallax speed={0.2} data-scroll className="relative w-full h-full">
+          <Parallax speed={0.05} data-scroll className="relative w-full h-full">
             <Image
               src="/home/quote-ellipse-large.webp"
               alt=""
@@ -58,7 +58,7 @@ export default function Quote({ dict }: Props) {
           duration={1800}
           className="pointer-events-none absolute -left-2 top-60 lg:top-68 xl:top-73 h-40 md:h-56 lg:h-72 xl:h-91 w-full lg:w-full xl:w-257 z-10"
         >
-          <Parallax speed={-0.1} data-scroll className="relative w-full h-full">
+          <Parallax speed={-0.05} data-scroll className="relative w-full h-full">
             <Image
               src="/home/quote-mountains.webp"
               alt=""
@@ -74,7 +74,7 @@ export default function Quote({ dict }: Props) {
           duration={1600}
           className="pointer-events-none aspect-square absolute left-[45%] lg:left-96 xl:left-121 top-96 lg:top-110 xl:top-134 size-16 lg:size-20 xl:size-27 z-10"
         >
-          <Parallax speed={0.25} data-scroll className="relative w-full h-full">
+          <Parallax speed={0.12} data-scroll className="relative w-full h-full">
             <Image
               src="/home/quote-ellipse-small.webp"
               alt=""

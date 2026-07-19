@@ -14,139 +14,6 @@
     "searchLabel": "Search",
     "languageLabel": "INDONESIA"
   },
-  "hero": {
-    "eyebrow": "PLUS Advisor",
-    "titleLine1": "Menjaga Nilai Berkelanjutan,",
-    "titleLine2": "Menghadirkan Ketenangan Hati."
-  },
-  "familyLegacy": {
-    "titlePrefix": "Sebuah Komitmen pada ",
-    "titleAccent": "Warisan Keluarga",
-    "body": "PLUS Advisor hadir mendampingi keluarga dalam menghadapi tanggung jawab yang besar dan keputusan yang membawa dampak mendalam. Melalui pendekatan yang jelas, prinsip, kehati-hatian, dan pendapat yang independen, kami membantu menjaga keutuhan nilai yang berharga serta menjaga keberlanjutan lintas generasi.",
-    "cta": "Read More",
-    "footnote": "Kami memandu bagaimana kekayaan Anda dilestarikan dan diwariskan dari generasi ke generasi—melalui perencanaan warisan dan suksesi yang selaras dengan visi jangka panjang keluarga Anda."
-  },
-  "wealthPlanning": {
-    "cta": "Read More",
-    "prev": "Previous",
-    "next": "Next",
-    "slides": [
-      {
-        "number": "01",
-        "title": "Wealth Planning",
-        "subtitle": "Perencanaan Keberlanjutan",
-        "body": "Kami memberikan arahan dalam merencanakan agar apa yang Anda miliki dapat dijaga dan diteruskan. Hal ini mencakup estate planning seperti hibah selama masa hidup, asuransi jiwa, perjanjian pranikah, dan wasiat serta succession planning untuk menjaga keberlanjutan usaha keluarga. Setiap langkah disusun dengan mempertimbangkan tujuan dan arah jangka panjang keluarga.",
-        "image": "/home/slides/01-wealth-planning.webp",
-        "imageAlt": "Balon udara di atas reruntuhan candi kuno di Bagan, Myanmar"
-      },
-      {
-        "number": "02",
-        "title": "Wealth Management",
-        "subtitle": "Mengelola Arah dan Menjaga Pertumbuhan",
-        "body": "Kami memberikan arahan dalam mengelola investasi secara terarah dan disiplin—mencakup strategi investasi dan alokasi aset, pertimbangan private equity, laporan konsolidasi, serta advisory investasi. Setiap keputusan dipertimbangkan dalam konteks yang lebih luas, menjaga keseimbangan antara pertumbuhan dan keberlanjutan jangka panjang.",
-        "image": "/home/slides/02-wealth-management.webp",
-        "imageAlt": "Gunung Agung saat erupsi ketika matahari terbenam di atas sawah, Bali"
-      },
-      {
-        "number": "03",
-        "title": "Tax Planning",
-        "subtitle": "Menavigasi Kompleksitas dengan Struktur yang Terarah",
-        "body": "Kami memberikan arahan dalam berbagai aspek perpajakan—mencakup pelaporan pajak, struktur kepemilikan properti, relokasi lintas negara, serta pertimbangan pajak lintas yurisdiksi. Setiap langkah dipertimbangkan dengan saksama agar selaras dengan ketentuan yang berlaku, sekaligus menjaga kejelasan dan efisiensi dalam jangka panjang.",
-        "image": "/home/slides/03-tax-planning.webp",
-        "imageAlt": "Pria membawa bibit padi melintasi sawah terasering di Sa Pa, Vietnam"
-      },
-      {
-        "number": "04",
-        "title": "Family Governance",
-        "subtitle": "Membangun Keselarasan Lintas Generasi",
-        "body": "Kami memberikan arahan dalam membentuk tata kelola keluarga yang mendukung kejelasan, komunikasi, dan keberlanjutan. Hal ini mencakup pembentukan dewan keluarga, konstitusi keluarga, serta forum keluarga—untuk membantu menyelaraskan pandangan, mendukung pengambilan keputusan, dan menjaga nilai bersama dari waktu ke waktu.",
-        "image": "/home/slides/04-family-governance.webp",
-        "imageAlt": "Orang-orang membawa sesajen melintasi sawah"
-      },
-      {
-        "number": "05",
-        "title": "Trust & Corporate Services",
-        "subtitle": "Menyusun Struktur Kepemilikan dengan Kejelasan dan Keberlanjutan",
-        "body": "Kami memberikan arahan dalam membentuk dan menata struktur yang mendukung kepemilikan, perlindungan, dan keberlanjutan jangka panjang. Hal ini mencakup pendirian entitas, administrasi trust, pertimbangan properti, penataan struktur kepemilikan, kepemilikan saham keluarga, pengaturan nominee, serta aset khusus seperti pesawat dan kapal. Setiap struktur disusun dengan pertimbangan yang matang agar tetap selaras dengan tujuan dan kebutuhan yang terus berkembang.",
-        "image": "/home/slides/05-trust-corporate.webp",
-        "imageAlt": "Nelayan di Sungai Li saat fajar"
-      },
-      {
-        "number": "06",
-        "title": "Charity & Philanthropy",
-        "subtitle": "Memberi dengan Makna dan Tujuan",
-        "body": "Kami memberikan arahan dalam merancang pendekatan pemberian yang bermakna—melalui penyusunan strategi pemberian serta pembentukan yayasan filantropi. Setiap langkah dipertimbangkan dengan saksama agar selaras dengan nilai keluarga dan menghadirkan dampak yang berkelanjutan.",
-        "image": "/home/slides/06-charity-philanthropy.webp",
-        "imageAlt": "Burung camar terbang di Danau Inle, Myanmar"
-      }
-    ]
-  },
-  "beyondFinancialAdvice": {
-    "eyebrow": "PLUS Advisor",
-    "title": "Lebih dari Sekadar Finansial",
-    "cta": "Read More",
-    "pillars": [
-      {
-        "number": "01",
-        "title": "Wealth Assessment",
-        "lead": "Setiap perjalanan dimulai dari pemahaman.",
-        "description": "Setiap perjalanan dimulai dari pemahaman. Kami meluangkan waktu untuk menyusun gambaran menyeluruh atas kondisi keuangan Anda, termasuk aset, risiko, prioritas, dan hal yang paling berarti bagi Anda. Penilaian yang komprehensif memberikan kejelasan sebagai fondasi dari mana keputusan yang tepat dan terarah dapat diambil."
-      },
-      {
-        "number": "02",
-        "title": "Advisory",
-        "lead": "Tidak setiap keputusan perlu dihadapi sendiri.",
-        "description": "Kami memberikan sudut pandang yang independen terhadap produk atau proposal finansial, membantu Anda melihat melampaui apa yang ditawarkan—agar setiap langkah dapat diambil dengan keyakinan dan keteguhan."
-      },
-      {
-        "number": "03",
-        "title": "Advisor Oversight & Governance",
-        "lead": "Pendapat yang baik dibangun di atas landasan yang kuat.",
-        "description": "Setiap saran di PLUS Advisor didukung oleh standar etika yang jelas, pendekatan yang menyeluruh, dan panduan hukum—memastikan setiap pendapat diberikan dengan kehati-hatian, tanggung jawab, dan integritas."
-      },
-      {
-        "number": "04",
-        "title": "Family Office Services",
-        "lead": "Apa yang dimiliki bukan sekadar angka—namun memuat makna yang timbul lintas generasi.",
-        "description": "Kami mendampingi keluarga dalam merencanakan, melindungi, dan mengatur dengan penuh pertimbangan, agar apa yang telah dibangun dapat terus mendukung visi, nilai, dan keharmonisan keluarga seiring dengan waktu."
-      },
-      {
-        "number": "05",
-        "title": "Fraud Prevention & Response Advisory",
-        "lead": "Di tengah ketidakpastian, kejelasan menjadi semakin penting.",
-        "description": "Kami mendampingi Anda dalam mengidentifikasi potensi risiko sejak awal, memberikan pemahaman yang komprehensif, dan menavigasi situasi kompleks—sehingga pencegahan dan penanganan dapat dilakukan dengan lebih tepat dan penuh keyakinan."
-      }
-    ]
-  },
-  "quote": {
-    "text": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
-    "author": "Robert Stevenson"
-  },
-  "featuredJournals": {
-    "titlePrefix": "Featured",
-    "titleAccent": "Journals",
-    "body": "Melalui Our Journals, kami berbagi pandangan dan pengalaman yang melampaui angka — menelusuri filosofi, tata nilai, dan pembelajaran dalam perjalanan keluarga.",
-    "cta": "See All",
-    "readMore": "Read More",
-    "items": [
-      {
-        "date": "21 Oktober 2022",
-        "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
-      },
-      {
-        "date": "21 Oktober 2022",
-        "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
-      },
-      {
-        "date": "21 Oktober 2022",
-        "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
-      },
-      {
-        "date": "21 Oktober 2022",
-        "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
-      }
-    ]
-  },
   "footer": {
     "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, structuring, protecting, and sustaining their legacy—so it may endure with clarity, care, and continuity across generations.",
     "whistleTitle": "Whistle Blowing System",
@@ -162,5 +29,236 @@
       "Market Update",
       "Disclaimer"
     ]
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "PLUS Advisor",
+      "titleLine1": "Menjaga Nilai Berkelanjutan,",
+      "titleLine2": "Menghadirkan Ketenangan Hati."
+    },
+    "familyLegacy": {
+      "titlePrefix": "Sebuah Komitmen pada ",
+      "titleAccent": "Warisan Keluarga",
+      "body": "PLUS Advisor hadir mendampingi keluarga dalam menghadapi tanggung jawab yang besar dan keputusan yang membawa dampak mendalam. Melalui pendekatan yang jelas, prinsip, kehati-hatian, dan pendapat yang independen, kami membantu menjaga keutuhan nilai yang berharga serta menjaga keberlanjutan lintas generasi.",
+      "cta": "Read More",
+      "footnote": "Kami memandu bagaimana kekayaan Anda dilestarikan dan diwariskan dari generasi ke generasi—melalui perencanaan warisan dan suksesi yang selaras dengan visi jangka panjang keluarga Anda."
+    },
+    "wealthPlanning": {
+      "cta": "Read More",
+      "prev": "Previous",
+      "next": "Next",
+      "slides": [
+        {
+          "number": "01",
+          "title": "Wealth Planning",
+          "subtitle": "Perencanaan Keberlanjutan",
+          "body": "Kami memberikan arahan dalam merencanakan agar apa yang Anda miliki dapat dijaga dan diteruskan. Hal ini mencakup estate planning seperti hibah selama masa hidup, asuransi jiwa, perjanjian pranikah, dan wasiat serta succession planning untuk menjaga keberlanjutan usaha keluarga. Setiap langkah disusun dengan mempertimbangkan tujuan dan arah jangka panjang keluarga.",
+          "image": "/home/slides/01-wealth-planning.webp",
+          "imageAlt": "Balon udara di atas reruntuhan candi kuno di Bagan, Myanmar"
+        },
+        {
+          "number": "02",
+          "title": "Wealth Management",
+          "subtitle": "Mengelola Arah dan Menjaga Pertumbuhan",
+          "body": "Kami memberikan arahan dalam mengelola investasi secara terarah dan disiplin—mencakup strategi investasi dan alokasi aset, pertimbangan private equity, laporan konsolidasi, serta advisory investasi. Setiap keputusan dipertimbangkan dalam konteks yang lebih luas, menjaga keseimbangan antara pertumbuhan dan keberlanjutan jangka panjang.",
+          "image": "/home/slides/02-wealth-management.webp",
+          "imageAlt": "Gunung Agung saat erupsi ketika matahari terbenam di atas sawah, Bali"
+        },
+        {
+          "number": "03",
+          "title": "Tax Planning",
+          "subtitle": "Menavigasi Kompleksitas dengan Struktur yang Terarah",
+          "body": "Kami memberikan arahan dalam berbagai aspek perpajakan—mencakup pelaporan pajak, struktur kepemilikan properti, relokasi lintas negara, serta pertimbangan pajak lintas yurisdiksi. Setiap langkah dipertimbangkan dengan saksama agar selaras dengan ketentuan yang berlaku, sekaligus menjaga kejelasan dan efisiensi dalam jangka panjang.",
+          "image": "/home/slides/03-tax-planning.webp",
+          "imageAlt": "Pria membawa bibit padi melintasi sawah terasering di Sa Pa, Vietnam"
+        },
+        {
+          "number": "04",
+          "title": "Family Governance",
+          "subtitle": "Membangun Keselarasan Lintas Generasi",
+          "body": "Kami memberikan arahan dalam membentuk tata kelola keluarga yang mendukung kejelasan, komunikasi, dan keberlanjutan. Hal ini mencakup pembentukan dewan keluarga, konstitusi keluarga, serta forum keluarga—untuk membantu menyelaraskan pandangan, mendukung pengambilan keputusan, dan menjaga nilai bersama dari waktu ke waktu.",
+          "image": "/home/slides/04-family-governance.webp",
+          "imageAlt": "Orang-orang membawa sesajen melintasi sawah"
+        },
+        {
+          "number": "05",
+          "title": "Trust & Corporate Services",
+          "subtitle": "Menyusun Struktur Kepemilikan dengan Kejelasan dan Keberlanjutan",
+          "body": "Kami memberikan arahan dalam membentuk dan menata struktur yang mendukung kepemilikan, perlindungan, dan keberlanjutan jangka panjang. Hal ini mencakup pendirian entitas, administrasi trust, pertimbangan properti, penataan struktur kepemilikan, kepemilikan saham keluarga, pengaturan nominee, serta aset khusus seperti pesawat dan kapal. Setiap struktur disusun dengan pertimbangan yang matang agar tetap selaras dengan tujuan dan kebutuhan yang terus berkembang.",
+          "image": "/home/slides/05-trust-corporate.webp",
+          "imageAlt": "Nelayan di Sungai Li saat fajar"
+        },
+        {
+          "number": "06",
+          "title": "Charity & Philanthropy",
+          "subtitle": "Memberi dengan Makna dan Tujuan",
+          "body": "Kami memberikan arahan dalam merancang pendekatan pemberian yang bermakna—melalui penyusunan strategi pemberian serta pembentukan yayasan filantropi. Setiap langkah dipertimbangkan dengan saksama agar selaras dengan nilai keluarga dan menghadirkan dampak yang berkelanjutan.",
+          "image": "/home/slides/06-charity-philanthropy.webp",
+          "imageAlt": "Burung camar terbang di Danau Inle, Myanmar"
+        }
+      ]
+    },
+    "beyondFinancialAdvice": {
+      "eyebrow": "PLUS Advisor",
+      "title": "Lebih dari Sekadar Finansial",
+      "cta": "Read More",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Wealth Assessment",
+          "lead": "Setiap perjalanan dimulai dari pemahaman.",
+          "description": "Setiap perjalanan dimulai dari pemahaman. Kami meluangkan waktu untuk menyusun gambaran menyeluruh atas kondisi keuangan Anda, termasuk aset, risiko, prioritas, dan hal yang paling berarti bagi Anda. Penilaian yang komprehensif memberikan kejelasan sebagai fondasi dari mana keputusan yang tepat dan terarah dapat diambil."
+        },
+        {
+          "number": "02",
+          "title": "Advisory",
+          "lead": "Tidak setiap keputusan perlu dihadapi sendiri.",
+          "description": "Kami memberikan sudut pandang yang independen terhadap produk atau proposal finansial, membantu Anda melihat melampaui apa yang ditawarkan—agar setiap langkah dapat diambil dengan keyakinan dan keteguhan."
+        },
+        {
+          "number": "03",
+          "title": "Advisor Oversight & Governance",
+          "lead": "Pendapat yang baik dibangun di atas landasan yang kuat.",
+          "description": "Setiap saran di PLUS Advisor didukung oleh standar etika yang jelas, pendekatan yang menyeluruh, dan panduan hukum—memastikan setiap pendapat diberikan dengan kehati-hatian, tanggung jawab, dan integritas."
+        },
+        {
+          "number": "04",
+          "title": "Family Office Services",
+          "lead": "Apa yang dimiliki bukan sekadar angka—namun memuat makna yang timbul lintas generasi.",
+          "description": "Kami mendampingi keluarga dalam merencanakan, melindungi, dan mengatur dengan penuh pertimbangan, agar apa yang telah dibangun dapat terus mendukung visi, nilai, dan keharmonisan keluarga seiring dengan waktu."
+        },
+        {
+          "number": "05",
+          "title": "Fraud Prevention & Response Advisory",
+          "lead": "Di tengah ketidakpastian, kejelasan menjadi semakin penting.",
+          "description": "Kami mendampingi Anda dalam mengidentifikasi potensi risiko sejak awal, memberikan pemahaman yang komprehensif, dan menavigasi situasi kompleks—sehingga pencegahan dan penanganan dapat dilakukan dengan lebih tepat dan penuh keyakinan."
+        }
+      ]
+    },
+    "quote": {
+      "text": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
+      "author": "Robert Stevenson"
+    },
+    "featuredJournals": {
+      "titlePrefix": "Featured",
+      "titleAccent": "Journals",
+      "body": "Melalui Our Journals, kami berbagi pandangan dan pengalaman yang melampaui angka — menelusuri filosofi, tata nilai, dan pembelajaran dalam perjalanan keluarga.",
+      "cta": "See All",
+      "readMore": "Read More",
+      "items": [
+        {
+          "date": "21 Oktober 2022",
+          "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Single vs Multi Family Office: Mana yang Tepat untuk Anda?"
+        }
+      ]
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Tentang Kami",
+      "titleLine1": "Pendamping Keluarga dalam",
+      "titleLine2": "Menjaga Keberlanjutan Nilai"
+    },
+    "aboutPlusAdvisor": {
+      "title": "Tentang Plus Advisor",
+      "subtitle": "Dituntun dengan Kejelasan, Dijaga dengan Kepedulian.",
+      "paragraphs": [
+        "PLUS Advisor adalah family office dan firma advisory yang berbasis di Indonesia, bekerja bersama individu dan keluarga lintas batas. Kami mendampingi mereka yang menavigasi kompleksitas dengan kejelasan dan kehati-hatian, di mana setiap keputusan membawa bobot yang sama pentingnya dengan hasilnya.",
+        "Sebagai family office, kami menyatukan berbagai dimensi kekayaan—finansial, struktural, dan lintas generasi—menjadi satu kesatuan yang lebih bertimbang. Setiap unsur ditinjau dalam kaitannya satu sama lain, membentuk arah yang koheren, terukur, dan penuh keyakinan yang tenang.",
+        "Seiring berjalannya waktu dan koordinasi yang cermat, kami mendukung keluarga untuk melangkah maju dengan penuh niat. Kami membantu menjaga stabilitas, memelihara keberlanjutan, dan meneruskan hal-hal yang penting lintas generasi."
+      ]
+    },
+    "leadership": {
+      "eyebrow": "Leadership",
+      "name": "Priskilla Lusina",
+      "featuredQuote": "Karya Priskilla Lusina berakar pada satu keyakinan sederhana: bahwa kekayaan, ketika dipandu dengan kepedulian, menjadi lebih dari sekadar akumulasi—ia menjadi keberlanjutan, makna, dan tanggung jawab yang diteruskan.",
+      "paragraphs": [
+        "Priskilla memandang manajemen kekayaan sebagai perjalanan personal yang dalam, dibentuk oleh kepercayaan, pemahaman, dan penjagaan yang etis. Dalam mendampingi keluarga secara dekat, ia memastikan setiap keputusan diambil dengan kejelasan dan niat yang teguh. Kini, sebagai CEO dan pendiri PLUS Advisor, ia meneruskan filosofi ini ke dalam pendekatan yang lebih luas dan terintegrasi, selaras dengan kebutuhan yang terus berkembang dari mereka yang ia layani.",
+        "Dalam kapasitas pribadinya, Priskilla adalah Penasihat Investasi Orang Perseorangan yang terdaftar di Otoritas Jasa Keuangan (OJK), anggota FPSB Indonesia, serta Certified Financial Planner (CFP). Perjalanan profesionalnya, yang terbangun melalui bertahun-tahun pengalaman dan refleksi, membawanya mendirikan PLUS Advisor—sebuah wujud dari nilai-nilai yang ia pegang, berlandaskan integritas, kejelasan, dan komitmen jangka panjang bagi keluarga dan keberlanjutan mereka.",
+        "Pengakuan terbaru sebagai \"Top Wealth Management Service Provider in APAC 2024\", yang diberikan oleh Financial Service Review, mencerminkan kepercayaan yang ia bangun seiring waktu. Bagi Priskilla, kesuksesan sejati tidak semata diukur dari pertumbuhan, melainkan dari kemampuan untuk menjalani hidup dengan ketenangan hati. Keyakinan ini terus membentuk pendekatan PLUS Advisor yang mengutamakan keluarga, di mana setiap langkah dipandu dengan kepedulian, menghadirkan keberlanjutan, keyakinan yang tenang, dan pengalaman yang penuh pertimbangan."
+
+      ],
+      "recognitionHighlight": "Top Wealth Management Service Provider in APAC 2024",
+      "portraitAlt": "Priskilla Lusina, CEO dan pendiri PLUS Advisor",
+      "memberOfLabel": "Anggota dari"
+    },
+    "beyondFinancialAdvice": {
+      "eyebrow": "PLUS Advisor",
+      "title": "Komitmen Kami",
+      "cta": "Read More",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Independensi",
+          "lead": "Arahan tanpa benturan kepentingan.",
+          "description": "Kami tidak menjual produk. Pendapatan kami selaras dengan keluarga yang kami dampingi—sehingga setiap rekomendasi diukur semata-mata terhadap kepentingan jangka panjang mereka."
+        },
+        {
+          "number": "02",
+          "title": "Kerahasiaan",
+          "lead": "Setiap percakapan tetap terjaga.",
+          "description": "Kepercayaan keluarga yang bekerja bersama kami adalah fondasi dari semua yang kami lakukan. Kerahasiaan diperlakukan dengan keseriusan sebuah kewajiban fidusia."
+        },
+        {
+          "number": "03",
+          "title": "Kesinambungan",
+          "lead": "Konsisten lintas generasi.",
+          "description": "Kerja sama kami dirancang untuk melampaui satu keputusan, satu penasihat, atau satu siklus pasar—menjadi titik acuan yang stabil seiring keluarga dan kebutuhannya berkembang."
+        },
+        {
+          "number": "04",
+          "title": "Kejelasan",
+          "lead": "Arahan tepat, disampaikan dengan sederhana.",
+          "description": "Struktur yang kompleks tidak boleh mengaburkan alasan di baliknya. Kami meluangkan waktu untuk menjelaskan setiap langkah agar keluarga tetap memegang kendali atas setiap keputusan."
+        },
+        {
+          "number": "05",
+          "title": "Kepedulian",
+          "lead": "Lebih dari sekadar angka.",
+          "description": "Kami menyadari bahwa kekayaan membawa makna, kenangan, dan tanggung jawab. Setiap rekomendasi disusun dengan gambaran yang lebih utuh itu."
+        }
+      ]
+    },
+    "quote": {
+      "text": "Di dalam setiap keluarga tersimpan kisah yang layak dijaga; peran kami hanyalah membantu menulis bab berikutnya dengan penuh kepedulian.",
+      "author": "PLUS Advisor"
+    },
+    "featuredJournals": {
+      "titlePrefix": "Dari",
+      "titleAccent": "Jurnal Kami",
+      "body": "Pandangan, refleksi, dan pembelajaran dari perjalanan kami mendampingi keluarga—dibagikan untuk membuka percakapan yang lebih luas tentang penjagaan dan warisan.",
+      "cta": "Lihat Semua",
+      "readMore": "Selengkapnya",
+      "items": [
+        {
+          "date": "21 Oktober 2022",
+          "title": "Mengapa Family Office yang Independen Penting"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Membangun Tata Kelola yang Bertahan Lintas Generasi"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Disiplin Tenang di Balik Kekayaan Jangka Panjang"
+        },
+        {
+          "date": "21 Oktober 2022",
+          "title": "Nilai Sebelum Bentuk: Catatan tentang Penataan"
+        }
+      ]
+    }
   }
 }

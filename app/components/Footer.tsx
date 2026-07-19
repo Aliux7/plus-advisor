@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Dictionary } from "../[lang]/dictionaries";
+import type { FooterDict } from "../[lang]/dictionaries";
 import ScrollReveal from "./ScrollReveal";
 
 const SOCIAL_ICONS = [
@@ -8,7 +8,7 @@ const SOCIAL_ICONS = [
   { label: "YouTube", src: "/social/youtube.svg" },
 ];
 
-type Props = { dict: Dictionary["footer"] };
+type Props = { dict: FooterDict };
 
 export default function Footer({ dict }: Props) {
   return (

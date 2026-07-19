@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { FeaturedJournalsDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
@@ -10,7 +10,7 @@ const JOURNAL_IMAGES = [
   "/home/journals/journal-04.webp",
 ];
 
-type Props = { dict: Dictionary["featuredJournals"] };
+type Props = { dict: FeaturedJournalsDict };
 
 export default function FeaturedJournals({ dict }: Props) {
   return (
@@ -25,7 +25,7 @@ export default function FeaturedJournals({ dict }: Props) {
         className="pointer-events-none  absolute -right-10 lg:-right-20 top-0 h-60 md:h-72 lg:h-96 xl:h-111 w-80 md:w-md lg:w-xl xl:w-167 z-0"
       >
         <Parallax
-          speed={0.2}
+          speed={0.05}
           data-scroll
           className="opacity-30 sm:opacity-100 relative w-full h-full"
         >
@@ -84,7 +84,7 @@ export default function FeaturedJournals({ dict }: Props) {
               className="relative -mt-4 sm:-mt-6 md:-mt-8 -left-40 sm:-left-64 md:-left-96 lg:-left-160 h-40 sm:h-64 md:h-96 lg:h-160 w-64 sm:w-96 md:w-xl lg:w-255 pointer-events-none"
             >
               <Parallax
-                speed={0.15}
+                speed={0.08}
                 data-scroll
                 className="relative w-full h-full"
               >
@@ -102,7 +102,7 @@ export default function FeaturedJournals({ dict }: Props) {
               duration={1600}
               className="absolute -bottom-20 sm:-bottom-32 md:-bottom-40 lg:-bottom-50 left-0 lg:right-14 w-28 sm:w-40 md:w-56 lg:w-auto"
             >
-              <Parallax speed={-0.15} data-scroll className="relative">
+              <Parallax speed={-0.08} data-scroll className="relative">
                 <Image
                   src="/home/journals-flower.webp"
                   alt=""
@@ -157,7 +157,7 @@ export default function FeaturedJournals({ dict }: Props) {
         duration={1800}
         className="relative overflow-hidden w-full h-40 md:h-64 lg:h-80 xl:h-100 -mt-6 md:-mt-8 lg:-mt-10 pointer-events-none"
       >
-        <Parallax speed={0.1} data-scroll className="relative w-full h-full">
+        <Parallax speed={0.05} data-scroll className="relative w-full h-full">
           <Image
             src="/home/blue-mountain-sand.webp"
             alt=""

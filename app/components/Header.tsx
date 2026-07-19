@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import type { Dictionary, Locale } from "../[lang]/dictionaries";
+import type { HeaderDict, Locale } from "../[lang]/dictionaries";
 import LanguageToggle from "./LanguageToggle";
 
 type Props = {
-  dict: Dictionary["header"];
+  dict: HeaderDict;
   lang: Locale;
 };
 
@@ -16,7 +16,7 @@ export default function Header({ dict, lang }: Props) {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { label: dict.nav.about, href: "#about" },
+    { label: dict.nav.about, href: `/${lang}/about` },
     { label: dict.nav.services, href: "#services" },
     { label: dict.nav.familyOffice, href: "#family-office" },
     { label: dict.nav.journals, href: "#journals" },

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { HeroDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 
-type Props = { dict: Dictionary["hero"] };
+type Props = { dict: HeroDict };
 
 export default function Hero({ dict }: Props) {
   return (

@@ -17,3 +17,19 @@ export const hasLocale = (locale: string): locale is Locale =>
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
 
 export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+
+/** Shared page-section dictionaries — home and about use the same shape. */
+export type PageDictionary = Dictionary["home"];
+export type HeroDict = PageDictionary["hero"];
+export type FamilyLegacyDict = PageDictionary["familyLegacy"];
+export type WealthPlanningDict = PageDictionary["wealthPlanning"];
+export type BeyondFinancialAdviceDict = PageDictionary["beyondFinancialAdvice"];
+export type QuoteDict = PageDictionary["quote"];
+export type FeaturedJournalsDict = PageDictionary["featuredJournals"];
+
+export type HeaderDict = Dictionary["header"];
+export type FooterDict = Dictionary["footer"];
+
+/** About-page section shapes (only where they diverge from the home shape). */
+export type AboutPlusAdvisorDict = Dictionary["about"]["aboutPlusAdvisor"];
+export type LeadershipDict = Dictionary["about"]["leadership"];

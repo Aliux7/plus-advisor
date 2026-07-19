@@ -1,9 +1,9 @@
 import Image from "next/image";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { FamilyLegacyDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: Dictionary["familyLegacy"] };
+type Props = { dict: FamilyLegacyDict };
 
 export default function FamilyLegacy({ dict }: Props) {
   return (
@@ -16,7 +16,7 @@ export default function FamilyLegacy({ dict }: Props) {
         duration={1600}
         className="absolute -top-8 md:-top-16 w-full"
       >
-        <Parallax speed={0.15} data-scroll className="w-full">
+        <Parallax speed={0.08} data-scroll className="w-full">
           <Image
             src="/home/family-legacy-mountain-sand.svg"
             alt=""
@@ -39,7 +39,7 @@ export default function FamilyLegacy({ dict }: Props) {
                 duration={1600}
                 distance={80}
               >
-                <Parallax speed={0.2} data-scroll>
+                <Parallax speed={0.05} data-scroll>
                   <div className="bg-white rounded-full">
                     <Image
                       src="/home/family-legacy-ellipse.webp"
@@ -74,7 +74,7 @@ export default function FamilyLegacy({ dict }: Props) {
               duration={1600}
               className="absolute bottom-0 left-0 w-28 sm:w-40 md:w-56 xl:w-82 h-20 sm:h-30 md:h-42 xl:h-61"
             >
-              <Parallax speed={-0.1} data-scroll className="w-full h-full">
+              <Parallax speed={-0.05} data-scroll className="w-full h-full">
                 <Image
                   src="/home/flower.webp"
                   alt=""
@@ -94,7 +94,7 @@ export default function FamilyLegacy({ dict }: Props) {
                 duration={1600}
                 distance={80}
               >
-                <Parallax speed={0.25} data-scroll>
+                <Parallax speed={0.12} data-scroll>
                   <Image
                     src="/home/leaf.webp"
                     alt=""
@@ -151,7 +151,7 @@ export default function FamilyLegacy({ dict }: Props) {
             duration={1600}
             className="absolute opacity-50 sm:opacity-100 sm:relative -ml-10 w-full max-w-md md:max-w-lg lg:max-w-none lg:w-155 lg:h-142.5 z-20 lg:ml-15 mx-auto lg:mx-0"
           >
-            <Parallax speed={-0.15} data-scroll className="w-full h-full">
+            <Parallax speed={-0.08} data-scroll className="w-full h-full">
               <Image
                 src="/home/bird.webp"
                 alt=""

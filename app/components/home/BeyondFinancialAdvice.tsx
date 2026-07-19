@@ -1,14 +1,15 @@
 import Image from "next/image";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { BeyondFinancialAdviceDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
+import SlidingDivider from "../SlidingDivider";
 import Parallax from "../Parallax";
 
-type Props = { dict: Dictionary["beyondFinancialAdvice"] };
+type Props = { dict: BeyondFinancialAdviceDict };
 
 export default function BeyondFinancialAdvice({ dict }: Props) {
   return (
     <section data-scroll-section className="mt-40 relative min-h-screen text-white">
-      <Parallax speed={0.15} data-scroll className="absolute inset-0">
+      <Parallax speed={0.08} data-scroll className="absolute inset-0">
         <Image
           src="/home/beach-family-sunset.webp"
           alt="Family playing at the beach during sunset"
@@ -53,14 +54,12 @@ export default function BeyondFinancialAdvice({ dict }: Props) {
               {dict.cta}
             </a>
           </ScrollReveal>
-          <ScrollReveal
-            variant="slide-right"
+          <SlidingDivider
+            className="absolute bottom-0 left-0 w-full"
+            barClassName="bg-white"
             delay={600}
             duration={1400}
-            className="bottom-0 left-0 bg-white w-full h-px absolute"
-          >
-            <span className="sr-only">divider</span>
-          </ScrollReveal>
+          />
         </div>
 
         <div className="mt-8 md:mt-12 lg:mt-16 grid grid-cols-1 grid-rows-[auto_auto_auto_auto] gap-x-4 md:gap-x-6 gap-y-0 space-y-10 pt-8 md:pt-12 pb-8 md:pb-12 px-5 sm:px-10 xl:px-20 sm:grid-cols-2 lg:grid-cols-5 bg-[#88643B]/50 backdrop-blur-xs">

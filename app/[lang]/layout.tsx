@@ -17,6 +17,8 @@ import {
   hasLocale,
 } from "./dictionaries";
 import LocomotiveScrollProvider from "../components/LocomotiveScrollProvider";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +60,18 @@ const catalog = localFont({
   ],
 });
 
+const gothamCondensed = localFont({
+  variable: "--font-gotham-condensed",
+  display: "swap",
+  src: [
+    {
+      path: "../fonts/Gotham-Condensed-Book-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
+
 export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
@@ -80,14 +94,21 @@ export default async function LangLayout({
 }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
 
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${catalog.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${catalog.variable} ${gothamCondensed.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <LocomotiveScrollProvider>{children}</LocomotiveScrollProvider>
+        <LocomotiveScrollProvider>
+          <div id="top" className="flex flex-1 flex-col overflow-x-hidden">
+            <Header dict={dict.header} lang={lang} />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <Footer dict={dict.footer} />
+          </div>
+        </LocomotiveScrollProvider>
       </body>
     </html>
   );

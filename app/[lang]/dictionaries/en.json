@@ -14,139 +14,6 @@
     "searchLabel": "Search",
     "languageLabel": "ENGLISH"
   },
-  "hero": {
-    "eyebrow": "PLUS Advisor",
-    "titleLine1": "Nurturing Legacies,",
-    "titleLine2": "Providing Peace of Mind."
-  },
-  "familyLegacy": {
-    "titlePrefix": "A Commitment to",
-    "titleAccent": "Family Legacy",
-    "body": "PLUS Advisor stands beside families where responsibility grows and decisions carry weight. Through clarity, due care, and independent advisory, we help protect what matters and sustain peace of mind across generations.",
-    "cta": "Read More",
-    "footnote": "We guide how your wealth is preserved and passed on across generations—through estate and succession planning aligned with your family’s long-term vision."
-  },
-  "wealthPlanning": {
-    "cta": "Read More",
-    "prev": "Previous",
-    "next": "Next",
-    "slides": [
-      {
-        "number": "01",
-        "title": "Wealth Planning",
-        "subtitle": "Structuring What Is Meant to Be Carried Forward",
-        "body": "We provide guidance in shaping how what you have built is preserved and passed on—through estate planning, including lifetime gifting, life insurance, prenuptial arrangements, and wills, as well as succession planning to support business continuity. Each step is aligned with your intentions and the long-term direction of the family.",
-        "image": "/home/slides/01-wealth-planning.webp",
-        "imageAlt": "Hot air balloons over ancient temple ruins in Bagan, Myanmar"
-      },
-      {
-        "number": "02",
-        "title": "Wealth Management",
-        "subtitle": "Shaping Direction and Sustaining Growth",
-        "body": "We provide thoughtful guidance in managing investments with clarity and discipline—covering investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Each decision is considered within a broader perspective, balancing growth with long-term stability.",
-        "image": "/home/slides/02-wealth-management.webp",
-        "imageAlt": "Mount Agung during eruption at sunset over rice fields, Bali"
-      },
-      {
-        "number": "03",
-        "title": "Tax Planning",
-        "subtitle": "Navigating Complexity with Structure and Clarity",
-        "body": "We provide considered guidance across tax-related matters—covering tax filings, real estate structures, international relocation, and cross-border tax considerations. Each recommendation is shaped with care, ensuring alignment with regulatory requirements while supporting long-term clarity and efficiency.",
-        "image": "/home/slides/03-tax-planning.webp",
-        "imageAlt": "Man carrying rice seedlings across terraces in Sa Pa, Vietnam"
-      },
-      {
-        "number": "04",
-        "title": "Family Governance",
-        "subtitle": "Building Alignment Across Generations",
-        "body": "We provide guidance in shaping governance structures that support clarity, communication, and continuity within the family. This includes the formation of family councils, constitutions, and assemblies—designed to help align perspectives, support decision-making, and sustain shared values over time.",
-        "image": "/home/slides/04-family-governance.webp",
-        "imageAlt": "People carrying offerings through a rice paddy"
-      },
-      {
-        "number": "05",
-        "title": "Trust & Corporate Services",
-        "subtitle": "Structuring Ownership with Clarity and Continuity",
-        "body": "We provide guidance in establishing and maintaining structures that support ownership, protection, and long-term continuity. This includes corporate incorporation, trust administration, real estate considerations, ownership structuring, family shareholding, nominee arrangements, and specialized assets such as aircraft and yachts. Each structure is approached with care—ensuring it remains aligned with broader objectives and evolving needs.",
-        "image": "/home/slides/05-trust-corporate.webp",
-        "imageAlt": "Fishermen on the Li River at dawn"
-      },
-      {
-        "number": "06",
-        "title": "Charity & Philanthropy",
-        "subtitle": "Giving with Purpose and Intention",
-        "body": "We provide guidance in shaping meaningful approaches to giving—through the development of giving strategies and the establishment of grant-making foundations. Each step is considered with care, ensuring that contributions reflect the values of the family and create lasting impact over time.",
-        "image": "/home/slides/06-charity-philanthropy.webp",
-        "imageAlt": "Seagulls in flight at Inle Lake, Myanmar"
-      }
-    ]
-  },
-  "beyondFinancialAdvice": {
-    "eyebrow": "PLUS Advisor",
-    "title": "Beyond Financial Advice",
-    "cta": "Read More",
-    "pillars": [
-      {
-        "number": "01",
-        "title": "Wealth Assessment",
-        "lead": "Every journey begins with understanding.",
-        "description": "Every journey begins with understanding. We take the time to develop a comprehensive view of your financial landscape, including assets, risks, priorities, and what matters most to you. This assessment provides clarity where informed decisions can begin."
-      },
-      {
-        "number": "02",
-        "title": "Advisory",
-        "lead": "Not every decision should be made alone.",
-        "description": "We provide an independent perspective on financial products or proposals, helping you see beyond what is presented—so you can move forward with confidence and assurance."
-      },
-      {
-        "number": "03",
-        "title": "Advisor Oversight & Governance",
-        "lead": "Good advice deserves a strong foundation.",
-        "description": "Advisors within PLUS Advisor are supported by clear ethical standards, thoughtful review, and legal guidance—ensuring that every advice is delivered with care, responsibility, and integrity."
-      },
-      {
-        "number": "04",
-        "title": "Family Office Services",
-        "lead": "Wealth is more than numbers—it carries meaning across generations.",
-        "description": "We help families plan, preserve, and govern their wealth with intention, so what has been built can continue to support the family's objectives, values, and harmony over time."
-      },
-      {
-        "number": "05",
-        "title": "Fraud Prevention & Response Advisory",
-        "lead": "In uncertainty, clarity becomes essential.",
-        "description": "We help you identify early potential signs of risk, be informed, and navigate potential complex situations so adequate response can be improved with confidence and informed judgment."
-      }
-    ]
-  },
-  "quote": {
-    "text": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
-    "author": "Robert Stevenson"
-  },
-  "featuredJournals": {
-    "titlePrefix": "Featured",
-    "titleAccent": "Journals",
-    "body": "Through Our Journals, we share perspectives and experiences that go beyond numbers—exploring the philosophy, values, and lessons within the family’s journey.",
-    "cta": "See All",
-    "readMore": "Read More",
-    "items": [
-      {
-        "date": "21 October 2022",
-        "title": "Single vs Multi Family Office: Which One Is Right for You?"
-      },
-      {
-        "date": "21 October 2022",
-        "title": "Single vs Multi Family Office: Which One Is Right for You?"
-      },
-      {
-        "date": "21 October 2022",
-        "title": "Single vs Multi Family Office: Which One Is Right for You?"
-      },
-      {
-        "date": "21 October 2022",
-        "title": "Single vs Multi Family Office: Which One Is Right for You?"
-      }
-    ]
-  },
   "footer": {
     "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, structuring, protecting, and sustaining their legacy—so it may endure with clarity, care, and continuity across generations.",
     "whistleTitle": "Whistle Blowing System",
@@ -162,5 +29,235 @@
       "Market Update",
       "Disclaimer"
     ]
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "PLUS Advisor",
+      "titleLine1": "Nurturing Legacies,",
+      "titleLine2": "Providing Peace of Mind."
+    },
+    "familyLegacy": {
+      "titlePrefix": "A Commitment to",
+      "titleAccent": "Family Legacy",
+      "body": "PLUS Advisor stands beside families where responsibility grows and decisions carry weight. Through clarity, due care, and independent advisory, we help protect what matters and sustain peace of mind across generations.",
+      "cta": "Read More",
+      "footnote": "We guide how your wealth is preserved and passed on across generations—through estate and succession planning aligned with your family’s long-term vision."
+    },
+    "wealthPlanning": {
+      "cta": "Read More",
+      "prev": "Previous",
+      "next": "Next",
+      "slides": [
+        {
+          "number": "01",
+          "title": "Wealth Planning",
+          "subtitle": "Structuring What Is Meant to Be Carried Forward",
+          "body": "We provide guidance in shaping how what you have built is preserved and passed on—through estate planning, including lifetime gifting, life insurance, prenuptial arrangements, and wills, as well as succession planning to support business continuity. Each step is aligned with your intentions and the long-term direction of the family.",
+          "image": "/home/slides/01-wealth-planning.webp",
+          "imageAlt": "Hot air balloons over ancient temple ruins in Bagan, Myanmar"
+        },
+        {
+          "number": "02",
+          "title": "Wealth Management",
+          "subtitle": "Shaping Direction and Sustaining Growth",
+          "body": "We provide thoughtful guidance in managing investments with clarity and discipline—covering investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Each decision is considered within a broader perspective, balancing growth with long-term stability.",
+          "image": "/home/slides/02-wealth-management.webp",
+          "imageAlt": "Mount Agung during eruption at sunset over rice fields, Bali"
+        },
+        {
+          "number": "03",
+          "title": "Tax Planning",
+          "subtitle": "Navigating Complexity with Structure and Clarity",
+          "body": "We provide considered guidance across tax-related matters—covering tax filings, real estate structures, international relocation, and cross-border tax considerations. Each recommendation is shaped with care, ensuring alignment with regulatory requirements while supporting long-term clarity and efficiency.",
+          "image": "/home/slides/03-tax-planning.webp",
+          "imageAlt": "Man carrying rice seedlings across terraces in Sa Pa, Vietnam"
+        },
+        {
+          "number": "04",
+          "title": "Family Governance",
+          "subtitle": "Building Alignment Across Generations",
+          "body": "We provide guidance in shaping governance structures that support clarity, communication, and continuity within the family. This includes the formation of family councils, constitutions, and assemblies—designed to help align perspectives, support decision-making, and sustain shared values over time.",
+          "image": "/home/slides/04-family-governance.webp",
+          "imageAlt": "People carrying offerings through a rice paddy"
+        },
+        {
+          "number": "05",
+          "title": "Trust & Corporate Services",
+          "subtitle": "Structuring Ownership with Clarity and Continuity",
+          "body": "We provide guidance in establishing and maintaining structures that support ownership, protection, and long-term continuity. This includes corporate incorporation, trust administration, real estate considerations, ownership structuring, family shareholding, nominee arrangements, and specialized assets such as aircraft and yachts. Each structure is approached with care—ensuring it remains aligned with broader objectives and evolving needs.",
+          "image": "/home/slides/05-trust-corporate.webp",
+          "imageAlt": "Fishermen on the Li River at dawn"
+        },
+        {
+          "number": "06",
+          "title": "Charity & Philanthropy",
+          "subtitle": "Giving with Purpose and Intention",
+          "body": "We provide guidance in shaping meaningful approaches to giving—through the development of giving strategies and the establishment of grant-making foundations. Each step is considered with care, ensuring that contributions reflect the values of the family and create lasting impact over time.",
+          "image": "/home/slides/06-charity-philanthropy.webp",
+          "imageAlt": "Seagulls in flight at Inle Lake, Myanmar"
+        }
+      ]
+    },
+    "beyondFinancialAdvice": {
+      "eyebrow": "PLUS Advisor",
+      "title": "Beyond Financial Advice",
+      "cta": "Read More",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Wealth Assessment",
+          "lead": "Every journey begins with understanding.",
+          "description": "Every journey begins with understanding. We take the time to develop a comprehensive view of your financial landscape, including assets, risks, priorities, and what matters most to you. This assessment provides clarity where informed decisions can begin."
+        },
+        {
+          "number": "02",
+          "title": "Advisory",
+          "lead": "Not every decision should be made alone.",
+          "description": "We provide an independent perspective on financial products or proposals, helping you see beyond what is presented—so you can move forward with confidence and assurance."
+        },
+        {
+          "number": "03",
+          "title": "Advisor Oversight & Governance",
+          "lead": "Good advice deserves a strong foundation.",
+          "description": "Advisors within PLUS Advisor are supported by clear ethical standards, thoughtful review, and legal guidance—ensuring that every advice is delivered with care, responsibility, and integrity."
+        },
+        {
+          "number": "04",
+          "title": "Family Office Services",
+          "lead": "Wealth is more than numbers—it carries meaning across generations.",
+          "description": "We help families plan, preserve, and govern their wealth with intention, so what has been built can continue to support the family's objectives, values, and harmony over time."
+        },
+        {
+          "number": "05",
+          "title": "Fraud Prevention & Response Advisory",
+          "lead": "In uncertainty, clarity becomes essential.",
+          "description": "We help you identify early potential signs of risk, be informed, and navigate potential complex situations so adequate response can be improved with confidence and informed judgment."
+        }
+      ]
+    },
+    "quote": {
+      "text": "Don't judge each day by the harvest you reap but by the seeds that you plant.",
+      "author": "Robert Stevenson"
+    },
+    "featuredJournals": {
+      "titlePrefix": "Featured",
+      "titleAccent": "Journals",
+      "body": "Through Our Journals, we share perspectives and experiences that go beyond numbers—exploring the philosophy, values, and lessons within the family’s journey.",
+      "cta": "See All",
+      "readMore": "Read More",
+      "items": [
+        {
+          "date": "21 October 2022",
+          "title": "Single vs Multi Family Office: Which One Is Right for You?"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "Single vs Multi Family Office: Which One Is Right for You?"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "Single vs Multi Family Office: Which One Is Right for You?"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "Single vs Multi Family Office: Which One Is Right for You?"
+        }
+      ]
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About Us",
+      "titleLine1": "A Commitment",
+      "titleLine2": "to Family Legacy"
+    },
+    "aboutPlusAdvisor": {
+      "title": "About Plus Advisor",
+      "subtitle": "Guided with Clarity, Carried with Care.",
+      "paragraphs": [
+        "PLUS Advisor is a family office and advisory firm based in Indonesia, working with individuals and families across borders. We support those navigating complexity with clarity and due care, where decisions carry weight and unresolved matters as much as outcome.",
+        "As a family office, we bring together the many dimensions of wealth, including financial, structural, and generational considerations, into a more considered whole. Each element is approached in relation to one another, forming a direction that is coherent, deliberate, and quietly assured.",
+        "Through time and careful coordination, we support families in moving forward with intention. We help preserve stability, maintain continuity, and carry forward what matters across generations."
+      ]
+    },
+    "leadership": {
+      "eyebrow": "Leadership",
+      "name": "Priskilla Lusina",
+      "featuredQuote": "Priskilla Lusina's work is rooted in a simple belief: that wealth, when guided with care, becomes more than accumulation—it becomes continuity, meaning, and responsibility carried forward.",
+      "paragraphs": [
+        "Priskilla approaches wealth management as a deep personal journey, shaped by trust, understanding, and ethical stewardship. Working closely with families, she ensures that each decision is taken with clarity and intention. Today, as CEO and founder of PLUS Advisor, she extends this philosophy into a broader, more integrated approach that reflects the evolving needs of those she serves.",
+        "In her individual capacity, Priskilla is a licensed Individual Investment Adviser (Penasihat Investasi Orang Perseorangan) registered with Financial Services Authority of Indonesia (OJK), a member of FPSB Indonesia, and a Certified Financial Planner (CFP). Her professional path, built through years of experience and reflection, led to the founding of PLUS Advisor—an expression of her values, grounded in integrity, clarity, and a long-term commitment to families and their continuity.",
+        "Her recent recognition as the \"Top Wealth Management Service Provider in APAC 2024\", awarded by Financial Service Review, reflects the trust she has cultivated over time. For Priskilla, true success is not defined solely by growth, but by the ability to live with a peaceful mind. This belief continues to shape PLUS Advisor's family-first approach, where every step is guided with care, offering continuity, quiet confidence, and a thoughtfully assured experience."
+      ],
+      "recognitionHighlight": "Top Wealth Management Service Provider in APAC 2024",
+      "portraitAlt": "Priskilla Lusina, CEO and founder of PLUS Advisor",
+      "memberOfLabel": "Member of"
+    },
+    "beyondFinancialAdvice": {
+      "eyebrow": "PLUS Advisor",
+      "title": "Our Commitments",
+      "cta": "Read More",
+      "pillars": [
+        {
+          "number": "01",
+          "title": "Independence",
+          "lead": "Advice without conflict.",
+          "description": "We do not sell products. Our income is aligned with the families we serve—so every recommendation is measured against their long-term interests alone."
+        },
+        {
+          "number": "02",
+          "title": "Discretion",
+          "lead": "Every conversation stays with us.",
+          "description": "The trust of the families we work with is the foundation of everything we do. Confidentiality is treated with the seriousness of a fiduciary duty."
+        },
+        {
+          "number": "03",
+          "title": "Continuity",
+          "lead": "Steady across generations.",
+          "description": "Our engagements are designed to outlast any single decision, advisor, or market cycle—providing a stable point of reference as the family and its needs evolve."
+        },
+        {
+          "number": "04",
+          "title": "Clarity",
+          "lead": "Sound advice, plainly delivered.",
+          "description": "Complex structures should never obscure the reasoning behind them. We take the time to explain each step so the family stays in control of every decision."
+        },
+        {
+          "number": "05",
+          "title": "Care",
+          "lead": "Beyond financial numbers.",
+          "description": "We recognize that wealth carries meaning, memory, and responsibility. Every recommendation is shaped with that fuller picture in mind."
+        }
+      ]
+    },
+    "quote": {
+      "text": "In every family lies a story worth preserving; our role is simply to help write the next chapter with care.",
+      "author": "PLUS Advisor"
+    },
+    "featuredJournals": {
+      "titlePrefix": "From Our",
+      "titleAccent": "Journals",
+      "body": "Perspectives, reflections, and lessons from our work alongside families—shared to open a wider conversation about stewardship and legacy.",
+      "cta": "See All",
+      "readMore": "Read More",
+      "items": [
+        {
+          "date": "21 October 2022",
+          "title": "Why an Independent Family Office Matters"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "Building Governance That Lasts Generations"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "The Quiet Discipline of Long-Term Wealth"
+        },
+        {
+          "date": "21 October 2022",
+          "title": "Values Before Vehicles: A Note on Structuring"
+        }
+      ]
+    }
   }
 }

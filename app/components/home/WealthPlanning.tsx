@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
-import type { Dictionary } from "../../[lang]/dictionaries";
+import type { WealthPlanningDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: Dictionary["wealthPlanning"] };
+type Props = { dict: WealthPlanningDict };
 
 const OUT_DURATION = 400;
 const IN_DURATION = 700;
@@ -48,7 +48,7 @@ export default function WealthPlanning({ dict }: Props) {
           duration={1600}
           className="absolute left-0 -bottom-10 xl:bottom-0 w-50 h-68 opacity-50 xl:opacity-100"
         >
-          <Parallax speed={-0.15} data-scroll className="w-full h-full relative">
+          <Parallax speed={-0.08} data-scroll className="w-full h-full relative">
             <Image
               src="/home/bird-alt.webp"
               alt=""
@@ -141,7 +141,7 @@ export default function WealthPlanning({ dict }: Props) {
                 duration={1600}
                 className="w-full h-full"
               >
-                <Parallax speed={0.2} data-scroll className="relative w-full h-full">
+                <Parallax speed={0.05} data-scroll className="relative w-full h-full">
                   <div className="absolute inset-0 bg-white rounded-full">
                     <Image
                       src="/home/circle-decoration.webp"
@@ -162,7 +162,7 @@ export default function WealthPlanning({ dict }: Props) {
                 duration={1600}
                 className="w-full h-full"
               >
-                <Parallax speed={-0.2} data-scroll className="relative w-full h-full">
+                <Parallax speed={-0.05} data-scroll className="relative w-full h-full">
                   <Image
                     src="/home/line-ball.svg"
                     alt=""
@@ -181,7 +181,7 @@ export default function WealthPlanning({ dict }: Props) {
               distance={80}
               className="relative w-full h-full"
             >
-              <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden">
+              <div className="relative w-full h-full">
                 {slides.map((s, i) => {
                   const isCurrent = i === displayIndex;
                   const isSettled = isCurrent && isIn;
@@ -207,7 +207,7 @@ export default function WealthPlanning({ dict }: Props) {
                         fill
                         sizes="(min-width: 1024px) 50vw, 100vw"
                         priority={i === 0}
-                        className="object-cover"
+                        className="object-cover rounded-xl md:rounded-2xl overflow-hidden"
                       />
                     </div>
                   );
@@ -216,7 +216,12 @@ export default function WealthPlanning({ dict }: Props) {
             </ScrollReveal>
           </div>
 
-          <div className="self-end w-fit mt-6 lg:mt-10 flex items-center gap-4 lg:gap-6 text-[#88643B]">
+          <ScrollReveal
+            variant="fade-left"
+            delay={500}
+            duration={1600}
+            className="self-end w-fit mt-6 lg:mt-10 flex items-center gap-4 lg:gap-6 text-[#88643B]"
+          >
             <button
               type="button"
               onClick={goPrev}
@@ -270,7 +275,7 @@ export default function WealthPlanning({ dict }: Props) {
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </button>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
