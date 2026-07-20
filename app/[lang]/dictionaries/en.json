@@ -193,6 +193,32 @@
       "portraitAlt": "Priskilla Lusina, CEO and founder of PLUS Advisor",
       "memberOfLabel": "Member of"
     },
+    "mountainQuote": {
+      "text": "The greatest glory in living lie not in never failing, but in rising every time we fell.",
+      "author": "Nelson Mandela"
+    },
+    "aboutHer": {
+      "title": "About Her",
+      "prev": "Previous",
+      "next": "Next",
+      "testimonials": [
+        {
+          "text": "Mrs. Priskilla's leadership at Plus Advisor instilled crucial values that shaped my professional approach. She emphasized focus, time management, discipline, transparency, and honest communication. Her teachings on perseverance turned challenges into growth opportunities, promoting a positive attitude and concise communication. Consistency, commitment, personal presentation, and integrity were paramount. Her guidance profoundly influenced my personal and professional growth within the company.",
+          "author": "Mr. R.S",
+          "role": "Employee"
+        },
+        {
+          "text": "Working alongside Mrs. Priskilla, I learned that true leadership is measured by the clarity you leave behind. She taught me to approach every client conversation with patience, precision, and a genuine sense of stewardship. Her steady presence in moments of complexity gave me the confidence to navigate difficult decisions with care.",
+          "author": "Ms. A.L",
+          "role": "Employee"
+        },
+        {
+          "text": "Mrs. Priskilla leads by example—with quiet conviction and an unwavering commitment to doing what is right for the families we serve. She reminded me often that trust is earned through consistency, and that the smallest details are what carry a relationship across generations.",
+          "author": "Mr. D.K",
+          "role": "Employee"
+        }
+      ]
+    },
     "beyondFinancialAdvice": {
       "eyebrow": "PLUS Advisor",
       "title": "Our Commitments",

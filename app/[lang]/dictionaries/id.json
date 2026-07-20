@@ -194,6 +194,32 @@
       "portraitAlt": "Priskilla Lusina, CEO dan pendiri PLUS Advisor",
       "memberOfLabel": "Anggota dari"
     },
+    "mountainQuote": {
+      "text": "Kejayaan terbesar dalam hidup bukan terletak pada tidak pernah gagal, melainkan pada kemampuan untuk bangkit setiap kali kita jatuh.",
+      "author": "Nelson Mandela"
+    },
+    "aboutHer": {
+      "title": "About Her",
+      "prev": "Sebelumnya",
+      "next": "Berikutnya",
+      "testimonials": [
+        {
+          "text": "Kepemimpinan Ibu Priskilla di Plus Advisor menanamkan nilai-nilai penting yang membentuk pendekatan profesional saya. Beliau menekankan fokus, manajemen waktu, disiplin, transparansi, dan komunikasi yang jujur. Ajaran beliau tentang ketekunan mengubah tantangan menjadi peluang untuk berkembang, mendorong sikap positif dan komunikasi yang ringkas. Konsistensi, komitmen, penampilan personal, dan integritas menjadi hal utama. Bimbingan beliau memberi pengaruh yang mendalam pada pertumbuhan pribadi dan profesional saya di perusahaan.",
+          "author": "Bpk. R.S",
+          "role": "Karyawan"
+        },
+        {
+          "text": "Bekerja bersama Ibu Priskilla, saya belajar bahwa kepemimpinan sejati diukur dari kejelasan yang ditinggalkannya. Beliau mengajarkan saya untuk menghadapi setiap percakapan dengan klien dengan sabar, cermat, dan penuh rasa tanggung jawab. Kehadirannya yang tenang di tengah kerumitan memberi saya keyakinan untuk melangkah dengan penuh pertimbangan.",
+          "author": "Ibu A.L",
+          "role": "Karyawan"
+        },
+        {
+          "text": "Ibu Priskilla memimpin dengan teladan—dengan keyakinan yang tenang dan komitmen yang teguh untuk selalu melakukan yang terbaik bagi keluarga yang kami layani. Beliau sering mengingatkan bahwa kepercayaan dibangun melalui konsistensi, dan detail-detail terkecil-lah yang menjaga sebuah hubungan lintas generasi.",
+          "author": "Bpk. D.K",
+          "role": "Karyawan"
+        }
+      ]
+    },
     "beyondFinancialAdvice": {
       "eyebrow": "PLUS Advisor",
       "title": "Komitmen Kami",

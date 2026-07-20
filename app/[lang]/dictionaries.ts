@@ -33,3 +33,5 @@ export type FooterDict = Dictionary["footer"];
 /** About-page section shapes (only where they diverge from the home shape). */
 export type AboutPlusAdvisorDict = Dictionary["about"]["aboutPlusAdvisor"];
 export type LeadershipDict = Dictionary["about"]["leadership"];
+export type AboutHerDict = Dictionary["about"]["aboutHer"];
+export type MountainQuoteDict = Dictionary["about"]["mountainQuote"];

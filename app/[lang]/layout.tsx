@@ -72,6 +72,14 @@ const gothamCondensed = localFont({
   ],
 });
 
+const gotham = localFont({
+  variable: "--font-gotham",
+  display: "swap",
+  src: [
+    { path: "../fonts/Gotham-Regular.otf", weight: "400", style: "normal" },
+  ],
+});
+
 export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
@@ -99,7 +107,7 @@ export default async function LangLayout({
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${catalog.variable} ${gothamCondensed.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${catalog.variable} ${gothamCondensed.variable} ${gotham.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>
