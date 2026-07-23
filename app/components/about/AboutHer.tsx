@@ -44,7 +44,7 @@ export default function AboutHer({ dict }: Props) {
       className="relative overflow-hidden bg-white pt-20 md:pt-24 lg:pt-28 xl:pt-32 pb-20 "
     >
       <ScrollReveal
-        variant="fade-in"
+        variant="fade-left"
         delay={0}
         duration={1600}
         className="absolute -top-6 sm:-top-10 md:-top-14 lg:-top-16 xl:-top-20 -right-5 lg:right-0 w-40 sm:w-60 xl:w-80 pointer-events-none z-0"
