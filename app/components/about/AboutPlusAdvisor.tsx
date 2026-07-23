@@ -59,7 +59,7 @@ export default function AboutPlusAdvisor({ dict }: Props) {
         </div>
 
         <div className="flex flex-col gap-10 md:gap-12 lg:flex-row lg:gap-7">
-          <div className="mx-auto lg:-ml-10 xl:ml-0 origin-top sm:origin-top-left scale-90 sm:scale-100 lg:scale-80 xl:scale-100 -mb-20 sm:mb-0 lg:-mr-24 xl:mr-0 lg:-mb-24 xl:mb-0 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10 xl:-translate-y-1/8">
+          <div className="mx-auto -mt-10 lg:mt-0 lg:-ml-10 xl:ml-0 origin-top sm:origin-top-left scale-90 sm:scale-100 lg:scale-80 xl:scale-100 -mb-10 sm:mb-0 lg:-mr-24 xl:mr-0 lg:-mb-24 xl:mb-0 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10 xl:-translate-y-1/8">
             <ScrollReveal
               variant="fade-in"
               delay={200}
@@ -105,7 +105,7 @@ export default function AboutPlusAdvisor({ dict }: Props) {
               duration={1800}
               className="relative w-full"
             >
-              <Parallax speed={0.1} data-scroll className="relative w-full">
+              <Parallax speed={0.06} data-scroll className="relative w-full">
                 <Image
                   src="/Asset 14@2x.svg"
                   alt=""
@@ -138,7 +138,7 @@ export default function AboutPlusAdvisor({ dict }: Props) {
             </ScrollReveal>
           </div>
 
-          <div className="flex flex-col gap-4 md:gap-5 xl:gap-6 max-w-2xl xl:mt-10">
+          <div className="flex flex-col gap-4 md:gap-5 xl:gap-6 max-w-2xl -mt-10 lg:mt-0 xl:mt-10">
             {dict.paragraphs.map((paragraph, i) => (
               <ScrollReveal
                 key={i}

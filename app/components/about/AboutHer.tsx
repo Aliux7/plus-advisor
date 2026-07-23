@@ -41,13 +41,13 @@ export default function AboutHer({ dict }: Props) {
   return (
     <section
       data-scroll-section
-      className="relative bg-white pt-20 md:pt-24 lg:pt-28 xl:pt-32 pb-20 lg:pb-0"
+      className="relative overflow-hidden bg-white pt-20 md:pt-24 lg:pt-28 xl:pt-32 pb-20 "
     >
       <ScrollReveal
         variant="fade-in"
         delay={0}
         duration={1600}
-        className="absolute -top-6 sm:-top-10 md:-top-14 lg:-top-16 xl:-top-20 right-0 w-16 sm:w-24 md:w-40 lg:w-60 xl:w-80 pointer-events-none z-0"
+        className="absolute -top-6 sm:-top-10 md:-top-14 lg:-top-16 xl:-top-20 -right-5 lg:right-0 w-40 sm:w-60 xl:w-80 pointer-events-none z-0"
       >
         <Parallax speed={-0.05} data-scroll className="relative w-full">
           <Image
@@ -96,8 +96,8 @@ export default function AboutHer({ dict }: Props) {
           />
         </div>
 
-        <div className="flex flex-col gap-10 md:gap-12 lg:flex-row items-center lg:gap-24 xl:gap-40">
-          <div className="pointer-events-none mx-auto lg:-ml-10 xl:ml-0 origin-top sm:origin-top-left scale-90 sm:scale-100 lg:scale-80 xl:scale-100 -mb-14 sm:-mb-20 lg:-mr-24 lg:-mb-28 xl:mr-0 xl:mb-0 -translate-y-1/5 lg:-translate-y-1/4 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10">
+        <div className="flex flex-col gap-10 md:gap-12 lg:flex-row items-center lg:gap-24 xl:gap-32">
+          <div className="pointer-events-none mx-auto lg:-ml-10 xl:ml-0 origin-center lg:origin-top-left scale-90 lg:scale-80 xl:scale-100 -mb-28 lg:-mr-24 lg:-mb-28 xl:mr-0 xl:mb-0 -translate-y-1/5 lg:-translate-y-1/4 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10">
             <ScrollReveal
               variant="fade-in"
               delay={200}
@@ -120,7 +120,7 @@ export default function AboutHer({ dict }: Props) {
               delay={0}
               duration={1600}
               distance={60}
-              className="absolute top-30 lg:top-40 -left-10 w-42 sm:w-60 aspect-square rounded-full overflow-hidden"
+              className="absolute top-30 lg:top-40 -left-5 sm:-left-10 w-42 sm:w-60 aspect-square rounded-full overflow-hidden"
             >
               <Parallax
                 speed={0.05}
@@ -143,7 +143,7 @@ export default function AboutHer({ dict }: Props) {
               duration={1800}
               className="relative w-full"
             >
-              <Parallax speed={0.1} data-scroll className="relative w-full">
+              <Parallax speed={0.06} data-scroll className="relative w-full">
                 <Image
                   src="/about/flower.svg"
                   alt=""
@@ -176,7 +176,7 @@ export default function AboutHer({ dict }: Props) {
             </ScrollReveal>
           </div>
 
-          <div className="relative flex flex-col w-full max-w-2xl">
+          <div className="relative flex flex-col w-full">
             <ScrollReveal
               variant="fade-in"
               delay={100}
@@ -190,7 +190,7 @@ export default function AboutHer({ dict }: Props) {
               variant="fade-up"
               delay={200}
               duration={1600}
-              className="relative min-h-64 md:min-h-72 xl:min-h-80 pl-8 ml-5 lg:ml-0"
+              className="relative min-h-64 md:min-h-72 xl:min-h-80 pl-8 ml-5 lg:ml-0 mr-5 xl:mr-10"
             >
               {testimonials.map((t, i) => {
                 const isCurrent = i === displayIndex;
@@ -212,7 +212,7 @@ export default function AboutHer({ dict }: Props) {
                   >
                     <p
                       style={textStyle(0)}
-                      className="relative font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-gold"
+                      className="relative whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-gold"
                     >
                       {t.text}
 
@@ -224,7 +224,7 @@ export default function AboutHer({ dict }: Props) {
                 );
               })}
               <p
-                className="invisible font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em]"
+                className="invisible whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em]"
                 aria-hidden="true"
               >
                 {current.text}
@@ -237,7 +237,7 @@ export default function AboutHer({ dict }: Props) {
               duration={1400}
               className="mt-8 md:mt-10 flex items-start justify-between gap-6 md:gap-10"
             >
-              <div className="flex items-center gap-4 md:gap-6 text-[#88643B]">
+              <div className="flex items-center gap-4 text-[#88643B]">
                 <button
                   type="button"
                   onClick={goPrev}
@@ -293,15 +293,17 @@ export default function AboutHer({ dict }: Props) {
                 </button>
               </div>
 
-              <div className="flex-1 flex flex-col items-end pt-2">
-                <div className="w-full h-px bg-gold/40 xl:-mr-25" />
+              <div className="w-fit flex flex-col items-end pt-1 sm:pt-2">
+                <div className="w-[calc(100%+80px)] max-w-sm h-px bg-gold/40 -mr-20" />
                 <p
                   style={textStyle(120)}
-                  className="mt-3.5 md:mt-4.5 text-right font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-navy"
+                  className="mt-2.5 sm:mt-3 md:mt-4 lg:mt-4.5 xl:mt-5 text-right font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-[0.03em] text-navy text-nowrap"
                 >
                   <span className="font-semibold">{current.author}</span>{" "}
-                  <span className="mx-1 text-navy/60">|</span>
-                  <span className="tracking-[0.35rem]">{current.role}</span>
+                  <span className="mx-0.5 sm:mx-1 text-navy/60">|</span>
+                  <span className="tracking-[0.15rem] sm:tracking-[0.2rem] md:tracking-[0.25rem] lg:tracking-[0.3rem] xl:tracking-[0.35rem]">
+                    {current.role}
+                  </span>
                 </p>
               </div>
             </ScrollReveal>

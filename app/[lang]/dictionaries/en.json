@@ -197,25 +197,97 @@
       "text": "The greatest glory in living lie not in never failing, but in rising every time we fell.",
       "author": "Nelson Mandela"
     },
+    "mindsetPlanning": {
+      "intro": "Our advisory approach is guided by clarity, structure, and a long-term perspective. Working hand in hand with families, we move through a considered process—where priorities become clear, direction finds alignment, and decisions are taken with a sense of confidence that is both steady and assured.",
+      "title": "Mindset, Analysis,",
+      "titleSecondLine": "& Planning Approach",
+      "paragraphs": [
+        "We begin by working hand in hand with each family, understanding the values that guide their decisions, the priorities they hold, and what they seek to carry forward. Through this process, a shared perspective is formed so that every step ahead is aligned with intention and clarity.",
+        "From there, we take a careful and independent view of the present, reviewing existing structures, assets, governance, and potential risks. Each element is considered in relation to one another, allowing us to develop a clear and grounded understanding of the family's current position.",
+        "With this foundation, we continue to work hand in hand in shaping a clear direction, integrating structural, governance, and asset considerations into a cohesive framework. Each advice is made with due care, ensuring it remains adaptable, considered, and aligned with continuity over time."
+      ],
+      "bullets": [
+        "Working hand in hand with families in overseeing assets, investments, and financial records—ensuring each element is understood, well maintained, and aligned with a broader direction.",
+        "Providing considered advisory on tax matters, business evolution, and investment decisions, with each recommendation shaped by both present needs and long-term implications.",
+        "Supporting families in planning ahead, so what has been built may be carried forward with clarity, intention, and lasting value across generations."
+      ]
+    },
+    "starValue": {
+      "titlePrefix": "STAR",
+      "titleAccent": "Value",
+      "subtitle": "Sustainable, Trustworthy, Accountable, and Reliable",
+      "items": [
+        {
+          "title": "Sustainable Framework of Wealth Management",
+          "body": "At Plus Advisor, our commitment to a sustainable approach forms the foundation of our STAR Value. We understand the importance of nurturing your family's well-being for generations to come, while helping you build a legacy that will be cherished by your loved ones. Our dedication extends beyond financial advice. We are committed to delivering quality, integrity, and lasting value in every aspect of your financial journey."
+        },
+        {
+          "title": "Trustworthy with Years of Reputable Experience",
+          "body": "Trust is the cornerstone of our STAR Value. Backed by years of experience and a proven track record, we have established ourselves as trusted stewards of our clients' financial aspirations. Count on us to guide you through every stage of your journey, ensuring that each decision is made with your best interests at heart."
+        },
+        {
+          "title": "Accountable and Transparent Access for Both Sides",
+          "body": "Accountability and transparency rest at the heart of our approach. Just like the comforting embrace of a family, we foster open and honest communication. Our commitment is to provide you with a clear, unobstructed view of your journey as well as quality insights and guidance that enhance your overall quality of life."
+        },
+        {
+          "title": "Reliable to Achieve Common Goals and Benefits",
+          "body": "Reliability forms the essence of our STAR Value. We're not just advisors; we're your partners in this family-centric voyage. Together, let's strive to achieve shared goals and reap mutual benefits, ensuring your family's enduring success while enhancing the overall quality of your life."
+        }
+      ]
+    },
+    "integrityCompliance": {
+      "title": "Integrity, Compliance, and Confidentiality",
+      "paragraphs": [
+        "At PLUS Advisor, integrity underpins every aspect of our work. We operate in alignment with applicable laws and regulations, prevailing professional standards, and principles of good governance, ensuring that each engagement is conducted with accountability, transparency, and due care.",
+        "Compliance is embedded within our processes and decision-making, not merely as an obligation, but as a disciplined approach to safeguarding the interests of the families we serve and maintaining the trust placed in us.",
+        "Confidentiality is upheld as a fundamental responsibility. All information entrusted to PLUS Advisor is handled with strict discretion and protected through appropriate internal controls and protocols designed to preserve its confidentiality and integrity.",
+        "Access to confidential information is limited to authorized parties on a need-to-know basis, ensuring that confidentiality remains secure. Through this commitment, we provide an environment where privacy is respected and where clients may proceed with clarity and confidence."
+      ]
+    },
     "aboutHer": {
       "title": "About Her",
       "prev": "Previous",
       "next": "Next",
       "testimonials": [
         {
-          "text": "Mrs. Priskilla's leadership at Plus Advisor instilled crucial values that shaped my professional approach. She emphasized focus, time management, discipline, transparency, and honest communication. Her teachings on perseverance turned challenges into growth opportunities, promoting a positive attitude and concise communication. Consistency, commitment, personal presentation, and integrity were paramount. Her guidance profoundly influenced my personal and professional growth within the company.",
-          "author": "Mr. R.S",
+          "text": "Accountable. Responsible. Reliable. Talented. No-nonsense. Thoughtful. Kind-hearted. These are just a few qualities that describe Priskilla, whom I've known since her days at Citibank. Her rapid career progression reflects her integrity and passion for helping and guiding people like me, and many others, who aren't well-versed in financial management. \n\n Now, as she builds her own business, it's clear her drive remains unwavering. I deeply respect her. Meeting Priskilla has been a blessing. With patience and care, she helped me recover after a significant investment loss. I firmly believe that with her steadfast faith and hard work, Priskilla will lead PLUS Advisor into a future filled with blessings.",
+          "author": "Mr. J.T.",
+          "role": "Business Owner"
+        },
+        {
+          "text": "My impression has been very positive, right from the initial process. Ms. Priskilla's approach felt exclusive, as I knew the clients involved were significant. With this gallery concept, it feels like we can truly express ourselves. Moreover, Ms. Pris is very accommodating to the many ideas from everyone involved, not just me. There are many great individuals in their respective fields. Another impression I have is that Ms. Pris really knows how to hire top-notch experts in their fields.",
+          "author": "Mr. B.R.",
+          "role": "Business Owner"
+        },
+        {
+          "text": "She is a person who speaks candidly. If she doesn't know something, she'll say so. If she wants to learn something, she'll express her interest. She deeply respects all professions, knowing the boundaries between the various roles involved in planning. Most importantly, she is eager and quick to learn. This is the key aspect of everything. Above all, she is an excellent conductor in orchestrating our teamwork.",
+          "author": "Mr. H.W.E.",
+          "role": "Business Owner"
+        },
+        {
+          "text": "I admire her discipline and eagerness to understand the details needed for this project. I am very, very happy to work with Ms. Priskilla.",
+          "author": "Mr. A.I.",
+          "role": "Business Owner"
+        },
+        {
+          "text": "I learned from Ms. Priskilla about discipline, time management, creating a positive work environment, and building good relationships with clients.",
+          "author": "Ms. L.",
           "role": "Employee"
         },
         {
-          "text": "Working alongside Mrs. Priskilla, I learned that true leadership is measured by the clarity you leave behind. She taught me to approach every client conversation with patience, precision, and a genuine sense of stewardship. Her steady presence in moments of complexity gave me the confidence to navigate difficult decisions with care.",
-          "author": "Ms. A.L",
+          "text": "Ms. Priskilla's support greatly enhances my daily work experience. Starting with prayer and gratitude fosters a positive mindset and respect for colleagues. Neat appearance, transparent tasks, and open communication are prioritized. Smiling through challenges spreads positivity. We are trained to see mistakes as learning opportunities and persist until solutions are established. Personal development through motivational reading reinforces the positive habits that make achieving goals at Plus Advisor fulfilling.",
+          "author": "Ms. A.L.",
           "role": "Employee"
         },
         {
-          "text": "Mrs. Priskilla leads by example—with quiet conviction and an unwavering commitment to doing what is right for the families we serve. She reminded me often that trust is earned through consistency, and that the smallest details are what carry a relationship across generations.",
-          "author": "Mr. D.K",
+          "text": "Ms. Priskilla's leadership at Plus Advisor instilled crucial values that shaped my professional approach. She emphasized focus, time management, discipline, transparency, and honest communication. Her teachings on perseverance turned challenges into growth opportunities, promoting a positive attitude and concise communication. Consistency, commitment, personal presentation, and integrity were paramount. Her guidance profoundly influenced my personal and professional growth within the company.",
+          "author": "Mr. R.S.",
           "role": "Employee"
+        },
+        {
+          "text": "My experience with Ms. Priskilla has been truly remarkable. Since before the founding of PLUS Advisor, she has profoundly influenced my life. Introduced to her through my father, who valued her guidance during his retirement, I quickly learned to appreciate her insightful counsel. \n\n Returning to Indonesia from America in 2014 marked a significant career and lifestyle change for my husband and me. With substantial retirement funds from America, Ms. Priskilla provided invaluable advice on securing our health and planning for our children's education. Her strategic approach ensured stability during our early years in Balikpapan, where we still had income. As we transitioned to Bandung, her guidance became even more critical, allowing us to comfortably manage our finances without steady employment. \n\n  Beyond financial matters, Ms. Priskilla's support extended to personal and professional aspects of our lives. She facilitated connections with skilled professionals for our family hotel project, demonstrating her dedication and expertise. Her holistic approach, understanding of our needs, and ability to provide sound advice have made a profound impact, fostering trust and gratitude over our decade-long relationship.",
+          "author": "Ms. R.W.P.",
+          "role": "Client"
         }
       ]
     },

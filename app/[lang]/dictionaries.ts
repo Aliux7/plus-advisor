@@ -35,3 +35,6 @@ export type AboutPlusAdvisorDict = Dictionary["about"]["aboutPlusAdvisor"];
 export type LeadershipDict = Dictionary["about"]["leadership"];
 export type AboutHerDict = Dictionary["about"]["aboutHer"];
 export type MountainQuoteDict = Dictionary["about"]["mountainQuote"];
+export type MindsetPlanningDict = Dictionary["about"]["mindsetPlanning"];
+export type StarValueDict = Dictionary["about"]["starValue"];
+export type IntegrityComplianceDict = Dictionary["about"]["integrityCompliance"];

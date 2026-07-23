@@ -6,6 +6,7 @@ import {
   Cormorant_Garamond,
   Raleway,
   Saira,
+  IBM_Plex_Sans_Condensed,
 } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
@@ -45,6 +46,12 @@ const raleway = Raleway({
 
 const saira = Saira({
   variable: "--font-saira",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const ibmPlexSansCondensed = IBM_Plex_Sans_Condensed({
+  variable: "--font-ibm-plex-sans-condensed",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -107,7 +114,7 @@ export default async function LangLayout({
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${catalog.variable} ${gothamCondensed.variable} ${gotham.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${ibmPlexSansCondensed.variable} ${catalog.variable} ${gothamCondensed.variable} ${gotham.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>

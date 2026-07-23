@@ -157,7 +157,7 @@ export default function FeaturedJournals({ dict }: Props) {
         duration={1800}
         className="relative overflow-hidden w-full h-40 md:h-64 lg:h-80 xl:h-100 -mt-6 md:-mt-8 lg:-mt-10 pointer-events-none"
       >
-        <Parallax speed={0.05} data-scroll className="relative w-full h-full">
+        <Parallax speed={0.05} data-scroll className="relative w-full h-full -bottom-8">
           <Image
             src="/home/blue-mountain-sand.webp"
             alt=""

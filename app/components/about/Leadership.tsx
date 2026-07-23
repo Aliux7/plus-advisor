@@ -9,7 +9,7 @@ export default function Leadership({ dict }: Props) {
   return (
     <section
       data-scroll-section
-      className="relative bg-white pt-16 md:pt-24 lg:pt-32 xl:pt-40 pb-20 md:pb-28 lg:pb-36 xl:pb-44"
+      className="relative overflow-hidden bg-white pt-16 md:pt-24 lg:pt-32 xl:pt-40 pb-14 lg:pb-20 xl:pb-44"
     >
       <ScrollReveal
         variant="fade-in"
@@ -27,8 +27,8 @@ export default function Leadership({ dict }: Props) {
         </Parallax>
       </ScrollReveal>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 xl:gap-24 px-5 sm:px-10 xl:px-20">
-        <div className="flex flex-col max-w-2xl">
+      <div className="relative z-10 grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-24 px-5 sm:px-10 xl:px-20">
+        <div className="flex flex-col xl:max-w-2xl">
           <ScrollReveal
             as="p"
             variant="fade-up"
@@ -54,7 +54,7 @@ export default function Leadership({ dict }: Props) {
             variant="fade-up"
             delay={250}
             duration={1600}
-            className="mt-6 md:mt-8 xl:mt-10.5 pr-20 lg:pr-0 font-catalog font-bold text-[14px] sm:text-[16px] md:text-[18px] xl:text-[20px] leading-[1.4] tracking-[0.03em] text-gold"
+            className="mt-6 md:mt-8 xl:mt-10.5 pr-10 sm:pr-20 md:pr-32 lg:pr-44 xl:pr-0 font-catalog font-bold text-[14px] sm:text-[16px] md:text-[18px] xl:text-[20px] leading-[1.4] tracking-[0.03em] text-gold"
           >
             {dict.featuredQuote}
           </ScrollReveal>
@@ -185,7 +185,7 @@ export default function Leadership({ dict }: Props) {
             variant="fade-in"
             delay={0}
             duration={1600}
-            className="hidden md:block absolute z-20 -bottom-6 md:-bottom-8 lg:-bottom-10 -right-8 md:-right-12 lg:-right-16 xl:-right-24 w-64 md:w-80 lg:w-100 xl:w-135 h-48 md:h-60 lg:h-75 xl:h-101 pointer-events-none"
+            className="hidden md:block absolute z-20 -bottom-6 md:-bottom-8 lg:-bottom-10 -right-8 md:-right-16 lg:-right-20 xl:-right-24 w-64 md:w-80 lg:w-100 xl:w-135 h-48 md:h-60 lg:h-75 xl:h-101 pointer-events-none"
           >
             <Parallax
               speed={0.08}

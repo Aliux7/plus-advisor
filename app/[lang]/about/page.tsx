@@ -4,9 +4,9 @@ import AboutPlusAdvisor from "../../components/about/AboutPlusAdvisor";
 import Leadership from "../../components/about/Leadership";
 import AboutHer from "../../components/about/AboutHer";
 import MountainQuote from "../../components/about/MountainQuote";
-import BeyondFinancialAdvice from "../../components/about/BeyondFinancialAdvice";
-import Quote from "../../components/about/Quote";
-import FeaturedJournals from "../../components/about/FeaturedJournals";
+import MindsetPlanning from "../../components/about/MindsetPlanning";
+import StarValue from "../../components/about/StarValue";
+import IntegrityCompliance from "../../components/about/IntegrityCompliance";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export default async function About({ params }: PageProps<"/[lang]/about">) {
@@ -21,10 +21,9 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
       <Leadership dict={about.leadership} />
       <AboutHer dict={about.aboutHer} />
       <MountainQuote dict={about.mountainQuote} />
-
-      {/* <BeyondFinancialAdvice dict={about.beyondFinancialAdvice} />
-      <Quote dict={about.quote} />
-      <FeaturedJournals dict={about.featuredJournals} /> */}
+      <MindsetPlanning dict={about.mindsetPlanning} />
+      <StarValue dict={about.starValue} />
+      <IntegrityCompliance dict={about.integrityCompliance} />
     </>
   );
 }
