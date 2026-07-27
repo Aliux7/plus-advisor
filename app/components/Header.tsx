@@ -20,7 +20,7 @@ export default function Header({ dict, lang }: Props) {
     { label: dict.nav.stories, href: `/${lang}/stories` },
     { label: dict.nav.familyOffice, href: `/${lang}/office` },
     { label: dict.nav.journals, href: `/${lang}/journals` },
-    { label: dict.nav.marketUpdate, href: "#market-update" },
+    { label: dict.nav.marketUpdate, href: `/${lang}/market` },
   ];
 
   return (

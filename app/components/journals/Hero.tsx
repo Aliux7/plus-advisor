@@ -1,8 +1,11 @@
 import Image from "next/image";
+import type { JournalsHeroDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-export default function Hero() {
+type Props = { dict: JournalsHeroDict };
+
+export default function Hero({ dict }: Props) {
   return (
     <section
       data-scroll-section
@@ -16,7 +19,7 @@ export default function Hero() {
           duration={1800}
           className="font-catalog font-normal text-[26px] sm:text-[32px] md:text-[38px] lg:text-[42px] xl:text-[48px] leading-normal tracking-widest text-gold"
         >
-          Our Journals
+          {dict.title}
         </ScrollReveal>
 
         <ScrollReveal
@@ -26,8 +29,7 @@ export default function Hero() {
           duration={1600}
           className="mt-4 md:mt-5 lg:mt-6 max-w-lg font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] leading-normal tracking-widest text-navy"
         >
-          Discover thoughtful perspectives on the key decisions that impact your
-          wealth and your family&rsquo;s future.
+          {dict.body}
         </ScrollReveal>
       </div>
 
@@ -147,10 +149,10 @@ export default function Hero() {
             className="w-10 sm:w-12 md:w-13 xl:w-15 h-auto -mt-1 xl:-mt-2 -mb-2 xl:-mb-3"
           />
           <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-            WHISTLE
+            {dict.whistleLine1}
           </p>
           <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-            BLOWING
+            {dict.whistleLine2}
           </p>
         </div>
       </ScrollReveal>

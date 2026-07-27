@@ -46,8 +46,17 @@ export type VisionMissionDict = Dictionary["stories"]["visionMission"];
 export type OurValuesDict = Dictionary["stories"]["ourValues"];
 
 /** Office-page section shapes. */
+export type OfficeHeroDict = Dictionary["office"]["hero"];
 export type FamilyOfficeDict = Dictionary["office"]["familyOffice"];
 export type ServicePillarsDict = Dictionary["office"]["servicePillars"];
 export type AscentDict = Dictionary["office"]["ascent"];
 export type HolisticApproachDict = Dictionary["office"]["holisticApproach"];
 export type QuietMindDict = Dictionary["office"]["quietMind"];
+
+/** Journals-page section shapes. */
+export type JournalsHeroDict = Dictionary["journals"]["hero"];
+export type LatestFeaturedDict = Dictionary["journals"]["latestFeatured"];
+export type JournalsGridDict = Dictionary["journals"]["grid"];
+
+/** Market-page section shape. */
+export type MarketUpdateDict = Dictionary["market"];

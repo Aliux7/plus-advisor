@@ -1,8 +1,11 @@
 import Image from "next/image";
+import type { LatestFeaturedDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import SlidingDivider from "../SlidingDivider";
 
-export default function LatestFeatured() {
+type Props = { dict: LatestFeaturedDict };
+
+export default function LatestFeatured({ dict }: Props) {
   return (
     <section
       data-scroll-section
@@ -18,7 +21,7 @@ export default function LatestFeatured() {
               duration={1800}
               className="pr-10 font-catalog font-black text-[20px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[34px] leading-[1.4] tracking-[0.15em] text-white"
             >
-              Latest &amp; Featured
+              {dict.title}
             </ScrollReveal>
             <SlidingDivider
               className="mt-3 md:mt-4 opacity-40 -ml-20"
@@ -35,8 +38,7 @@ export default function LatestFeatured() {
             duration={1800}
             className="md:mt-2 lg:mt-4 font-raleway font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-widest text-white/90"
           >
-            A curated view on the topics that shape informed financial and
-            family decisions.
+            {dict.description}
           </ScrollReveal>
         </div>
 
@@ -64,7 +66,7 @@ export default function LatestFeatured() {
               duration={1600}
               className="font-catalog font-normal text-[13px] sm:text-[14px] md:text-[15px] lg:text-[17px] xl:text-[19px] leading-normal tracking-widest text-white"
             >
-              21 October 2022
+              {dict.featured.date}
             </ScrollReveal>
 
             <ScrollReveal
@@ -74,7 +76,7 @@ export default function LatestFeatured() {
               duration={1800}
               className="font-catalog font-normal text-[20px] sm:text-[24px] md:text-[26px] lg:text-[30px] xl:text-[34px] leading-normal tracking-widest text-white"
             >
-              Single or Multi-Family Office? Understanding What Suits You Best
+              {dict.featured.title}
             </ScrollReveal>
 
             <ScrollReveal
@@ -87,7 +89,7 @@ export default function LatestFeatured() {
                 href="#"
                 className="inline-flex justify-center items-center rounded-[15px] border border-white h-9.5 w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-white transition-colors duration-300 ease-in-out hover:bg-white hover:text-navy"
               >
-                Read More
+                {dict.readMore}
               </a>
             </ScrollReveal>
           </div>

@@ -1,7 +1,10 @@
 import Image from "next/image";
+import type { OfficeHeroDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 
-export default function Hero() {
+type Props = { dict: OfficeHeroDict };
+
+export default function Hero({ dict }: Props) {
   return (
     <section data-scroll-section className="relative pt-0">
       <video
@@ -23,7 +26,7 @@ export default function Hero() {
           duration={1600}
           className="mb-2 md:mb-3.5 font-raleway text-[14px] sm:text-[16px] md:text-[18px] xl:text-[24px] font-light leading-normal tracking-widest text-white"
         >
-          Family Office
+          {dict.eyebrow}
         </ScrollReveal>
 
         <ScrollReveal
@@ -33,10 +36,10 @@ export default function Hero() {
           duration={1800}
           className="lg:text-nowrap font-catalog text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] font-normal leading-normal tracking-widest text-white"
         >
-          Strategic Guidance for
+          {dict.titleLine1}
           <br />
           <span className="italic pr-10 sm:pr-20 lg:pr-0 pl-0 lg:pl-[20%] xl:pl-[37%]">
-            Families Across Generations
+            {dict.titleLine2}
           </span>
         </ScrollReveal>
 
@@ -70,10 +73,10 @@ export default function Hero() {
               className="w-10 sm:w-12 md:w-13 xl:w-15 h-auto -mt-1 xl:-mt-2 -mb-2 xl:-mb-3"
             />
             <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-              WHISTLE
+              {dict.whistleLine1}
             </p>
             <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-              BLOWING
+              {dict.whistleLine2}
             </p>
           </div>
         </ScrollReveal>

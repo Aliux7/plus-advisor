@@ -437,6 +437,13 @@
     }
   },
   "office": {
+    "hero": {
+      "eyebrow": "Family Office",
+      "titleLine1": "Strategic Guidance for",
+      "titleLine2": "Families Across Generations",
+      "whistleLine1": "WHISTLE",
+      "whistleLine2": "BLOWING"
+    },
     "familyOffice": {
       "title": "Family Office",
       "subtitle": "Guided with Clarity, Carried with Care.",
@@ -525,5 +532,104 @@
         }
       ]
     }
+  },
+  "journals": {
+    "hero": {
+      "title": "Our Journals",
+      "body": "Discover thoughtful perspectives on the key decisions that impact your wealth and your family's future.",
+      "whistleLine1": "WHISTLE",
+      "whistleLine2": "BLOWING"
+    },
+    "latestFeatured": {
+      "title": "Latest & Featured",
+      "description": "A curated view on the topics that shape informed financial and family decisions.",
+      "featured": {
+        "date": "21 October 2022",
+        "title": "Single or Multi-Family Office? Understanding What Suits You Best"
+      },
+      "readMore": "Read More"
+    },
+    "grid": {
+      "filterLine1": "Filter By Topic",
+      "filterLine2": "Or Date Published",
+      "readMore": "Read More",
+      "items": [
+        {
+          "date": "21 October 2022",
+          "title": "Single or Multi-Family Office? Understanding What Suits You Best"
+        },
+        {
+          "date": "23 October 2022",
+          "title": "Tax Audit Preparation: How to Navigate a Tax Review with Confidence"
+        },
+        {
+          "date": "24 October 2022",
+          "title": "Private Equity or Public Markets? Finding the Right Fit for Family Investors"
+        },
+        {
+          "date": "25 October 2022",
+          "title": "Building Governance That Lasts Generations"
+        },
+        {
+          "date": "26 October 2022",
+          "title": "The Quiet Discipline of Long-Term Wealth"
+        },
+        {
+          "date": "27 October 2022",
+          "title": "Values Before Vehicles: A Note on Structuring"
+        },
+        {
+          "date": "28 October 2022",
+          "title": "Why an Independent Family Office Matters"
+        },
+        {
+          "date": "29 October 2022",
+          "title": "Estate Planning Across Borders: A Careful Approach"
+        },
+        {
+          "date": "30 October 2022",
+          "title": "Philanthropy with Purpose: Foundations That Last"
+        }
+      ]
+    }
+  },
+  "market": {
+    "eyebrow": "Market Update",
+    "titleLine1": "Measured insights",
+    "titleLine2": "in an ever-changing market.",
+    "marketLabel": "Market:",
+    "reportBadge": "PA MONTHLY REPORT",
+    "reportTitle": "Plus Advisor",
+    "reportSubtitle": "MonthlyMarket*",
+    "reportYear": "2026",
+    "categories": {
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "scenario": "Scenario",
+      "yearly": "Yearly"
+    },
+    "insights": {
+      "mutualFunds": "Mutual Funds Insight",
+      "fixedIncome": "Fixed Income Insight",
+      "equity": "Equity Insight",
+      "macroPulse": "Macro Pulse"
+    },
+    "description": "A deeper review of the month's economic movements: cross-asset performance, and capital market themes shaping the investment environment. This report includes commentary and reflections on shifts to help build a clearer view of market direction and the opportunities for long-term investors.",
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "downloadPdf": "Download PDF"
   }
 }

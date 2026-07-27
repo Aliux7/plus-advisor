@@ -14,7 +14,7 @@ export default async function Office({ params }: PageProps<"/[lang]/office">) {
 
   return (
     <>
-      <Hero />
+      <Hero dict={office.hero} />
       <FamilyOffice dict={office.familyOffice} />
       <ServicePillars
         dict={office.servicePillars}

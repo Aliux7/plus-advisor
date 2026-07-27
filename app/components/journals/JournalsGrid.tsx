@@ -1,61 +1,32 @@
 import Image from "next/image";
+import type { JournalsGridDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-const JOURNALS = [
-  {
-    image: "/home/journals/journal-01.webp",
-    date: "21 October 2022",
-    title: "Single or Multi-Family Office? Understanding What Suits You Best",
-  },
-  {
-    image: "/home/journals/journal-02.webp",
-    date: "23 October 2022",
-    title:
-      "Tax Audit Preparation: How to Navigate a Tax Review with Confidence",
-  },
-  {
-    image: "/home/journals/journal-03.webp",
-    date: "24 October 2022",
-    title:
-      "Private Equity or Public Markets? Finding the Right Fit for Family Investors",
-  },
-  {
-    image: "/home/journals/journal-04.webp",
-    date: "25 October 2022",
-    title: "Building Governance That Lasts Generations",
-  },
-  {
-    image: "/home/journals/journal-01.webp",
-    date: "26 October 2022",
-    title: "The Quiet Discipline of Long-Term Wealth",
-  },
-  {
-    image: "/home/journals/journal-02.webp",
-    date: "27 October 2022",
-    title: "Values Before Vehicles: A Note on Structuring",
-  },
-  {
-    image: "/home/journals/journal-03.webp",
-    date: "28 October 2022",
-    title: "Why an Independent Family Office Matters",
-  },
-  {
-    image: "/home/journals/journal-04.webp",
-    date: "29 October 2022",
-    title: "Estate Planning Across Borders: A Careful Approach",
-  },
-  {
-    image: "/home/journals/journal-01.webp",
-    date: "30 October 2022",
-    title: "Philanthropy with Purpose: Foundations That Last",
-  },
+const JOURNAL_IMAGES = [
+  "/home/journals/journal-01.webp",
+  "/home/journals/journal-02.webp",
+  "/home/journals/journal-03.webp",
+  "/home/journals/journal-04.webp",
+  "/home/journals/journal-01.webp",
+  "/home/journals/journal-02.webp",
+  "/home/journals/journal-03.webp",
+  "/home/journals/journal-04.webp",
+  "/home/journals/journal-01.webp",
 ];
 
 const TOTAL_PAGES = 7;
 const CURRENT_PAGE = 1;
 
-export default function JournalsGrid() {
+type Props = { dict: JournalsGridDict };
+
+export default function JournalsGrid({ dict }: Props) {
+  const journals = dict.items.map((item, i) => ({
+    image: JOURNAL_IMAGES[i] ?? JOURNAL_IMAGES[0],
+    date: item.date,
+    title: item.title,
+  }));
+
   return (
     <section
       data-scroll-section
@@ -88,16 +59,20 @@ export default function JournalsGrid() {
                 </svg>
               </div>
               <p className="font-catalog font-black text-[16px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-[0.15em] text-gold">
-                Filter By Topic
+                {dict.filterLine1}
                 <br />
-                Or Date Published
+                {dict.filterLine2}
               </p>
             </div>
 
-            <JournalCard journal={JOURNALS[0]} className="mt-0 md:mt-4 lg:mt-8 xl:mt-13" />
+            <JournalCard
+              journal={journals[0]}
+              readMoreLabel={dict.readMore}
+              className="mt-0 md:mt-4 lg:mt-8 xl:mt-13"
+            />
           </ScrollReveal>
 
-          {JOURNALS.slice(1).map((journal, i) => {
+          {journals.slice(1).map((journal, i) => {
             // Grid position of this item = i + 2 (item at slice index 0 is grid position 2)
             // 2-col grid (sm/md): col-1 items are at grid positions 3, 5, 7, 9 → i = 1, 3, 5, 7
             // 3-col grid (lg+):   col-1 items are at grid positions 4, 7      → i = 2, 5
@@ -121,7 +96,7 @@ export default function JournalsGrid() {
                 duration={1600}
                 className={`flex flex-col ${offsetClass}`}
               >
-                <JournalCard journal={journal} />
+                <JournalCard journal={journal} readMoreLabel={dict.readMore} />
               </ScrollReveal>
             );
           })}
@@ -211,9 +186,11 @@ type Journal = { image: string; date: string; title: string };
 
 function JournalCard({
   journal,
+  readMoreLabel,
   className = "",
 }: {
   journal: Journal;
+  readMoreLabel: string;
   className?: string;
 }) {
   return (
@@ -240,7 +217,7 @@ function JournalCard({
         href="#"
         className="mt-4 md:mt-5 inline-flex justify-center items-center rounded-[15px] border border-navy h-9.5 w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
       >
-        Read More
+        {readMoreLabel}
       </a>
     </article>
   );
