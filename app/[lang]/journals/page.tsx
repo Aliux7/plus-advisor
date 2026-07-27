@@ -14,8 +14,8 @@ export default async function Journals({
   return (
     <>
       <Hero dict={journals.hero} />
-      <LatestFeatured dict={journals.latestFeatured} />
-      <JournalsGrid dict={journals.grid} />
+      <LatestFeatured dict={journals.latestFeatured} lang={lang} />
+      <JournalsGrid dict={journals.grid} lang={lang} />
     </>
   );
 }

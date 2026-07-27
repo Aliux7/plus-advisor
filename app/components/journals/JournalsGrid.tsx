@@ -1,5 +1,6 @@
 import Image from "next/image";
-import type { JournalsGridDict } from "../../[lang]/dictionaries";
+import Link from "next/link";
+import type { JournalsGridDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
@@ -18,10 +19,11 @@ const JOURNAL_IMAGES = [
 const TOTAL_PAGES = 7;
 const CURRENT_PAGE = 1;
 
-type Props = { dict: JournalsGridDict };
+type Props = { dict: JournalsGridDict; lang: Locale };
 
-export default function JournalsGrid({ dict }: Props) {
+export default function JournalsGrid({ dict, lang }: Props) {
   const journals = dict.items.map((item, i) => ({
+    id: String(i + 1),
     image: JOURNAL_IMAGES[i] ?? JOURNAL_IMAGES[0],
     date: item.date,
     title: item.title,
@@ -68,6 +70,7 @@ export default function JournalsGrid({ dict }: Props) {
             <JournalCard
               journal={journals[0]}
               readMoreLabel={dict.readMore}
+              lang={lang}
               className="mt-0 md:mt-4 lg:mt-8 xl:mt-13"
             />
           </ScrollReveal>
@@ -96,7 +99,11 @@ export default function JournalsGrid({ dict }: Props) {
                 duration={1600}
                 className={`flex flex-col ${offsetClass}`}
               >
-                <JournalCard journal={journal} readMoreLabel={dict.readMore} />
+                <JournalCard
+                  journal={journal}
+                  readMoreLabel={dict.readMore}
+                  lang={lang}
+                />
               </ScrollReveal>
             );
           })}
@@ -182,15 +189,17 @@ export default function JournalsGrid({ dict }: Props) {
   );
 }
 
-type Journal = { image: string; date: string; title: string };
+type Journal = { id: string; image: string; date: string; title: string };
 
 function JournalCard({
   journal,
   readMoreLabel,
+  lang,
   className = "",
 }: {
   journal: Journal;
   readMoreLabel: string;
+  lang: Locale;
   className?: string;
 }) {
   return (
@@ -213,12 +222,12 @@ function JournalCard({
         {journal.title}
       </h3>
 
-      <a
-        href="#"
+      <Link
+        href={`/${lang}/news/${journal.id}`}
         className="mt-4 md:mt-5 inline-flex justify-center items-center rounded-[15px] border border-navy h-9.5 w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
       >
         {readMoreLabel}
-      </a>
+      </Link>
     </article>
   );
 }

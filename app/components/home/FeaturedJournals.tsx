@@ -1,5 +1,6 @@
 import Image from "next/image";
-import type { FeaturedJournalsDict } from "../../[lang]/dictionaries";
+import Link from "next/link";
+import type { FeaturedJournalsDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
@@ -10,9 +11,9 @@ const JOURNAL_IMAGES = [
   "/home/journals/journal-04.webp",
 ];
 
-type Props = { dict: FeaturedJournalsDict };
+type Props = { dict: FeaturedJournalsDict; lang: Locale };
 
-export default function FeaturedJournals({ dict }: Props) {
+export default function FeaturedJournals({ dict, lang }: Props) {
   return (
     <section
       data-scroll-section
@@ -68,12 +69,12 @@ export default function FeaturedJournals({ dict }: Props) {
             duration={1400}
             className="mb-10 sm:mb-0 mt-6 md:mt-8 lg:mt-9.5 w-fit relative z-20"
           >
-            <a
-              href="#journals"
+            <Link
+              href={`/${lang}/journals`}
               className="inline-flex justify-center items-center rounded-[15px] border border-gold h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-gold transition-colors duration-300 ease-in-out bg-transparent hover:bg-gold hover:text-white"
             >
               {dict.cta}
-            </a>
+            </Link>
           </ScrollReveal>
 
           <div className="absolute opacity-50 lg:opacity-100 lg:relative pointer-events-none z-0">
@@ -140,12 +141,12 @@ export default function FeaturedJournals({ dict }: Props) {
               <h3 className="mt-2 max-w-xs font-catalog font-black text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
                 {journal.title}
               </h3>
-              <a
-                href="#journals"
+              <Link
+                href={`/${lang}/news/${index + 1}`}
                 className="mt-3 md:mt-4 inline-flex items-center justify-center rounded-[15px] border border-navy h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
               >
                 {dict.readMore}
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

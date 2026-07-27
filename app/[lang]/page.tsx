@@ -19,7 +19,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <WealthPlanning dict={home.wealthPlanning} />
       <BeyondFinancialAdvice dict={home.beyondFinancialAdvice} />
       <Quote dict={home.quote} />
-      <FeaturedJournals dict={home.featuredJournals} />
+      <FeaturedJournals dict={home.featuredJournals} lang={lang} />
     </>
   );
 }

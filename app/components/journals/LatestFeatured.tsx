@@ -1,11 +1,12 @@
 import Image from "next/image";
-import type { LatestFeaturedDict } from "../../[lang]/dictionaries";
+import Link from "next/link";
+import type { LatestFeaturedDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import SlidingDivider from "../SlidingDivider";
 
-type Props = { dict: LatestFeaturedDict };
+type Props = { dict: LatestFeaturedDict; lang: Locale };
 
-export default function LatestFeatured({ dict }: Props) {
+export default function LatestFeatured({ dict, lang }: Props) {
   return (
     <section
       data-scroll-section
@@ -85,12 +86,12 @@ export default function LatestFeatured({ dict }: Props) {
               duration={1600}
               className="mt-2 md:mt-3 w-fit"
             >
-              <a
-                href="#"
+              <Link
+                href={`/${lang}/news/featured`}
                 className="inline-flex justify-center items-center rounded-[15px] border border-white h-9.5 w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-white transition-colors duration-300 ease-in-out hover:bg-white hover:text-navy"
               >
                 {dict.readMore}
-              </a>
+              </Link>
             </ScrollReveal>
           </div>
         </div>
