@@ -40,9 +40,19 @@ export default function StarValue({ dict }: Props) {
           variant="fade-up"
           delay={200}
           duration={1600}
-          className="mt-3 md:mt-4 font-catalog font-bold text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.4] tracking-[0.4em] text-gold"
+          className="mt-3 md:mt-4 font-catalog font-bold text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-[1.4] tracking-[0.4em] text-navy"
         >
-          {dict.subtitle}
+          {dict.subtitle.split(/(\s+)/).map((token, i) => {
+            const first = token.charAt(0);
+            const isCapitalized = first && first !== first.toLowerCase();
+            if (!isCapitalized) return <span key={i}>{token}</span>;
+            return (
+              <span key={i}>
+                <span className="text-gold">{first}</span>
+                {token.slice(1)}
+              </span>
+            );
+          })}
         </ScrollReveal>
       </div>
 

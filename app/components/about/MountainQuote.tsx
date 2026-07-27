@@ -11,7 +11,7 @@ export default function MountainQuote({ dict }: Props) {
       <div className="relative w-full aspect-video">
         <Parallax speed={0.04} data-scroll className="absolute inset-0">
           <Image
-            src="/about/MistyMountains.png"
+            src="/about/MistyMountains.webp"
             alt=""
             fill
             sizes="100vw"

@@ -40,13 +40,13 @@ export default function WealthPlanning({ dict }: Props) {
   });
 
   return (
-    <section data-scroll-section className="relative pb-16 lg:pb-24">
+    <section data-scroll-section className="relative sm:pb-16 lg:pb-24">
       <div className="xl:h-130 relative flex flex-col-reverse xl:flex-row justify-center items-start gap-10 lg:gap-6.5 px-5 sm:px-10 xl:px-20">
         <ScrollReveal
           variant="fade-right"
           delay={200}
           duration={1600}
-          className="absolute left-0 -bottom-10 xl:bottom-0 w-50 h-68 opacity-50 xl:opacity-100"
+          className="absolute right-0 sm:right-auto sm:left-0 -bottom-20 sm:bottom-10 xl:bottom-0 w-50 h-68 opacity-50 xl:opacity-100"
         >
           <Parallax speed={-0.08} data-scroll className="w-full h-full relative">
             <Image
@@ -59,7 +59,7 @@ export default function WealthPlanning({ dict }: Props) {
           </Parallax>
         </ScrollReveal>
 
-        <div className="-mt-10 xl:mt-0 flex flex-col w-full xl:w-auto min-h-96 xl:min-h-105">
+        <div className="-mt-10 xl:mt-0 pl-0 sm:pl-10 xl:pl-0 flex flex-col w-full xl:w-auto min-h-96 xl:min-h-105">
           <ScrollReveal
             variant="fade-up"
             delay={0}
@@ -105,7 +105,7 @@ export default function WealthPlanning({ dict }: Props) {
             variant="fade-up"
             delay={300}
             duration={1600}
-            className="my-4 md:my-6 xl:max-w-md"
+            className="my-4 md:my-6 max-w-3xl xl:max-w-md sm:pl-20 xl:pl-0"
           >
             <p
               style={textStyle(360)}
@@ -119,12 +119,12 @@ export default function WealthPlanning({ dict }: Props) {
             variant="fade-up"
             delay={500}
             duration={1400}
-            className="mt-2 lg:mt-auto w-fit"
+            className="mt-2 lg:mt-auto ml-0 xl:ml-0 w-fit"
           >
             <div style={textStyle(480)}>
               <a
                 href="#services"
-                className="flex justify-center items-center rounded-2xl border border-[#88643B] h-9 md:h-9.5 w-40 md:w-49 font-saira font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-[#88643B] hover:text-white"
+                className="inline-flex justify-center items-center rounded-[15px] border border-[#88643B] h-9.5 w-40 md:w-49 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-[#88643B] hover:text-white"
               >
                 {dict.cta}
               </a>

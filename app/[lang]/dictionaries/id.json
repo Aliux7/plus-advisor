@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "PLUS Advisor",
+    "title": "PLUS ADVISOR",
     "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, preserving, protecting, and sustaining their legacy."
   },
   "header": {
     "nav": {
       "about": "About Us",
-      "services": "Our Stories",
+      "stories": "Our Stories",
       "familyOffice": "Family Office",
       "journals": "Our Journals",
       "marketUpdate": "Market Update"
@@ -354,6 +354,174 @@
         {
           "date": "21 Oktober 2022",
           "title": "Nilai Sebelum Bentuk: Catatan tentang Penataan"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "hero": {
+      "eyebrow": "Kisah Kami",
+      "titleLine1": "Kepedulian Tanpa Batas untuk",
+      "titleLine2": "Nilai yang Bermakna"
+    },
+    "ourStory": {
+      "paragraphs": [
+        "Gunung bertahan melampaui waktu. Ia menyimpan sesuatu yang berharga di dalamnya, dibentuk oleh kesabaran, beban, dan ketahanan. Emas di dalam gunung tidak bertahan secara kebetulan—ia hanya tetap bernilai ketika diperlakukan dengan tujuan.",
+        "Di Plus Advisor, kami meyakini bahwa kekayaan memiliki makna yang serupa. Ia bukan sekadar angka atau pencapaian, melainkan cerminan nilai, aspirasi, dan tanggung jawab sebuah keluarga terhadap apa yang harus dijaga lintas generasi.",
+        "Didirikan oleh Priskilla Lusina, yang perjalanannya dibentuk oleh lebih dari 25 tahun pengalaman, Plus Advisor hadir untuk melayani keluarga yang mencari kejernihan dan kepedulian dalam keputusan-keputusan yang bermakna. Peran kami bukan mengejar transaksi atau hasil jangka pendek, melainkan memberikan panduan jangka panjang yang bijaksana, berlandaskan kepercayaan dan pemahaman.",
+        "Kami mendampingi keluarga dalam tata kelola, perencanaan suksesi, filantropi, serta pertimbangan investasi jangka panjang—dengan pendekatan yang disiplin, penuh penghormatan, dan sadar akan apa yang telah dipercayakan. Seperti emas di dalam gunung, kekayaan memerlukan perawatan agar tetap bermakna.",
+        "Plus Advisor hadir untuk memberikan perawatan itu. Karena warisan yang bertahan lama dibentuk secara tenang, seiring waktu, dan dengan tujuan."
+      ],
+      "cards": [
+        {
+          "title": "Warna Luar",
+          "body": "Warna luar merepresentasikan pertumbuhan, kestabilan, dan kehidupan—seperti lanskap pegunungan yang terus berkembang."
+        },
+        {
+          "title": "Warna Emas",
+          "body": "Nuansa emas dan cokelat di bagian dalam melambangkan kemakmuran yang bertahan, lahir dari pengelolaan yang penuh pertimbangan."
+        },
+        {
+          "title": "Gunung",
+          "body": "Gunung menjadi metafora kekuatan dan pencapaian, yang diraih melalui perencanaan yang terarah."
+        }
+      ]
+    },
+    "visionMission": {
+      "panels": [
+        {
+          "title": "Visi Kami",
+          "paragraphs": [
+            "Menjadi kepercayaan bagi keluarga dalam menavigasi tanggung jawab jangka panjang atas apa yang terus dijaga dan diteruskan.",
+            "PLUS Advisor memandang masa depan di mana kekayaan keluarga dijalankan dengan kepastian, integritas, dan kehati-hatian—dengan menjaga nilai yang bermakna, merawat keharmonisan, serta memastikan keberlanjutan lintas generasi."
+          ]
+        },
+        {
+          "title": "Misi Kami",
+          "paragraphs": [
+            "Mendampingi keluarga dengan layanan advisori yang penuh pertimbangan, berlandaskan etika, dan dijalankan dengan disiplin dalam menavigasi keputusan-keputusan kompleks terkait pengelolaan kekayaan seiring waktu.",
+            "Melalui pendekatan yang menyeluruh dan berbasis pada relasi, PLUS Advisor membantu keluarga mengambil keputusan dengan lebih jelas, melindungi hal-hal yang paling berarti, serta menjaga kepercayaan dan keberlanjutan lintas generasi."
+          ]
+        }
+      ]
+    },
+    "ourValues": {
+      "title": "Nilai Kami",
+      "intro": "Nilai-nilai kami menjadi landasan yang membimbing setiap keputusan, hubungan, dan tanggung jawab yang dipercayakan kepada kami.",
+      "values": [
+        {
+          "title": "Integrity",
+          "body": "Kami bertindak dengan transparansi, kejujuran, dan akuntabilitas dalam setiap keputusan."
+        },
+        {
+          "title": "Legacy",
+          "body": "Kami menjaga dan mengembangkan apa yang dibangun agar tetap mencerminkan nilai keluarga lintas generasi."
+        },
+        {
+          "title": "Personalization",
+          "body": "Kami menghadirkan pendekatan yang disesuaikan dengan kebutuhan dan aspirasi setiap keluarga."
+        },
+        {
+          "title": "Expertise",
+          "body": "Didukung oleh pengalaman yang teruji dan kepemimpinan yang penuh wawasan."
+        },
+        {
+          "title": "Holistic Care",
+          "body": "Kami mencakup setiap aspek, dari pengelolaan, tata kelola keluarga, hingga keberlanjutan yang dibangun lintas generasi."
+        },
+        {
+          "title": "Innovation",
+          "body": "Kami mengedepankan strategi yang berorientasi ke depan untuk menjaga masa depan yang bermakna."
+        }
+      ]
+    }
+  },
+  "office": {
+    "familyOffice": {
+      "title": "Family Office",
+      "subtitle": "Melangkah dengan Kejernihan, Dijaga dengan Kepedulian.",
+      "eyebrow": "Melampaui Keuangan",
+      "heading": "PLUS Advisor, Sebuah Multi-Family Office",
+      "paragraphs": [
+        "Sebuah multi-family office dirancang untuk mendampingi keluarga dalam mengelola dan menjaga kekayaan melalui pendekatan yang lebih terintegrasi. Ia menyatukan pertimbangan finansial, struktural, dan antar generasi dalam kerangka yang koheren, memastikan setiap keputusan tidak diambil secara terpisah, melainkan selaras dengan arah jangka panjang yang lebih luas.",
+        "Di PLUS Advisor, peran kami melampaui keuangan. Kami bekerja berdampingan dengan keluarga, memahami nilai dan aspirasi mereka, mendampingi setiap langkah dengan kejernihan dan kehati-hatian, memastikan setiap keputusan mencerminkan tidak hanya strategi, tetapi juga tujuan.",
+        "Peran kami mencakup perspektif advisori yang lebih luas, mendampingi keluarga dalam menavigasi keputusan penting di dimensi finansial maupun personal. Ini mencakup pendampingan seputar kepentingan pribadi, pertimbangan properti, dan proyek jangka panjang, di mana kami memberikan masukan yang matang, membantu menyelaraskan keahlian yang tepat, dan memastikan setiap langkah tetap terstruktur serta berlandaskan pada pengelolaan finansial yang bertanggung jawab."
+      ],
+      "advisoryParagraphs": [
+        "Pendekatan ini tercermin dalam berbagai bidang advisori. Dalam perencanaan kekayaan, kami memberikan panduan mengenai perencanaan warisan—termasuk pemberian semasa hidup, asuransi jiwa, perjanjian pranikah, dan wasiat—serta perencanaan suksesi untuk menjaga keberlanjutan bisnis keluarga. Dalam manajemen kekayaan, kami memberikan saran mengenai strategi investasi dan alokasi aset, pertimbangan private equity, pelaporan konsolidasi, serta nasihat investasi independen. Dukungan perencanaan pajak kami mencakup panduan pengisian pajak, penataan real estat, relokasi internasional, dan perencanaan lintas kerangka perjanjian pajak berganda.",
+        "Kami juga memberikan saran mengenai tata kelola keluarga, termasuk pembentukan dewan keluarga, konstitusi, dan majelis untuk mendukung kejernihan komunikasi dan pengambilan keputusan. Melalui pertimbangan trust dan korporasi, kami memberikan saran mengenai penataan perusahaan, administrasi trust, manajemen real estat, struktur kepemilikan, kepemilikan saham keluarga, serta aset-aset khusus. Lebih jauh, kami mendampingi keluarga dalam kegiatan amal dan filantropi, termasuk strategi pemberian dan pembentukan yayasan pemberian hibah, memastikan dampak yang dibawa ke depan dilakukan dengan penuh niat."
+      ]
+    },
+    "servicePillars": {
+      "titleLine1": "Pilar Layanan",
+      "titleLine2": "Kami",
+      "intro": "Kami mendampingi keluarga menavigasi kompleksitas finansial dengan pendekatan yang jernih dan disiplin—menjaga kestabilan hari ini serta memastikan keberlanjutan warisan di masa depan."
+    },
+    "ascent": {
+      "titleLine1": "Pendakian Kami Dipandu oleh",
+      "titleLine2": "Lima Prinsip",
+      "principles": [
+        {
+          "number": "01.",
+          "title": "Kenali gunung yang didaki",
+          "body": "Menetapkan niat dengan jelas."
+        },
+        {
+          "number": "02.",
+          "title": "Fokus pada puncak di depan",
+          "body": "Tetap teguh dalam pencarian Anda."
+        },
+        {
+          "number": "03.",
+          "title": "Kenali posisi Anda saat ini",
+          "body": "Mengenali kekuatan yang dimiliki."
+        },
+        {
+          "number": "04.",
+          "title": "Rencanakan jalur Anda",
+          "body": "Susun arah dan menavigasi dengan bijak menuju tujuan."
+        },
+        {
+          "number": "05.",
+          "title": "Berkomitmen sepenuhnya",
+          "body": "Terus melangkah maju dengan penuh keteguhan."
+        }
+      ],
+      "closing": "Bersama Plus Advisor, Anda bukan sekadar klien; Anda adalah bagian dari keluarga. Pendekatan menyeluruh kami, yang tersusun dari langkah-langkah utama ini, dirancang untuk merawat kesejahteraan finansial keluarga Anda, menjaga warisan Anda, dan menghadirkan ketenangan hati yang seutuhnya. Di Plus Advisor, kami berkomitmen membantu keluarga Anda mencapainya."
+    },
+    "quietMind": {
+      "lines": [
+        "Pikiran yang tenang belajar lebih baik.",
+        "Pikiran yang tenang mengamati lebih baik.",
+        "Pikiran yang tenang bertindak lebih baik."
+      ]
+    },
+    "holisticApproach": {
+      "title": "Pendekatan Menyeluruh Kami",
+      "phases": [
+        {
+          "number": "01",
+          "title": "Cetak Biru",
+          "subtitle": "Merancang Warisan Finansial Keluarga Anda",
+          "body": "Pada tahap Cetak Biru, kami meletakkan fondasi bagi keberhasilan finansial keluarga Anda. Kami menyediakan fasilitas manajemen keluarga, membantu menganalisis aset, dan menyusun rencana warisan yang memastikan keberlanjutan legasi Anda."
+        },
+        {
+          "number": "02",
+          "title": "Penataan",
+          "subtitle": "Membangun Kerangka Finansial yang Berkelanjutan",
+          "body": "Tahap Penataan berfokus pada penciptaan kerangka finansial yang berkelanjutan bagi keluarga Anda. Kami memberikan panduan mengenai penataan pajak, konstitusi keluarga, model manajemen kekayaan, serta memastikan transparansi dan efisiensi."
+        },
+        {
+          "number": "03",
+          "title": "Perlindungan",
+          "subtitle": "Menjaga Kekayaan dan Warisan Anda",
+          "body": "Pada tahap Perlindungan, kami menyusun dokumentasi hukum dan membantu pengajuan insentif pajak untuk menjaga kekayaan dan warisan keluarga Anda."
+        },
+        {
+          "number": "04",
+          "title": "Sistem Pendukung",
+          "subtitle": "Mitra Terpercaya dalam Perjalanan Finansial Anda",
+          "body": "Peran kami tidak berhenti pada nasihat—kami menjadi sistem pendukung yang tepercaya. Kami memberikan panduan dan konsultasi bagi anggota keluarga mengenai investasi. Kami percaya pada kekuatan pikiran yang tenang, memastikan ketenangan hati sepanjang perjalanan finansial keluarga Anda."
         }
       ]
     }

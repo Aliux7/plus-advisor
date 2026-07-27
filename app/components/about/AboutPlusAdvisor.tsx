@@ -32,21 +32,23 @@ export default function AboutPlusAdvisor({ dict }: Props) {
 
       <div className="relative z-10 flex flex-col gap-10 md:gap-14 lg:gap-16 px-5 sm:px-10 xl:px-20">
         <div className="flex flex-col w-fit">
-          <ScrollReveal
-            as="h1"
-            variant="fade-up"
-            delay={0}
-            duration={1800}
-            className="font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
-          >
-            {dict.title}
-          </ScrollReveal>
-          <SlidingDivider
-            className="w-full -ml-10 sm:-ml-20 xl:-ml-40"
-            barClassName="bg-gold/40"
-            delay={300}
-            duration={1400}
-          />
+          <div className="flex flex-col w-fit">
+            <ScrollReveal
+              as="h1"
+              variant="fade-up"
+              delay={0}
+              duration={1800}
+              className="pr-10 font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+            >
+              {dict.title}
+            </ScrollReveal>
+            <SlidingDivider
+              className="-ml-10 sm:-ml-20 xl:-ml-40"
+              barClassName="bg-gold/40"
+              delay={300}
+              duration={1400}
+            />
+          </div>
           <ScrollReveal
             as="p"
             variant="fade-up"
@@ -58,31 +60,14 @@ export default function AboutPlusAdvisor({ dict }: Props) {
           </ScrollReveal>
         </div>
 
-        <div className="flex flex-col gap-10 md:gap-12 lg:flex-row lg:gap-7">
-          <div className="mx-auto -mt-10 lg:mt-0 lg:-ml-10 xl:ml-0 origin-top sm:origin-top-left scale-90 sm:scale-100 lg:scale-80 xl:scale-100 -mb-10 sm:mb-0 lg:-mr-24 xl:mr-0 lg:-mb-24 xl:mb-0 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10 xl:-translate-y-1/8">
-            <ScrollReveal
-              variant="fade-in"
-              delay={200}
-              duration={1800}
-              className="block absolute size-20 sm:size-23.5 aspect-square pointer-events-none z-10 right-10 sm:right-20 top-5 sm:top-20"
-            >
-              <Parallax speed={-0.06} data-scroll className="relative w-full">
-                <Image
-                  src="/home/line-ball.svg"
-                  alt=""
-                  width={420}
-                  height={420}
-                  className="w-full h-auto"
-                />
-              </Parallax>
-            </ScrollReveal>
-
+        <div className="flex flex-col gap-10 md:gap-12 lg:flex-row justify-start items-center lg:gap-16 xl:gap-22 -mt-10 lg:mt-0 xl:mt-10">
+          <div className="relative aspect-square h-60 sm:h-80 md:h-100 xl:h-120">
             <ScrollReveal
               variant="fade-right"
               delay={0}
               duration={1600}
               distance={60}
-              className="absolute top-10 lg:top-14 left-4 lg:left-12 w-36 sm:w-50 aspect-square rounded-full overflow-hidden"
+              className="absolute top-[7%] left-[1%] w-2/5 aspect-square rounded-full overflow-hidden"
             >
               <Parallax
                 speed={0.05}
@@ -98,37 +83,55 @@ export default function AboutPlusAdvisor({ dict }: Props) {
                 />
               </Parallax>
             </ScrollReveal>
-
             <ScrollReveal
               variant="fade-up"
               delay={200}
               duration={1800}
-              className="relative w-full"
+              className="absolute inset-0 flex items-center justify-center"
             >
-              <Parallax speed={0.06} data-scroll className="relative w-full">
+              <Parallax
+                speed={0.06}
+                data-scroll
+                className="relative w-full h-full"
+              >
                 <Image
-                  src="/Asset 14@2x.svg"
+                  src="/about/illustration.svg"
                   alt=""
-                  width={486}
-                  height={546}
+                  fill
+                  sizes="(min-width: 1024px) 486px, 90vw"
+                  className="object-contain scale-120"
+                />
+              </Parallax>
+            </ScrollReveal>
+            <ScrollReveal
+              variant="fade-in"
+              delay={200}
+              duration={1800}
+              className="block absolute top-[10%] right-[10%] w-1/5 aspect-square pointer-events-none z-10"
+            >
+              <Parallax speed={-0.06} data-scroll className="relative w-full">
+                <Image
+                  src="/home/line-ball.svg"
+                  alt=""
+                  width={420}
+                  height={420}
                   className="w-full h-auto"
                 />
               </Parallax>
             </ScrollReveal>
-
             <ScrollReveal
               variant="zoom-in"
               delay={400}
               duration={1600}
-              className="absolute bottom-20 lg:bottom-30 right-20 lg:right-24 size-20 sm:size-32 aspect-square"
+              className="absolute bottom-[10%] right-[17%] w-[30%] aspect-square"
             >
               <Parallax
                 speed={-0.05}
                 data-scroll
-                className="relative w-full h-full bg-white rounded-full overflow-hidden"
+                className="relative w-full h-full bg-white rounded-full"
               >
                 <Image
-                  src="/home/quote-ellipse-large.webp"
+                  src="/shared/quote-ellipse-large.webp"
                   alt=""
                   fill
                   sizes="(min-width: 1280px) 128px, 96px"
@@ -138,7 +141,7 @@ export default function AboutPlusAdvisor({ dict }: Props) {
             </ScrollReveal>
           </div>
 
-          <div className="flex flex-col gap-4 md:gap-5 xl:gap-6 max-w-2xl -mt-10 lg:mt-0 xl:mt-10">
+          <div className="flex flex-col gap-4 md:gap-5 xl:gap-6 max-w-2xl">
             {dict.paragraphs.map((paragraph, i) => (
               <ScrollReveal
                 key={i}

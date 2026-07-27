@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "PLUS Advisor",
+    "title": "PLUS ADVISOR",
     "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, preserving, protecting, and sustaining their legacy."
   },
   "header": {
     "nav": {
       "about": "About Us",
-      "services": "Our Stories",
+      "stories": "Our Stories",
       "familyOffice": "Family Office",
       "journals": "Our Journals",
       "marketUpdate": "Market Update"
@@ -354,6 +354,174 @@
         {
           "date": "21 October 2022",
           "title": "Values Before Vehicles: A Note on Structuring"
+        }
+      ]
+    }
+  },
+  "stories": {
+    "hero": {
+      "eyebrow": "Our Stories",
+      "titleLine1": "Endless Care for",
+      "titleLine2": "Timeless Legacies"
+    },
+    "ourStory": {
+      "paragraphs": [
+        "Mountains endure through time. They hold what is precious within, shaped by patience, weight, and restraint. The gold inside a mountain does not last by chance—it remains only when treated with purpose.",
+        "At Plus Advisor, we believe wealth is much the same. It is more than numbers or achievement. It carries a family's values, aspirations, and responsibility for what must endure beyond one generation.",
+        "Founded by Priskilla Lusina, whose work has been shaped by more than 25 years of experience, Plus Advisor was established to serve families who seek clarity and care in decisions that matter. Our role is not to pursue transactions or short-term outcomes, but to provide thoughtful, long-term guidance grounded in trust and understanding.",
+        "We support families across governance, succession, philanthropy, and long-term investment considerations—approaching each decision with discipline, respect, and attention to what has been entrusted. Like gold within a mountain, wealth requires care to remain meaningful.",
+        "Plus Advisor exists to provide that care. Because legacies that last are shaped quietly, over time, with purpose."
+      ],
+      "cards": [
+        {
+          "title": "Outer Tones",
+          "body": "The outer tones represent growth, stability, and life—like flourishing mountain landscapes."
+        },
+        {
+          "title": "Inner Gold",
+          "body": "The inner gold/brown hues symbolize enduring prosperity born from thoughtful stewardship."
+        },
+        {
+          "title": "Mountain",
+          "body": "The mountain stands as a metaphor for strength and achievement, reached through intentional planning."
+        }
+      ]
+    },
+    "visionMission": {
+      "panels": [
+        {
+          "title": "Our Vision",
+          "paragraphs": [
+            "To be a trusted advisor for families in navigating the long-term responsibilities of family wealth.",
+            "PLUS Advisor envisions a future where family wealth is managed with clarity, integrity, and prudence—preserving values, fostering harmony, and ensuring continuity across generations."
+          ]
+        },
+        {
+          "title": "Our Mission",
+          "paragraphs": [
+            "To support families through thoughtful, ethical, and disciplined advisory in navigating complex wealth decisions over time.",
+            "Through a holistic and relationship-driven approach, PLUS Advisor helps families to make informed decisions, safeguard what matters most, and preserve trust and continuity across generations."
+          ]
+        }
+      ]
+    },
+    "ourValues": {
+      "title": "Our Values",
+      "intro": "Our values form the quiet foundation that guides every decision, relationship, and responsibility entrusted to us.",
+      "values": [
+        {
+          "title": "Integrity",
+          "body": "We act with transparency, honesty, and accountability in every decision."
+        },
+        {
+          "title": "Legacy",
+          "body": "We preserve and grow wealth to reflect family values across generations."
+        },
+        {
+          "title": "Personalization",
+          "body": "We tailor solutions to the unique needs and aspirations of every family."
+        },
+        {
+          "title": "Expertise",
+          "body": "We bring decades of proven experience and insightful leadership."
+        },
+        {
+          "title": "Holistic Care",
+          "body": "We address every aspect of wealth, family governance, and legacy building."
+        },
+        {
+          "title": "Innovation",
+          "body": "We embrace forward thinking strategies to secure meaningful futures."
+        }
+      ]
+    }
+  },
+  "office": {
+    "familyOffice": {
+      "title": "Family Office",
+      "subtitle": "Guided with Clarity, Carried with Care.",
+      "eyebrow": "Beyond Finance",
+      "heading": "PLUS Advisor, a Multi-Family Office",
+      "paragraphs": [
+        "A multi-family office is designed to support families in managing and sustaining their wealth through a more integrated approach. It brings together financial, structural, and generational considerations within a cohesive framework, ensuring decisions are not made in isolation, but aligned with broader, long-term objectives.",
+        "At PLUS Advisor, our role extends beyond finance. We work closely with families, understanding values and aspirations, supporting each step with clarity and diligence, ensuring each decision reflects not only strategy, but purpose.",
+        "Our role encompasses a broader advisory perspective, assisting families in navigating significant decisions across both financial and personal dimensions. This includes advice around personal pursuits, property considerations, and long-term projects, where we provide considered input, help align the appropriate expertise, and ensure each step remains structured and grounded within a responsible financial management."
+      ],
+      "advisoryParagraphs": [
+        "This approach is reflected across a comprehensive range of advisory areas. In wealth planning, we provide guidance on estate planning—including lifetime gifting, life insurance, prenuptial arrangements, and wills—as well as succession planning to support the continuity of family businesses. In wealth management, we advise on investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Our tax planning support includes guidance on tax filings, real estate structuring, international relocation, and planning across double tax treaty frameworks.",
+        "We also advise on family governance, including the establishment of family councils, constitutions, and assemblies to support clarity in communication and decision-making. Through trust and corporate considerations, we provide advice on corporate structuring, trust administration, real estate management, ownership structures, family shareholding, as well as specialized assets. Beyond this, we support families in charity and philanthropy, including giving strategies and the formation of grant-making foundations, ensuring that impact is carried forward with intention."
+      ]
+    },
+    "servicePillars": {
+      "titleLine1": "Our Service",
+      "titleLine2": "Pillars",
+      "intro": "We guide families through financial complexity with a clear, disciplined approach—protecting today's stability and ensuring tomorrow's legacy."
+    },
+    "ascent": {
+      "titleLine1": "Our Ascent Is Guided by",
+      "titleLine2": "Five Principles",
+      "principles": [
+        {
+          "number": "01.",
+          "title": "Identify the mountain",
+          "body": "Setting your intentions clearly."
+        },
+        {
+          "number": "02.",
+          "title": "Focus on the Summit Ahead",
+          "body": "Remain unwavering in your pursuit."
+        },
+        {
+          "number": "03.",
+          "title": "Assess Your Current Position",
+          "body": "Recognizing your strengths."
+        },
+        {
+          "number": "04.",
+          "title": "Map Your Route",
+          "body": "Chart a course and navigate wisely towards your destination."
+        },
+        {
+          "number": "05.",
+          "title": "Stay Committed",
+          "body": "Forge ahead with determination."
+        }
+      ],
+      "closing": "With Plus Advisor, you're not just a client; you're part of a family. Our holistic approach, consisting of these key steps, is designed to nurture your family's financial well-being, protect your legacy, and provide the ultimate peace of mind. At Plus Advisor, we're committed to helping your family achieve just that."
+    },
+    "quietMind": {
+      "lines": [
+        "A quiet mind learns better.",
+        "A quiet mind observes better.",
+        "A quiet mind acts better."
+      ]
+    },
+    "holisticApproach": {
+      "title": "Our Holistic Approach",
+      "phases": [
+        {
+          "number": "01",
+          "title": "Blueprint",
+          "subtitle": "Designing Your Family's Financial Legacy",
+          "body": "In the Blueprint phase, we lay the foundation for your family's financial success. We provide family management facilities, assist in analyzing your assets, and craft an estate plan that ensures your legacy endures."
+        },
+        {
+          "number": "02",
+          "title": "Structuring",
+          "subtitle": "Building a Sustainable Financial Framework",
+          "body": "The Structuring phase focuses on creating a sustainable financial framework for your family. We provide guidance on tax structuring, family constitutions, wealth management models, and help ensure transparency and efficiency."
+        },
+        {
+          "number": "03",
+          "title": "Protection",
+          "subtitle": "Securing Your Wealth and Legacy",
+          "body": "In the Protection phase, we establish legal documentation and assist in applying for tax incentives, safeguarding your family's wealth and legacy."
+        },
+        {
+          "number": "04",
+          "title": "Support System",
+          "subtitle": "Your Trusted Partner in Financial Success",
+          "body": "Our role does not end with advice—it extends to being your trusted support system. We provide guidance and consultation for family members on investment-related matters. We believe in the power of a quiet mind, ensuring peace of mind throughout your family's financial journey."
         }
       ]
     }

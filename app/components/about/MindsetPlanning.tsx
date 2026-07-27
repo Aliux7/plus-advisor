@@ -17,7 +17,7 @@ export default function MindsetPlanning({ dict }: Props) {
         >
           <Parallax speed={-0.05} data-scroll className="relative w-full">
             <Image
-              src="/about/tree.png"
+              src="/about/tree.webp"
               alt=""
               width={640}
               height={640}
@@ -43,7 +43,7 @@ export default function MindsetPlanning({ dict }: Props) {
         <div className="relative w-full aspect-12/8 sm:aspect-14/8 md:aspect-16/8 lg:aspect-20/8 xl:aspect-24/8 overflow-hidden">
           <Parallax speed={0.04} data-scroll className="absolute inset-0">
             <Image
-              src="/about/island.jpg"
+              src="/about/island.webp"
               alt=""
               fill
               sizes="100vw"
@@ -81,7 +81,7 @@ export default function MindsetPlanning({ dict }: Props) {
                       variant="fade-up"
                       delay={index * 120}
                       duration={1600}
-                      className="font-raleway font-normal text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-[1.7] tracking-[0.03em] text-white"
+                      className="font-raleway font-semibold text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.4] tracking-widest text-white"
                     >
                       {paragraph}
                     </ScrollReveal>
@@ -96,7 +96,7 @@ export default function MindsetPlanning({ dict }: Props) {
                       variant="fade-up"
                       delay={index * 120}
                       duration={1600}
-                      className="relative pl-4 md:pl-6 font-raleway font-normal text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-[1.7] tracking-[0.03em] text-white"
+                      className="relative pl-4 md:pl-6 font-catalog font-bold text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-widest text-white"
                     >
                       <span
                         aria-hidden="true"

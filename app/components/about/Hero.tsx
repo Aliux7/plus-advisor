@@ -47,7 +47,7 @@ export default function Hero({ dict }: Props) {
           variant="fade-in"
           delay={1500}
           duration={1400}
-          className="mt-4 md:mt-6"
+          className="mt-4 md:mt-6 xl:mt-16"
         >
           <Image
             src="/home/mouse-scroll.svg"
@@ -62,7 +62,7 @@ export default function Hero({ dict }: Props) {
           variant="zoom-in"
           delay={1100}
           duration={1400}
-          className="cursor-pointer absolute right-5 sm:right-10 xl:right-20 bottom-6 sm:bottom-8 md:bottom-10 xl:bottom-16 size-18 sm:size-20 md:size-22 xl:size-25"
+          className="cursor-pointer absolute right-5 sm:right-10 xl:right-20 bottom-6 sm:bottom-8 md:bottom-10 xl:bottom-14 size-18 sm:size-20 md:size-22 xl:size-25"
         >
           <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur-md bg-white/75 hover:bg-white rounded-full font-catalog font-black transition-colors ease-in-out duration-500">
             <Image

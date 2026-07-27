@@ -70,7 +70,7 @@ export default function FeaturedJournals({ dict }: Props) {
           >
             <a
               href="#journals"
-              className="flex justify-center items-center rounded-2xl border border-gold w-28 md:w-32.5 h-9 md:h-9.5 font-saira font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-none tracking-normal text-center text-gold transition-colors duration-300 ease-in-out bg-transparent hover:bg-gold hover:text-white"
+              className="inline-flex justify-center items-center rounded-[15px] border border-gold h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-gold transition-colors duration-300 ease-in-out bg-transparent hover:bg-gold hover:text-white"
             >
               {dict.cta}
             </a>
@@ -142,7 +142,7 @@ export default function FeaturedJournals({ dict }: Props) {
               </h3>
               <a
                 href="#journals"
-                className="mt-3 md:mt-4 inline-flex items-center justify-center rounded-2xl border border-navy w-28 md:w-32.5 h-9 md:h-9.5 font-saira font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
+                className="mt-3 md:mt-4 inline-flex items-center justify-center rounded-[15px] border border-navy h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
               >
                 {dict.readMore}
               </a>
@@ -159,7 +159,7 @@ export default function FeaturedJournals({ dict }: Props) {
       >
         <Parallax speed={0.05} data-scroll className="relative w-full h-full -bottom-8">
           <Image
-            src="/home/blue-mountain-sand.webp"
+            src="/shared/blue-mountain-sand.webp"
             alt=""
             width={2400}
             height={800}

@@ -22,7 +22,7 @@ export default function IntegrityCompliance({ dict }: Props) {
               className="relative w-full h-full"
             >
               <Image
-                src="/home/family-legacy-ellipse.webp"
+                src="/shared/family-legacy-ellipse.webp"
                 alt=""
                 fill
                 sizes="352px"
@@ -43,7 +43,7 @@ export default function IntegrityCompliance({ dict }: Props) {
               className="relative w-full h-full"
             >
               <Image
-                src="/about/family-sunset.png"
+                src="/about/family-sunset.webp"
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 45vw, 90vw"
@@ -112,7 +112,7 @@ export default function IntegrityCompliance({ dict }: Props) {
           className="relative w-full h-full -bottom-8"
         >
           <Image
-            src="/home/blue-mountain-sand.webp"
+            src="/shared/blue-mountain-sand.webp"
             alt=""
             width={2400}
             height={800}

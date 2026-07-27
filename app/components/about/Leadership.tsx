@@ -185,7 +185,7 @@ export default function Leadership({ dict }: Props) {
             variant="fade-in"
             delay={0}
             duration={1600}
-            className="hidden md:block absolute z-20 -bottom-6 md:-bottom-8 lg:-bottom-10 -right-8 md:-right-16 lg:-right-20 xl:-right-24 w-64 md:w-80 lg:w-100 xl:w-135 h-48 md:h-60 lg:h-75 xl:h-101 pointer-events-none"
+            className="hidden md:block absolute z-20 -bottom-6 md:-bottom-8 lg:-bottom-10 -right-8 sm:-right-16 md:-right-20 xl:-right-24 w-64 sm:w-80 md:w-100 xl:w-135 h-48 sm:h-60 md:h-75 xl:h-101 pointer-events-none"
           >
             <Parallax
               speed={0.08}

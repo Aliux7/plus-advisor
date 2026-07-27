@@ -17,9 +17,9 @@ export default function Header({ dict, lang }: Props) {
 
   const navLinks = [
     { label: dict.nav.about, href: `/${lang}/about` },
-    { label: dict.nav.services, href: "#services" },
-    { label: dict.nav.familyOffice, href: "#family-office" },
-    { label: dict.nav.journals, href: "#journals" },
+    { label: dict.nav.stories, href: `/${lang}/stories` },
+    { label: dict.nav.familyOffice, href: `/${lang}/office` },
+    { label: dict.nav.journals, href: `/${lang}/journals` },
     { label: dict.nav.marketUpdate, href: "#market-update" },
   ];
 

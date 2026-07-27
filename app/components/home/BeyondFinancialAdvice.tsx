@@ -49,7 +49,7 @@ export default function BeyondFinancialAdvice({ dict }: Props) {
           >
             <a
               href="#services"
-              className="flex items-center justify-center rounded-2xl border border-[#88643B] h-9 md:h-9.5 w-40 md:w-49.5 font-saira font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-gold hover:text-white"
+              className="inline-flex items-center justify-center rounded-[15px] border border-[#88643B] h-9.5 w-40 md:w-49.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-gold hover:text-white"
             >
               {dict.cta}
             </a>

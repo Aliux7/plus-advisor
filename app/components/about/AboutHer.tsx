@@ -68,7 +68,7 @@ export default function AboutHer({ dict }: Props) {
       >
         <Parallax speed={0.06} data-scroll className="relative w-full">
           <Image
-            src="/about/forest.png"
+            src="/about/forest.webp"
             alt=""
             width={537}
             height={759}
@@ -84,12 +84,12 @@ export default function AboutHer({ dict }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+            className="pl-10 sm:pl-20 md:pl-30 lg:pl-40 pr-10 font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
           >
             {dict.title}
           </ScrollReveal>
           <SlidingDivider
-            className="w-[175%] -ml-5 sm:-ml-10 xl:-ml-20"
+            className="-ml-5 sm:-ml-10 xl:-ml-20"
             barClassName="bg-gold/40"
             delay={300}
             duration={1400}
@@ -97,30 +97,13 @@ export default function AboutHer({ dict }: Props) {
         </div>
 
         <div className="flex flex-col gap-10 md:gap-12 lg:flex-row items-center lg:gap-24 xl:gap-32">
-          <div className="pointer-events-none mx-auto lg:-ml-10 xl:ml-0 origin-center lg:origin-top-left scale-90 lg:scale-80 xl:scale-100 -mb-28 lg:-mr-24 lg:-mb-28 xl:mr-0 xl:mb-0 -translate-y-1/5 lg:-translate-y-1/4 relative w-full max-w-md lg:w-121.5 lg:max-w-none lg:shrink-0 pl-10">
-            <ScrollReveal
-              variant="fade-in"
-              delay={200}
-              duration={1800}
-              className="block absolute size-23 sm:size-30 aspect-square pointer-events-none z-10 right-0 top-1/2 -translate-y-1/2"
-            >
-              <Parallax speed={-0.06} data-scroll className="relative w-full">
-                <Image
-                  src="/home/line-ball.svg"
-                  alt=""
-                  width={420}
-                  height={420}
-                  className="w-full h-auto"
-                />
-              </Parallax>
-            </ScrollReveal>
-
+          <div className="pointer-events-none relative aspect-square h-60 sm:h-80 md:h-100 xl:h-125 mx-auto lg:mx-0 shrink-0">
             <ScrollReveal
               variant="fade-right"
               delay={0}
               duration={1600}
               distance={60}
-              className="absolute top-30 lg:top-40 -left-5 sm:-left-10 w-42 sm:w-60 aspect-square rounded-full overflow-hidden"
+              className="absolute top-0 left-0 w-2/5 aspect-square rounded-full overflow-hidden"
             >
               <Parallax
                 speed={0.05}
@@ -128,10 +111,10 @@ export default function AboutHer({ dict }: Props) {
                 className="relative w-full h-full"
               >
                 <Image
-                  src="/home/quote-ellipse-large.webp"
+                  src="/shared/quote-ellipse-large.webp"
                   alt=""
                   fill
-                  sizes="(min-width: 1024px) 220px, 160px"
+                  sizes="(min-width: 1024px) 200px, 160px"
                   className="object-cover"
                 />
               </Parallax>
@@ -141,15 +124,40 @@ export default function AboutHer({ dict }: Props) {
               variant="fade-up"
               delay={200}
               duration={1800}
-              className="relative w-full"
+              className="absolute -translate-y-1/5 translate-x-1/10 inset-0 flex items-center justify-center"
             >
-              <Parallax speed={0.06} data-scroll className="relative w-full">
+              <Parallax
+                speed={0.06}
+                data-scroll
+                className="relative w-full h-full"
+              >
                 <Image
                   src="/about/flower.svg"
                   alt=""
-                  width={537}
-                  height={758}
-                  className="w-full h-auto"
+                  fill
+                  sizes="(min-width: 1024px) 500px, 90vw"
+                  className="object-contain scale-130"
+                />
+              </Parallax>
+            </ScrollReveal>
+
+            <ScrollReveal
+              variant="fade-in"
+              delay={200}
+              duration={1800}
+              className="absolute top-5/20 right-1/20 -translate-y-1/2 w-1/5 aspect-square pointer-events-none z-10"
+            >
+              <Parallax
+                speed={-0.06}
+                data-scroll
+                className="relative w-full h-full"
+              >
+                <Image
+                  src="/home/line-ball.svg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 100px, 80px"
+                  className="object-contain"
                 />
               </Parallax>
             </ScrollReveal>
@@ -158,7 +166,7 @@ export default function AboutHer({ dict }: Props) {
               variant="zoom-in"
               delay={400}
               duration={1600}
-              className="absolute bottom-0 right-20 lg:right-24 size-20 sm:size-32 aspect-square"
+              className="absolute bottom-[10%] right-[20%] w-[20%] aspect-square"
             >
               <Parallax
                 speed={-0.05}
@@ -166,76 +174,81 @@ export default function AboutHer({ dict }: Props) {
                 className="relative w-full h-full bg-white rounded-full overflow-hidden"
               >
                 <Image
-                  src="/home/quote-ellipse-small.webp"
+                  src="/shared/quote-ellipse-small.svg"
                   alt=""
                   fill
-                  sizes="(min-width: 1280px) 128px, 96px"
+                  sizes="(min-width: 1280px) 100px, 80px"
                   className="object-cover"
                 />
               </Parallax>
             </ScrollReveal>
           </div>
 
-          <div className="relative flex flex-col w-full">
-            <ScrollReveal
-              variant="fade-in"
-              delay={100}
-              duration={1600}
-              className="absolute -top-2 sm:-top-3 xl:-top-4 left-0 lg:-left-5 font-raleway font-normal text-gold text-[32px] sm:text-[36px] md:text-[42px] xl:text-[50px] leading-[1.4] tracking-[0.03em] select-none pointer-events-none"
-            >
-              <span aria-hidden="true">“</span>
-            </ScrollReveal>
-
-            <ScrollReveal
-              variant="fade-up"
-              delay={200}
-              duration={1600}
-              className="relative min-h-64 md:min-h-72 xl:min-h-80 pl-8 ml-5 lg:ml-0 mr-5 xl:mr-10"
-            >
-              {testimonials.map((t, i) => {
-                const isCurrent = i === displayIndex;
-                const isSettled = isCurrent && isIn;
-                return (
-                  <div
-                    key={i}
-                    aria-hidden={!isSettled}
-                    className="absolute inset-0"
-                    style={{
-                      opacity: isSettled ? 1 : 0,
-                      transform: isSettled ? "none" : "translate3d(20px, 0, 0)",
-                      transition: isSettled
-                        ? `opacity ${IN_DURATION}ms ease-out, transform ${IN_DURATION}ms ease-out`
-                        : `opacity ${OUT_DURATION}ms ease-in, transform ${OUT_DURATION}ms ease-in`,
-                      willChange: "opacity, transform",
-                      pointerEvents: isSettled ? "auto" : "none",
-                    }}
-                  >
-                    <p
-                      style={textStyle(0)}
-                      className="relative whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-gold"
-                    >
-                      {t.text}
-
-                      <span className="ml-1 inline-block translate-y-3 sm:translate-y-3.5 md:translate-y-4 xl:translate-y-5 font-raleway font-normal text-gold text-[32px] sm:text-[36px] md:text-[42px] xl:text-[50px] leading-0 tracking-[0.03em] select-none pointer-events-none">
-                        ”
-                      </span>
-                    </p>
-                  </div>
-                );
-              })}
-              <p
-                className="invisible whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em]"
-                aria-hidden="true"
+          <div className="relative min-h-60 sm:min-h-80 md:min-h-100 xl:min-h-125 pb-30 flex justify-start items-center">
+            <div className="relative flex flex-col justify-center w-full">
+              <ScrollReveal
+                variant="fade-up"
+                delay={200}
+                duration={1600}
+                className="relative pl-8 ml-5 lg:ml-0 mr-5 xl:mr-10"
               >
-                {current.text}
-              </p>
-            </ScrollReveal>
+                {testimonials.map((t, i) => {
+                  const isCurrent = i === displayIndex;
+                  const isSettled = isCurrent && isIn;
+                  return (
+                    <div
+                      key={i}
+                      aria-hidden={!isSettled}
+                      className="absolute inset-0"
+                      style={{
+                        opacity: isSettled ? 1 : 0,
+                        transform: isSettled
+                          ? "none"
+                          : "translate3d(20px, 0, 0)",
+                        transition: isSettled
+                          ? `opacity ${IN_DURATION}ms ease-out, transform ${IN_DURATION}ms ease-out`
+                          : `opacity ${OUT_DURATION}ms ease-in, transform ${OUT_DURATION}ms ease-in`,
+                        willChange: "opacity, transform",
+                        pointerEvents: isSettled ? "auto" : "none",
+                      }}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="absolute -top-2 sm:-top-3 xl:-top-4 -translate-x-full font-raleway font-normal text-gold text-[32px] sm:text-[36px] md:text-[42px] xl:text-[50px] leading-[1.4] tracking-[0.03em] select-none pointer-events-none"
+                      >
+                        <span
+                          style={textStyle(0)}
+                          className="inline-block"
+                        >
+                          “
+                        </span>
+                      </span>
+                      <p
+                        style={textStyle(0)}
+                        className="relative whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-gold"
+                      >
+                        {t.text}
 
+                        <span className="ml-1 inline-block translate-y-3 sm:translate-y-3.5 md:translate-y-4 xl:translate-y-5 font-raleway font-normal text-gold text-[32px] sm:text-[36px] md:text-[42px] xl:text-[50px] leading-0 tracking-[0.03em] select-none pointer-events-none">
+                          ”
+                        </span>
+                      </p>
+                    </div>
+                  );
+                })}
+                <p
+                  className="invisible whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em]"
+                  aria-hidden="true"
+                >
+                  {current.text}
+                </p>
+              </ScrollReveal>
+            </div>
             <ScrollReveal
               variant="fade-up"
               delay={400}
               duration={1400}
-              className="mt-8 md:mt-10 flex items-start justify-between gap-6 md:gap-10"
+              className="w-full absolute bottom-0 mt-8 md:mt-10 flex items-start justify-between gap-6 md:gap-10"
             >
               <div className="flex items-center gap-4 text-[#88643B]">
                 <button

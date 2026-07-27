@@ -38,3 +38,16 @@ export type MountainQuoteDict = Dictionary["about"]["mountainQuote"];
 export type MindsetPlanningDict = Dictionary["about"]["mindsetPlanning"];
 export type StarValueDict = Dictionary["about"]["starValue"];
 export type IntegrityComplianceDict = Dictionary["about"]["integrityCompliance"];
+
+/** Stories-page section shapes. */
+export type StoriesHeroDict = Dictionary["stories"]["hero"];
+export type OurStoryDict = Dictionary["stories"]["ourStory"];
+export type VisionMissionDict = Dictionary["stories"]["visionMission"];
+export type OurValuesDict = Dictionary["stories"]["ourValues"];
+
+/** Office-page section shapes. */
+export type FamilyOfficeDict = Dictionary["office"]["familyOffice"];
+export type ServicePillarsDict = Dictionary["office"]["servicePillars"];
+export type AscentDict = Dictionary["office"]["ascent"];
+export type HolisticApproachDict = Dictionary["office"]["holisticApproach"];
+export type QuietMindDict = Dictionary["office"]["quietMind"];
