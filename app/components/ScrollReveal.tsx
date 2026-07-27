@@ -117,6 +117,17 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const vw = window.innerWidth || document.documentElement.clientWidth;
+    const initiallyInView =
+      rect.top < vh && rect.bottom > 0 && rect.left < vw && rect.right > 0;
+
+    if (initiallyInView) {
+      const raf = requestAnimationFrame(() => setVisible(true));
+      if (once) return () => cancelAnimationFrame(raf);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];

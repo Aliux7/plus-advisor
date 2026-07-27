@@ -60,3 +60,7 @@ export type JournalsGridDict = Dictionary["journals"]["grid"];
 
 /** Market-page section shape. */
 export type MarketUpdateDict = Dictionary["market"];
+
+/** News-detail page shape. */
+export type NewsDetailDict = Dictionary["news"];
+export type NewsHeroDict = Dictionary["news"]["hero"];
