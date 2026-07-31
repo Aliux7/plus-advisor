@@ -12,6 +12,8 @@
       "marketUpdate": "Market Update"
     },
     "searchLabel": "Search",
+    "searchPlaceholder": "Cari jurnal…",
+    "searchEmpty": "Jurnal tidak ditemukan.",
     "languageLabel": "INDONESIA"
   },
   "footer": {
@@ -687,7 +689,12 @@
       "date": "22 Oktober 2025",
       "author": "Oleh Sindy Larisa",
       "readTime": "6 menit membaca",
-      "shareLabel": "Bagikan"
+      "shareLabel": "Bagikan",
+      "facebookLabel": "Bagikan ke Facebook",
+      "whatsappLabel": "Bagikan ke WhatsApp",
+      "copyLabel": "Salin tautan",
+      "copiedLabel": "Tautan disalin",
+      "emailLabel": "Bagikan lewat email"
     },
     "body": [
       {

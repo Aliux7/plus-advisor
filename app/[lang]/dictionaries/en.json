@@ -12,6 +12,8 @@
       "marketUpdate": "Market Update"
     },
     "searchLabel": "Search",
+    "searchPlaceholder": "Search journals…",
+    "searchEmpty": "No journals found.",
     "languageLabel": "ENGLISH"
   },
   "footer": {
@@ -687,7 +689,12 @@
       "date": "22 October 2025",
       "author": "By Sindy Larisa",
       "readTime": "6 min read",
-      "shareLabel": "Share"
+      "shareLabel": "Share",
+      "facebookLabel": "Share on Facebook",
+      "whatsappLabel": "Share on WhatsApp",
+      "copyLabel": "Copy link",
+      "copiedLabel": "Link copied",
+      "emailLabel": "Share via email"
     },
     "body": [
       {

@@ -33,6 +33,17 @@ export function getAllPosts(): BlogPost[] {
   return posts;
 }
 
+export type SearchablePost = Pick<BlogPost, "id" | "slug" | "title" | "featured_image">;
+
+export function getSearchIndex(): SearchablePost[] {
+  return posts.map(({ id, slug, title, featured_image }) => ({
+    id,
+    slug,
+    title,
+    featured_image,
+  }));
+}
+
 export function getPostById(id: string): BlogPost | undefined {
   return byIdIndex.get(id);
 }

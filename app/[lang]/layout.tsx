@@ -20,6 +20,7 @@ import {
 import LocomotiveScrollProvider from "../components/LocomotiveScrollProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { getSearchIndex } from "../lib/posts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -111,6 +112,7 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
+  const searchIndex = getSearchIndex();
 
   return (
     <html
@@ -120,7 +122,7 @@ export default async function LangLayout({
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>
           <div id="top" className="flex flex-1 flex-col overflow-x-clip">
-            <Header dict={dict.header} lang={lang} />
+            <Header dict={dict.header} lang={lang} searchIndex={searchIndex} />
             <main className="flex flex-1 flex-col">{children}</main>
             <Footer dict={dict.footer} lang={lang} />
           </div>

@@ -1,36 +1,30 @@
-import Image from "next/image";
-import Link from "next/link";
 import type { NewsDetailDict, Locale } from "../../[lang]/dictionaries";
 import {
   authorLabel,
   formatPublishedDate,
-  getAllPosts,
   type BlogPost,
 } from "../../lib/posts";
 import Hero from "./Hero";
-import { Mail, Share, User } from "lucide-react";
+import ShareButtons from "./ShareButtons";
+import { User } from "lucide-react";
 
 type Props = { dict: NewsDetailDict; lang: Locale; post: BlogPost };
 
 const LOCAL_LABELS: Record<
   Locale,
-  { latest: string; eyebrow: string; by: string; emailLabel: string }
+  { latest: string; eyebrow: string; by: string }
 > = {
   en: {
     latest: "Latest Journals",
     eyebrow: "Journals",
     by: "by",
-    emailLabel: "Email",
   },
   id: {
     latest: "Jurnal Terbaru",
     eyebrow: "Jurnal",
     by: "oleh",
-    emailLabel: "Email",
   },
 };
-
-const SIDEBAR_LIMIT = 5;
 
 const TABLE_OPEN_RE = /<table\b/gi;
 const TABLE_CLOSE_RE = /<\/table>/gi;
@@ -43,9 +37,6 @@ function wrapTables(html: string): string {
 
 export default function NewsDetail({ dict, lang, post }: Props) {
   const labels = LOCAL_LABELS[lang];
-  const recent = getAllPosts()
-    .filter((p) => p.id !== post.id)
-    .slice(0, SIDEBAR_LIMIT);
 
   return (
     <>
@@ -69,22 +60,17 @@ export default function NewsDetail({ dict, lang, post }: Props) {
               <h2 className="font-catalog font-black text-navy text-[20px] md:text-[24px] xl:text-[28px] leading-[1.35] tracking-widest">
                 {post.title}
               </h2>
-              <div className="mt-4 flex justify-end items-center gap-5 text-gold">
-                <button
-                  type="button"
-                  aria-label={dict.sidebar.shareLabel}
-                  className="cursor-pointer transition-opacity duration-300 hover:opacity-70"
-                >
-                  <Share className="size-5" aria-hidden />
-                </button>
-                <button
-                  type="button"
-                  aria-label={labels.emailLabel}
-                  className="cursor-pointer transition-opacity duration-300 hover:opacity-70"
-                >
-                  <Mail className="size-5" aria-hidden />
-                </button>
-              </div>
+              <ShareButtons
+                title={post.title}
+                fallbackPath={`/${lang}/journals/${post.id}`}
+                labels={{
+                  facebookLabel: dict.sidebar.facebookLabel,
+                  whatsappLabel: dict.sidebar.whatsappLabel,
+                  copyLabel: dict.sidebar.copyLabel,
+                  copiedLabel: dict.sidebar.copiedLabel,
+                  emailLabel: dict.sidebar.emailLabel,
+                }}
+              />
               <p className="mt-8 font-catalog font-normal italic text-gold text-[14px] md:text-[16px] leading-snug tracking-widest">
                 {formatPublishedDate(post.date_published, lang)}
               </p>
