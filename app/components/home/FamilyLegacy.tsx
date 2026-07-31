@@ -1,11 +1,11 @@
 import Image from "next/image";
-import type { FamilyLegacyDict } from "../../[lang]/dictionaries";
+import type { FamilyLegacyDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: FamilyLegacyDict };
+type Props = { dict: FamilyLegacyDict; lang: Locale };
 
-export default function FamilyLegacy({ dict }: Props) {
+export default function FamilyLegacy({ dict, lang }: Props) {
   return (
     <section
       data-scroll-section
@@ -152,7 +152,7 @@ export default function FamilyLegacy({ dict }: Props) {
               className="mt-6 ml-0 lg:mt-9 w-fit"
             >
               <a
-                href="#about"
+                href={`/${lang}/about`}
                 className="inline-flex items-center justify-center rounded-[15px] border border-[#88643B] h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-[#88643B] hover:text-white"
               >
                 {dict.cta}

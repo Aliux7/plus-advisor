@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
-import type { WealthPlanningDict } from "../../[lang]/dictionaries";
+import type { WealthPlanningDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: WealthPlanningDict };
+type Props = { dict: WealthPlanningDict; lang: Locale };
 
 const OUT_DURATION = 400;
 const IN_DURATION = 700;
 
-export default function WealthPlanning({ dict }: Props) {
+export default function WealthPlanning({ dict, lang }: Props) {
   const { slides } = dict;
   const [index, setIndex] = useState(0);
   const [displayIndex, setDisplayIndex] = useState(0);
@@ -48,7 +48,11 @@ export default function WealthPlanning({ dict }: Props) {
           duration={1600}
           className="absolute right-0 sm:right-auto sm:left-0 -bottom-20 sm:bottom-10 xl:bottom-0 w-50 h-68 opacity-50 xl:opacity-100"
         >
-          <Parallax speed={-0.08} data-scroll className="w-full h-full relative">
+          <Parallax
+            speed={-0.08}
+            data-scroll
+            className="w-full h-full relative"
+          >
             <Image
               src="/home/bird-alt.webp"
               alt=""
@@ -74,11 +78,7 @@ export default function WealthPlanning({ dict }: Props) {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal
-            variant="fade-up"
-            delay={100}
-            duration={1800}
-          >
+          <ScrollReveal variant="fade-up" delay={100} duration={1800}>
             <h2
               style={textStyle(120)}
               className="font-catalog font-black text-[22px] sm:text-[26px] md:text-[28px] xl:text-[32px] leading-[1.2] tracking-widest text-gold w-full lg:w-5/6"
@@ -123,7 +123,7 @@ export default function WealthPlanning({ dict }: Props) {
           >
             <div style={textStyle(480)}>
               <a
-                href="#services"
+                href={`/${lang}/office`}
                 className="inline-flex justify-center items-center rounded-[15px] border border-[#88643B] h-9.5 w-40 md:w-49 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-[#88643B] hover:text-white"
               >
                 {dict.cta}
@@ -141,7 +141,11 @@ export default function WealthPlanning({ dict }: Props) {
                 duration={1600}
                 className="w-full h-full"
               >
-                <Parallax speed={0.05} data-scroll className="relative w-full h-full">
+                <Parallax
+                  speed={0.05}
+                  data-scroll
+                  className="relative w-full h-full"
+                >
                   <div className="absolute inset-0 bg-white rounded-full">
                     <Image
                       src="/home/circle-decoration.webp"
@@ -162,7 +166,11 @@ export default function WealthPlanning({ dict }: Props) {
                 duration={1600}
                 className="w-full h-full"
               >
-                <Parallax speed={-0.05} data-scroll className="relative w-full h-full">
+                <Parallax
+                  speed={-0.05}
+                  data-scroll
+                  className="relative w-full h-full"
+                >
                   <Image
                     src="/home/line-ball.svg"
                     alt=""

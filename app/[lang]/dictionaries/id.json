@@ -26,8 +26,7 @@
       "Our Stories",
       "Family Office",
       "Our Journals",
-      "Market Update",
-      "Disclaimer"
+      "Market Update"
     ],
     "disclaimer": "Informasi ini bersifat edukasi. Keputusan investasi sepenuhnya di tangan investor."
   },
@@ -606,7 +605,9 @@
     "categories": {
       "daily": "Daily",
       "weekly": "Weekly",
-      "monthly": "Monthly"
+      "monthly": "Monthly",
+      "semester": "Semester",
+      "yearly": "Yearly"
     },
     "insights": {
       "mutualFunds": "Mutual Funds Insight",
@@ -643,6 +644,30 @@
       "Oct",
       "Nov",
       "Dec"
+    ],
+    "semesters": [
+      "Jul–Des 2026",
+      "Jan–Jun 2026",
+      "Jul–Des 2025",
+      "Jan–Jun 2025",
+      "Jul–Des 2024",
+      "Jan–Jun 2024",
+      "Jul–Des 2023",
+      "Jan–Jun 2023",
+      "Jul–Des 2022",
+      "Jan–Jun 2022"
+    ],
+    "years": [
+      "2026",
+      "2025",
+      "2024",
+      "2023",
+      "2022",
+      "2021",
+      "2020",
+      "2019",
+      "2018",
+      "2017"
     ],
     "downloadPdf": "Download PDF"
   },

@@ -15,9 +15,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Hero dict={home.hero} />
-      <FamilyLegacy dict={home.familyLegacy} />
-      <WealthPlanning dict={home.wealthPlanning} />
-      <BeyondFinancialAdvice dict={home.beyondFinancialAdvice} />
+      <FamilyLegacy dict={home.familyLegacy} lang={lang} />
+      <WealthPlanning dict={home.wealthPlanning} lang={lang} />
+      <BeyondFinancialAdvice dict={home.beyondFinancialAdvice} lang={lang} />
       <Quote dict={home.quote} />
       <FeaturedJournals dict={home.featuredJournals} lang={lang} />
     </>

@@ -91,7 +91,7 @@ export default function NewsDetail({ dict, lang, post }: Props) {
               <div className="mt-3 flex items-center gap-3">
                 <User
                   aria-hidden
-                  className="size-7 md:size-8 xl:size-9 shrink-0 text-gold"
+                  className="size-6 md:size-7 shrink-0 text-gold rounded-full rounded-gold border p-0.5"
                   strokeWidth={1.5}
                 />
                 <span className="font-catalog font-normal text-gold text-[14px] md:text-[16px] leading-snug tracking-widest">

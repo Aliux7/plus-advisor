@@ -1,12 +1,12 @@
 import Image from "next/image";
-import type { BeyondFinancialAdviceDict } from "../../[lang]/dictionaries";
+import type { BeyondFinancialAdviceDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import SlidingDivider from "../SlidingDivider";
 import Parallax from "../Parallax";
 
-type Props = { dict: BeyondFinancialAdviceDict };
+type Props = { dict: BeyondFinancialAdviceDict, lang: Locale };
 
-export default function BeyondFinancialAdvice({ dict }: Props) {
+export default function BeyondFinancialAdvice({ dict, lang }: Props) {
   return (
     <section data-scroll-section className="mt-40 relative min-h-screen text-white">
       <Parallax speed={0.08} data-scroll className="absolute inset-0">
@@ -48,7 +48,7 @@ export default function BeyondFinancialAdvice({ dict }: Props) {
             className="mb-2 lg:mb-2.5 w-fit"
           >
             <a
-              href="#services"
+              href={`/${lang}/stories`}
               className="inline-flex items-center justify-center rounded-[15px] border border-[#88643B] h-9.5 w-40 md:w-49.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-[#88643B] transition-colors duration-300 ease-in-out hover:bg-gold hover:text-white"
             >
               {dict.cta}

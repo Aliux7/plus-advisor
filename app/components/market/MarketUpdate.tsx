@@ -8,28 +8,42 @@ import Parallax from "../Parallax";
 
 type Props = { dict: MarketUpdateDict };
 
-const CATEGORY_KEYS = ["daily", "weekly", "monthly"] as const;
-type CategoryKey = (typeof CATEGORY_KEYS)[number];
+const PERIOD_CATEGORY_KEYS = ["daily", "weekly", "monthly", "semester", "yearly"] as const;
+type PeriodCategoryKey = (typeof PERIOD_CATEGORY_KEYS)[number];
 
-const INSIGHT_KEYS = [
+const INSIGHT_CATEGORY_KEYS = [
   "mutualFunds",
   "fixedIncome",
   "equity",
   "macroPulse",
 ] as const;
-type InsightKey = (typeof INSIGHT_KEYS)[number];
+type InsightCategoryKey = (typeof INSIGHT_CATEGORY_KEYS)[number];
+
+type CategoryKey = PeriodCategoryKey | InsightCategoryKey;
+
+const isPeriodCategory = (key: CategoryKey): key is PeriodCategoryKey =>
+  (PERIOD_CATEGORY_KEYS as readonly string[]).includes(key);
 
 export default function MarketUpdate({ dict }: Props) {
   const [category, setCategory] = useState<CategoryKey>("monthly");
-  const [insight, setInsight] = useState<InsightKey | null>(null);
   const [periodIndex, setPeriodIndex] = useState(0);
 
-  const periodLabels =
-    category === "daily"
+  const selectCategory = (key: CategoryKey) => {
+    setCategory(key);
+    setPeriodIndex(0);
+  };
+
+  const periodLabels = isPeriodCategory(category)
+    ? category === "daily"
       ? dict.days
       : category === "weekly"
       ? dict.weeks
-      : dict.months;
+      : category === "monthly"
+      ? dict.months
+      : category === "semester"
+      ? dict.semesters
+      : dict.years
+    : null;
 
   return (
     <section
@@ -192,16 +206,13 @@ export default function MarketUpdate({ dict }: Props) {
               className="flex flex-col w-full lg:min-h-[437.5px]"
             >
               <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3">
-                {CATEGORY_KEYS.map((key) => {
+                {PERIOD_CATEGORY_KEYS.map((key) => {
                   const isActive = key === category;
                   return (
                     <button
                       key={key}
                       type="button"
-                      onClick={() => {
-                        setCategory(key);
-                        setPeriodIndex(0);
-                      }}
+                      onClick={() => selectCategory(key)}
                       className={`cursor-pointer text-center rounded-[15px] h-[38px] px-4 sm:px-5 md:px-5 lg:px-6 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal transition-colors duration-300 ease-in-out ${
                         isActive
                           ? "bg-navy text-white border border-navy"
@@ -215,15 +226,13 @@ export default function MarketUpdate({ dict }: Props) {
               </div>
 
               <div className="mt-3.5 lg:mt-4 flex flex-wrap gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3">
-                {INSIGHT_KEYS.map((key) => {
-                  const isActive = key === insight;
+                {INSIGHT_CATEGORY_KEYS.map((key) => {
+                  const isActive = key === category;
                   return (
                     <button
                       key={key}
                       type="button"
-                      onClick={() =>
-                        setInsight((prev) => (prev === key ? null : key))
-                      }
+                      onClick={() => selectCategory(key)}
                       className={`cursor-pointer text-center rounded-[15px] h-[38px] px-3 sm:px-4 md:px-4 lg:px-5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal transition-colors duration-300 ease-in-out ${
                         isActive
                           ? "bg-navy text-white border border-navy"
@@ -242,25 +251,27 @@ export default function MarketUpdate({ dict }: Props) {
 
               <div className="mt-11 lg:mt-11.5 border-t border-navy" />
 
-              <div className="mt-4.5 lg:mt-5 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6">
-                {periodLabels.map((label, i) => {
-                  const isActive = i === periodIndex;
-                  return (
-                    <button
-                      key={`${label}-${i}`}
-                      type="button"
-                      onClick={() => setPeriodIndex(i)}
-                      className={`cursor-pointer rounded-[15px] h-[35px] px-2.5 sm:px-3 md:px-3.5 lg:px-4 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.5] tracking-[0.1em] transition-colors duration-300 ease-in-out ${
-                        isActive
-                          ? "bg-navy text-white border border-navy"
-                          : "text-navy border border-navy/75 hover:border-navy hover:text-navy"
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
+              {periodLabels && (
+                <div className="mt-4.5 lg:mt-5 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6">
+                  {periodLabels.map((label, i) => {
+                    const isActive = i === periodIndex;
+                    return (
+                      <button
+                        key={`${label}-${i}`}
+                        type="button"
+                        onClick={() => setPeriodIndex(i)}
+                        className={`cursor-pointer rounded-[15px] h-[35px] px-2.5 sm:px-3 md:px-3.5 lg:px-4 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.5] tracking-[0.1em] transition-colors duration-300 ease-in-out ${
+                          isActive
+                            ? "bg-navy text-white border border-navy"
+                            : "text-navy border border-navy/75 hover:border-navy hover:text-navy"
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
               <div className="mt-10 lg:mt-auto lg:pt-6">
                 <a

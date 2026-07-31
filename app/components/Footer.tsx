@@ -1,16 +1,36 @@
 import Image from "next/image";
-import type { FooterDict } from "../[lang]/dictionaries";
+import type { FooterDict, Locale } from "../[lang]/dictionaries";
 import ScrollReveal from "./ScrollReveal";
 
 const SOCIAL_ICONS = [
-  { label: "Instagram", src: "/social/instagram.svg" },
-  { label: "LinkedIn", src: "/social/linkedin.svg" },
-  { label: "YouTube", src: "/social/youtube.svg" },
+  {
+    label: "Instagram",
+    src: "/social/instagram.svg",
+    link: "https://www.instagram.com/plusadvisor/",
+  },
+  {
+    label: "LinkedIn",
+    src: "/social/linkedin.svg",
+    link: "https://www.linkedin.com/company/plusadvisor/",
+  },
+  {
+    label: "YouTube",
+    src: "/social/youtube.svg",
+    link: "https://www.youtube.com/@plusadvisor",
+  },
 ];
 
-type Props = { dict: FooterDict };
+const COMPANY_LINK_PATHS = [
+  "/about",
+  "/stories",
+  "/office",
+  "/journals",
+  "/market",
+];
 
-export default function Footer({ dict }: Props) {
+type Props = { dict: FooterDict; lang: Locale };
+
+export default function Footer({ dict, lang }: Props) {
   return (
     <footer
       data-scroll-section
@@ -92,22 +112,26 @@ export default function Footer({ dict }: Props) {
               {dict.companyHeading}
             </ScrollReveal>
             <ul className="mt-4 md:mt-7 flex flex-col gap-2">
-              {dict.companyLinks.map((label, i) => (
-                <ScrollReveal
-                  key={label}
-                  as="li"
-                  variant="fade-up"
-                  delay={200 + i * 60}
-                  duration={1200}
-                >
-                  <a
-                    href="#"
-                    className="font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white underline decoration-1 underline-offset-1 hover:text-white/70 transition-colors duration-300 ease-in-out"
+              {dict.companyLinks.map((label, i) => {
+                const path = COMPANY_LINK_PATHS[i];
+                if (!path) return null;
+                return (
+                  <ScrollReveal
+                    key={label}
+                    as="li"
+                    variant="fade-up"
+                    delay={200 + i * 60}
+                    duration={1200}
                   >
-                    {label}
-                  </a>
-                </ScrollReveal>
-              ))}
+                    <a
+                      href={`/${lang}${path}`}
+                      className="font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white underline decoration-1 underline-offset-1 hover:text-white/70 transition-colors duration-300 ease-in-out"
+                    >
+                      {label}
+                    </a>
+                  </ScrollReveal>
+                );
+              })}
             </ul>
           </div>
 
@@ -132,11 +156,14 @@ export default function Footer({ dict }: Props) {
                 +62 21 5087 2450
               </ScrollReveal>
               <ScrollReveal
-                as="p"
+                as="a"
+                href="https://wa.me/6281112531101"
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="fade-up"
                 delay={310}
                 duration={1200}
-                className="text-nowrap font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white"
+                className="text-nowrap font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white hover:text-white/70 transition-colors duration-300 ease-in-out"
               >
                 +62 811-1253-1101
               </ScrollReveal>
@@ -152,7 +179,7 @@ export default function Footer({ dict }: Props) {
               {dict.socialHeading}
             </ScrollReveal>
             <div className="mt-3.5 flex items-center gap-5 md:gap-6.5">
-              {SOCIAL_ICONS.map(({ label, src }, i) => (
+              {SOCIAL_ICONS.map(({ label, src, link }, i) => (
                 <ScrollReveal
                   key={label}
                   variant="zoom-in"
@@ -160,7 +187,7 @@ export default function Footer({ dict }: Props) {
                   duration={1200}
                 >
                   <a
-                    href="#"
+                    href={link}
                     aria-label={label}
                     className="flex size-7.5 items-center justify-center transition-opacity duration-300 ease-in-out hover:opacity-80"
                   >
@@ -196,8 +223,9 @@ export default function Footer({ dict }: Props) {
       <div className="mt-10 xl:mt-5 md:ml-auto flex flex-col md:flex-row justify-start md:justify-end md:items-end px-5 sm:px-10 xl:px-20 pb-12 md:pb-16 lg:pb-20 gap-5 md:gap-10">
         <ScrollReveal
           as="p"
-          variant="fade-up"
-          duration={1200}
+          variant="fade-right"
+          delay={900}
+          duration={3000}
           rootMargin="0px"
           className="font-raleway font-normal text-[11px] leading-[1.49] tracking-[0.03em] text-white max-w-xl"
         >
@@ -205,8 +233,9 @@ export default function Footer({ dict }: Props) {
         </ScrollReveal>
         <ScrollReveal
           as="p"
-          variant="fade-up"
-          duration={1200}
+          variant="fade-right"
+          delay={300}
+          duration={3000}
           rootMargin="0px"
           className="font-raleway font-normal text-[11px] leading-[1.49] tracking-[0.03em] text-white text-nowrap"
         >
