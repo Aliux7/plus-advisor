@@ -8,13 +8,7 @@ import Parallax from "../Parallax";
 
 type Props = { dict: MarketUpdateDict };
 
-const CATEGORY_KEYS = [
-  "daily",
-  "weekly",
-  "monthly",
-  "scenario",
-  "yearly",
-] as const;
+const CATEGORY_KEYS = ["daily", "weekly", "monthly"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const INSIGHT_KEYS = [
@@ -28,7 +22,14 @@ type InsightKey = (typeof INSIGHT_KEYS)[number];
 export default function MarketUpdate({ dict }: Props) {
   const [category, setCategory] = useState<CategoryKey>("monthly");
   const [insight, setInsight] = useState<InsightKey | null>(null);
-  const [monthIndex, setMonthIndex] = useState(0);
+  const [periodIndex, setPeriodIndex] = useState(0);
+
+  const periodLabels =
+    category === "daily"
+      ? dict.days
+      : category === "weekly"
+      ? dict.weeks
+      : dict.months;
 
   return (
     <section
@@ -197,7 +198,10 @@ export default function MarketUpdate({ dict }: Props) {
                     <button
                       key={key}
                       type="button"
-                      onClick={() => setCategory(key)}
+                      onClick={() => {
+                        setCategory(key);
+                        setPeriodIndex(0);
+                      }}
                       className={`cursor-pointer text-center rounded-[15px] h-[38px] px-4 sm:px-5 md:px-5 lg:px-6 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal transition-colors duration-300 ease-in-out ${
                         isActive
                           ? "bg-navy text-white border border-navy"
@@ -239,13 +243,13 @@ export default function MarketUpdate({ dict }: Props) {
               <div className="mt-11 lg:mt-11.5 border-t border-navy" />
 
               <div className="mt-4.5 lg:mt-5 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6">
-                {dict.months.map((label, i) => {
-                  const isActive = i === monthIndex;
+                {periodLabels.map((label, i) => {
+                  const isActive = i === periodIndex;
                   return (
                     <button
                       key={`${label}-${i}`}
                       type="button"
-                      onClick={() => setMonthIndex(i)}
+                      onClick={() => setPeriodIndex(i)}
                       className={`cursor-pointer rounded-[15px] h-[35px] px-2.5 sm:px-3 md:px-3.5 lg:px-4 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.5] tracking-[0.1em] transition-colors duration-300 ease-in-out ${
                         isActive
                           ? "bg-navy text-white border border-navy"

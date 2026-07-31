@@ -27,7 +27,7 @@ export default function Hero({ dict }: Props) {
           variant="fade-up"
           delay={600}
           duration={1600}
-          className="mt-4 md:mt-5 lg:mt-6 max-w-lg font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] leading-normal tracking-widest text-navy"
+          className="mt-4 md:mt-5 lg:mt-6 max-w-lg font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-normal tracking-widest text-navy"
         >
           {dict.body}
         </ScrollReveal>

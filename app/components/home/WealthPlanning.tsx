@@ -95,7 +95,7 @@ export default function WealthPlanning({ dict }: Props) {
           >
             <p
               style={textStyle(240)}
-              className="font-catalog font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.7] tracking-normal text-gold"
+              className="font-catalog font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.7] tracking-normal text-gold"
             >
               {slide.subtitle}
             </p>
@@ -109,7 +109,7 @@ export default function WealthPlanning({ dict }: Props) {
           >
             <p
               style={textStyle(360)}
-              className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-widest text-navy"
+              className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-widest text-navy"
             >
               {slide.body}
             </p>

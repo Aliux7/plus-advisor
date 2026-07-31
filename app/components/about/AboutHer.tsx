@@ -225,7 +225,7 @@ export default function AboutHer({ dict }: Props) {
                       </span>
                       <p
                         style={textStyle(0)}
-                        className="relative whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-gold"
+                        className="relative whitespace-pre-line font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.03em] text-gold"
                       >
                         {t.text}
 
@@ -237,7 +237,7 @@ export default function AboutHer({ dict }: Props) {
                   );
                 })}
                 <p
-                  className="invisible whitespace-pre-line font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em]"
+                  className="invisible whitespace-pre-line font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.03em]"
                   aria-hidden="true"
                 >
                   {current.text}

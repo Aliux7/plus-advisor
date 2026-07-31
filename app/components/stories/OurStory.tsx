@@ -46,14 +46,14 @@ export default function OurStory({ dict }: Props) {
               variant="fade-up"
               delay={0}
               duration={1800}
-              className="relative w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-square"
+              className="relative w-24 sm:w-32 md:w-40 lg:w-44 xl:w-48 aspect-square"
             >
               <Image
                 src="/logo.svg"
                 alt=""
                 fill
                 priority
-                sizes="(min-width: 1280px) 256px, (min-width: 768px) 192px, 128px"
+                sizes="(min-width: 1280px) 192px, (min-width: 768px) 160px, 96px"
                 className="object-contain"
               />
             </ScrollReveal>
@@ -62,14 +62,14 @@ export default function OurStory({ dict }: Props) {
               variant="fade-up"
               delay={200}
               duration={1800}
-              className="relative w-40 sm:w-52 md:w-60 lg:w-72 xl:w-80 h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9"
+              className="relative w-32 sm:w-40 md:w-48 lg:w-56 xl:w-60 h-4 sm:h-5 md:h-5.5 lg:h-6 xl:h-7"
             >
               <Image
                 src="/logo_name.svg"
                 alt="PLUS ADVISOR"
                 fill
                 priority
-                sizes="(min-width: 1280px) 320px, (min-width: 768px) 240px, 160px"
+                sizes="(min-width: 1280px) 240px, (min-width: 768px) 192px, 128px"
                 className="object-contain"
               />
             </ScrollReveal>

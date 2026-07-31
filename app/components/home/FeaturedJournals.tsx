@@ -1,19 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { FeaturedJournalsDict, Locale } from "../../[lang]/dictionaries";
+import { getAllPosts, formatPublishedDate } from "../../lib/posts";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-const JOURNAL_IMAGES = [
-  "/home/journals/journal-01.webp",
-  "/home/journals/journal-02.webp",
-  "/home/journals/journal-03.webp",
-  "/home/journals/journal-04.webp",
-];
+const FEATURED_LIMIT = 4;
 
 type Props = { dict: FeaturedJournalsDict; lang: Locale };
 
 export default function FeaturedJournals({ dict, lang }: Props) {
+  const posts = getAllPosts().slice(0, FEATURED_LIMIT);
+
   return (
     <section
       data-scroll-section
@@ -117,9 +115,9 @@ export default function FeaturedJournals({ dict, lang }: Props) {
         </div>
 
         <div className="-mt-10 lg:mt-0 grid grid-cols-1 gap-x-6 md:gap-x-10 gap-y-8 md:gap-y-14 sm:grid-cols-2">
-          {dict.items.map((journal, index) => (
+          {posts.map((post, index) => (
             <ScrollReveal
-              key={index}
+              key={post.id}
               as="article"
               variant="fade-up"
               delay={index * 150}
@@ -128,7 +126,7 @@ export default function FeaturedJournals({ dict, lang }: Props) {
             >
               <div className="relative aspect-square w-full overflow-hidden rounded-xl md:rounded-2xl">
                 <Image
-                  src={JOURNAL_IMAGES[index] ?? JOURNAL_IMAGES[0]}
+                  src={post.featured_image}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 45vw, 90vw"
@@ -136,13 +134,13 @@ export default function FeaturedJournals({ dict, lang }: Props) {
                 />
               </div>
               <p className="mt-3 md:mt-4 font-catalog font-normal text-[14px] sm:text-[16px] md:text-[17px] lg:text-[19px] leading-normal tracking-widest text-navy">
-                {journal.date}
+                {formatPublishedDate(post.date_published, lang)}
               </p>
               <h3 className="mt-2 max-w-xs font-catalog font-black text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
-                {journal.title}
+                {post.title}
               </h3>
               <Link
-                href={`/${lang}/news/${index + 1}`}
+                href={`/${lang}/journals/${post.id}`}
                 className="mt-3 md:mt-4 inline-flex items-center justify-center rounded-[15px] border border-navy h-9.5 w-28 md:w-32.5 font-saira font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-none tracking-normal text-center text-navy transition-colors duration-300 ease-in-out hover:bg-navy hover:text-white"
               >
                 {dict.readMore}

@@ -1,7 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.plusadvisor.co.id",
+        pathname: "/wp-content/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh7-rt.googleusercontent.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

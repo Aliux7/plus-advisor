@@ -149,7 +149,7 @@ export default function AboutPlusAdvisor({ dict }: Props) {
                 variant="fade-up"
                 delay={i * 150}
                 duration={1600}
-                className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-navy"
+                className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.03em] text-navy"
               >
                 {paragraph}
               </ScrollReveal>

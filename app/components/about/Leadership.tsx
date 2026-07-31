@@ -83,7 +83,7 @@ export default function Leadership({ dict }: Props) {
                 variant="fade-up"
                 delay={400 + i * 150}
                 duration={1600}
-                className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.04em] text-navy"
+                className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.04em] text-navy"
               >
                 {paragraph}
               </ScrollReveal>
@@ -104,7 +104,7 @@ export default function Leadership({ dict }: Props) {
                   variant="fade-up"
                   delay={400}
                   duration={1600}
-                  className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.04em] text-navy"
+                  className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.04em] text-navy"
                 >
                   {before}
                   {idx !== -1 && (
@@ -142,7 +142,7 @@ export default function Leadership({ dict }: Props) {
             duration={1600}
             className="mt-4 md:mt-6 flex flex-col items-center gap-4 sm:gap-6"
           >
-            <span className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.04em] text-navy/70">
+            <span className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.04em] text-navy/70">
               {dict.memberOfLabel}
             </span>
             <div className="flex flex-wrap justify-center items-stretch gap-5 md:gap-6 lg:gap-8">

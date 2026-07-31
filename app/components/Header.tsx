@@ -44,7 +44,7 @@ export default function Header({ dict, lang }: Props) {
             width={140}
             height={120}
             priority
-            className="h-8 sm:h-10 xl:h-14.5 w-auto"
+            className="h-6 sm:h-8 xl:h-11 w-auto"
           />
           <Image
             src="/logo_name.svg"
@@ -52,7 +52,7 @@ export default function Header({ dict, lang }: Props) {
             width={126}
             height={14}
             priority
-            className="h-2.75 sm:h-3 xl:h-3.5 w-auto"
+            className="h-2 sm:h-2.5 xl:h-3 w-auto"
           />
         </Link>
 

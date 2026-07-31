@@ -141,7 +141,7 @@ export default function FamilyLegacy({ dict }: Props) {
               variant="fade-up"
               delay={200}
               duration={1600}
-              className="mt-4 md:mt-6 max-w-xl lg:pr-8 lg:max-w-lg font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] text-balance leading-[1.4] tracking-widest text-navy"
+              className="mt-4 md:mt-6 max-w-xl lg:pr-8 lg:max-w-lg font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] text-balance leading-[1.4] tracking-widest text-navy"
             >
               {dict.body}
             </ScrollReveal>
@@ -183,7 +183,7 @@ export default function FamilyLegacy({ dict }: Props) {
             variant="fade-up"
             delay={150}
             duration={1600}
-            className="text-start sm:-ml-10 lg:ml-0 mt-4 md:mt-6 max-w-lg xl:max-w-xl font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] text-balance leading-[1.4] tracking-widest text-navy"
+            className="text-start sm:-ml-10 lg:ml-0 mt-4 md:mt-6 max-w-lg xl:max-w-xl font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] text-balance leading-[1.4] tracking-widest text-navy"
           >
             {dict.footnote}
           </ScrollReveal>

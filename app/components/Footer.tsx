@@ -16,7 +16,7 @@ export default function Footer({ dict }: Props) {
       data-scroll-section
       className="relative overflow-hidden bg-navy text-white"
     >
-      <div className="relative z-10 px-5 sm:px-10 xl:px-20 py-12 md:py-16 lg:py-20 gap-10 md:gap-16 xl:gap-30 flex flex-col lg:flex-row justify-start items-start">
+      <div className="relative z-10 px-5 sm:px-10 xl:px-20 pt-12 md:pt-16 lg:pt-20 gap-10 md:gap-16 xl:gap-30 flex flex-col lg:flex-row justify-start items-start">
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full lg:w-auto">
           <ScrollReveal
             variant="fade-right"
@@ -49,7 +49,7 @@ export default function Footer({ dict }: Props) {
               variant="fade-up"
               delay={300}
               duration={1400}
-              className="mt-6 md:mt-8 lg:mt-10 inline-block font-catalog font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.89] tracking-widest text-white underline"
+              className="mt-4 md:mt-6 lg:mt-8 inline-block font-catalog font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.89] tracking-widest text-white underline"
             >
               {dict.whistleTitle}
             </ScrollReveal>
@@ -80,8 +80,8 @@ export default function Footer({ dict }: Props) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 w-full lg:w-auto lg:ml-auto">
-          <div className="flex flex-col lg:max-w-51">
+        <div className="flex gap-8 sm:gap-10 lg:gap-0 w-full lg:w-auto lg:ml-auto">
+          <div className="flex flex-col w-full lg:w-51">
             <ScrollReveal
               as="h4"
               variant="fade-up"
@@ -91,7 +91,7 @@ export default function Footer({ dict }: Props) {
             >
               {dict.companyHeading}
             </ScrollReveal>
-            <ul className="mt-4 md:mt-7 flex flex-col gap-2 md:gap-3">
+            <ul className="mt-4 md:mt-7 flex flex-col gap-2">
               {dict.companyLinks.map((label, i) => (
                 <ScrollReveal
                   key={label}
@@ -111,7 +111,7 @@ export default function Footer({ dict }: Props) {
             </ul>
           </div>
 
-          <div className="flex flex-col lg:max-w-56.25">
+          <div className="flex flex-col w-full lg:w-auto lg:max-w-56.25">
             <ScrollReveal
               as="h4"
               variant="fade-up"
@@ -127,7 +127,7 @@ export default function Footer({ dict }: Props) {
                 variant="fade-up"
                 delay={250}
                 duration={1200}
-                className="font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white"
+                className="text-nowrap font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white"
               >
                 +62 21 5087 2450
               </ScrollReveal>
@@ -136,7 +136,7 @@ export default function Footer({ dict }: Props) {
                 variant="fade-up"
                 delay={310}
                 duration={1200}
-                className="font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white"
+                className="text-nowrap font-catalog font-normal text-[14px] md:text-[16px] leading-none tracking-widest text-white"
               >
                 +62 811-1253-1101
               </ScrollReveal>
@@ -151,7 +151,7 @@ export default function Footer({ dict }: Props) {
             >
               {dict.socialHeading}
             </ScrollReveal>
-            <div className="mt-2.5 flex items-center gap-5 md:gap-6.5">
+            <div className="mt-3.5 flex items-center gap-5 md:gap-6.5">
               {SOCIAL_ICONS.map(({ label, src }, i) => (
                 <ScrollReveal
                   key={label}
@@ -186,21 +186,32 @@ export default function Footer({ dict }: Props) {
                 alt=""
                 width={143}
                 height={19}
-                className="mt-4 md:mt-5.5 w-36 h-auto"
+                className="mt-5 md:mt-6.5 w-36 h-auto"
               />
-            </ScrollReveal>
-
-            <ScrollReveal
-              as="p"
-              variant="fade-up"
-              delay={900}
-              duration={1200}
-              className="mt-4 md:mt-6 font-raleway font-normal text-[10px] leading-[1.49] tracking-[0.03em] text-white"
-            >
-              &copy;2026 Plus Advisor. All Right Reserved
             </ScrollReveal>
           </div>
         </div>
+      </div>
+
+      <div className="mt-10 xl:mt-5 md:ml-auto flex flex-col md:flex-row justify-start md:justify-end md:items-end px-5 sm:px-10 xl:px-20 pb-12 md:pb-16 lg:pb-20 gap-5 md:gap-10">
+        <ScrollReveal
+          as="p"
+          variant="fade-up"
+          duration={1200}
+          rootMargin="0px"
+          className="font-raleway font-normal text-[11px] leading-[1.49] tracking-[0.03em] text-white max-w-xl"
+        >
+          {dict.disclaimer}
+        </ScrollReveal>
+        <ScrollReveal
+          as="p"
+          variant="fade-up"
+          duration={1200}
+          rootMargin="0px"
+          className="font-raleway font-normal text-[11px] leading-[1.49] tracking-[0.03em] text-white text-nowrap"
+        >
+          &copy;2026 Plus Advisor. All Right Reserved
+        </ScrollReveal>
       </div>
     </footer>
   );

@@ -12,6 +12,10 @@ export default function LocomotiveScrollProvider({
   const pathname = usePathname();
 
   useEffect(() => {
+    // App Router leaves scroll where it was after Lenis takes over the window.
+    // Reset to top before re-initializing so each route starts at the hero.
+    window.scrollTo(0, 0);
+
     let instance: { destroy: () => void } | null = null;
     let cancelled = false;
 

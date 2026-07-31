@@ -28,7 +28,8 @@
       "Our Journals",
       "Market Update",
       "Disclaimer"
-    ]
+    ],
+    "disclaimer": "Informasi ini bersifat edukasi. Keputusan investasi sepenuhnya di tangan investor."
   },
   "home": {
     "hero": {
@@ -605,9 +606,7 @@
     "categories": {
       "daily": "Daily",
       "weekly": "Weekly",
-      "monthly": "Monthly",
-      "scenario": "Scenario",
-      "yearly": "Yearly"
+      "monthly": "Monthly"
     },
     "insights": {
       "mutualFunds": "Mutual Funds Insight",
@@ -616,6 +615,21 @@
       "macroPulse": "Macro Pulse"
     },
     "description": "A deeper review of the month's economic movements: cross-asset performance, and capital market themes shaping the investment environment. This report includes commentary and reflections on shifts to help build a clearer view of market direction and the opportunities for long-term investors.",
+    "days": [
+      "Sen",
+      "Sel",
+      "Rab",
+      "Kam",
+      "Jum",
+      "Sab",
+      "Min"
+    ],
+    "weeks": [
+      "Minggu 1",
+      "Minggu 2",
+      "Minggu 3",
+      "Minggu 4"
+    ],
     "months": [
       "Jan",
       "Feb",

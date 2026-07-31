@@ -80,7 +80,7 @@ export default function BeyondFinancialAdvice({ dict }: Props) {
               <p className="mt-4 md:mt-6 font-raleway font-bold text-[11px] md:text-[12px] leading-[1.4] tracking-[0.15em] text-white">
                 {pillar.lead}
               </p>
-              <p className="mt-3 md:mt-4 font-raleway font-bold text-[11px] md:text-[12px] leading-[1.4] tracking-[0.15em] text-white">
+              <p className="mt-3 md:mt-4 font-raleway text-[11px] md:text-[12px] leading-[1.4] tracking-[0.15em] text-white">
                 {pillar.description}
               </p>
             </ScrollReveal>

@@ -28,7 +28,8 @@
       "Our Journals",
       "Market Update",
       "Disclaimer"
-    ]
+    ],
+    "disclaimer": "This information is intended for educational purposes only and should not be considered investment advice. All investment decisions are made at the sole discretion and responsibility of the investor."
   },
   "home": {
     "hero": {
@@ -605,9 +606,7 @@
     "categories": {
       "daily": "Daily",
       "weekly": "Weekly",
-      "monthly": "Monthly",
-      "scenario": "Scenario",
-      "yearly": "Yearly"
+      "monthly": "Monthly"
     },
     "insights": {
       "mutualFunds": "Mutual Funds Insight",
@@ -616,6 +615,21 @@
       "macroPulse": "Macro Pulse"
     },
     "description": "A deeper review of the month's economic movements: cross-asset performance, and capital market themes shaping the investment environment. This report includes commentary and reflections on shifts to help build a clearer view of market direction and the opportunities for long-term investors.",
+    "days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "weeks": [
+      "Week 1",
+      "Week 2",
+      "Week 3",
+      "Week 4"
+    ],
     "months": [
       "Jan",
       "Feb",

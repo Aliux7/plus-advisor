@@ -83,7 +83,7 @@ export default function VisionMission({ dict }: Props) {
                         variant="fade-up"
                         delay={index * 120}
                         duration={1600}
-                        className="font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-widest text-white"
+                        className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-widest text-white"
                       >
                         {paragraph}
                       </ScrollReveal>

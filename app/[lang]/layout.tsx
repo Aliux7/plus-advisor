@@ -119,7 +119,7 @@ export default async function LangLayout({
     >
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>
-          <div id="top" className="flex flex-1 flex-col overflow-x-hidden">
+          <div id="top" className="flex flex-1 flex-col overflow-x-clip">
             <Header dict={dict.header} lang={lang} />
             <main className="flex flex-1 flex-col">{children}</main>
             <Footer dict={dict.footer} />

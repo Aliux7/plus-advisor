@@ -88,7 +88,7 @@ export default function FamilyOffice({ dict }: Props) {
                 variant="fade-up"
                 delay={i * 150}
                 duration={1600}
-                className="pl-5 sm:pl-10 xl:pl-20 font-raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] leading-[1.4] tracking-[0.03em] text-navy"
+                className="pl-5 sm:pl-10 xl:pl-20 font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.03em] text-navy"
               >
                 {paragraph}
               </ScrollReveal>
