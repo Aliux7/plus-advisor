@@ -64,7 +64,6 @@ export default function NewsDetail({ dict, lang, post }: Props) {
                 title={post.title}
                 fallbackPath={`/${lang}/journals/${post.id}`}
                 labels={{
-                  facebookLabel: dict.sidebar.facebookLabel,
                   whatsappLabel: dict.sidebar.whatsappLabel,
                   copyLabel: dict.sidebar.copyLabel,
                   copiedLabel: dict.sidebar.copiedLabel,

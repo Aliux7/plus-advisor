@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Check, Link as LinkIcon, Mail } from "lucide-react";
 
 type Labels = {
-  facebookLabel: string;
   whatsappLabel: string;
   copyLabel: string;
   copiedLabel: string;
@@ -34,7 +33,6 @@ export default function ShareButtons({ title, labels, fallbackPath }: Props) {
   }, [copied]);
 
   const shareText = `${title} — ${shareUrl}`;
-  const facebookHref = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   const emailHref = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(shareText)}`;
 
@@ -64,17 +62,6 @@ export default function ShareButtons({ title, labels, fallbackPath }: Props) {
 
   return (
     <div className="mt-4 flex justify-end items-center gap-5 text-gold">
-      <a
-        href={facebookHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={labels.facebookLabel}
-        title={labels.facebookLabel}
-        className={iconClass}
-      >
-        <FacebookIcon className="size-5" aria-hidden />
-      </a>
-
       <a
         href={whatsappHref}
         target="_blank"
@@ -109,22 +96,6 @@ export default function ShareButtons({ title, labels, fallbackPath }: Props) {
         <Mail className="size-5" aria-hidden />
       </a>
     </div>
-  );
-}
-
-function FacebookIcon({
-  className,
-  ...rest
-}: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      {...rest}
-    >
-      <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.27h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07Z" />
-    </svg>
   );
 }
 
