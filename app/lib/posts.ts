@@ -57,7 +57,7 @@ export function authorLabel(author: string): string {
   return AUTHOR_LABELS[author] ?? author;
 }
 
-const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", id: "id-ID" };
+const DATE_LOCALES: Record<Locale, string> = { en: "en-GB", id: "id-ID", zh: "zh-CN" };
 
 export function formatPublishedDate(iso: string, lang: Locale): string {
   const parsed = new Date(iso);

@@ -6,10 +6,10 @@ import type { Locale } from "../../[lang]/dictionaries";
 import { DEFAULT_SORT, type SortKey } from "./journalSort";
 
 const OPTION_LABELS: Record<SortKey, Record<Locale, string>> = {
-  latest: { en: "Latest Journal", id: "Jurnal Terbaru" },
-  oldest: { en: "Oldest Journal", id: "Jurnal Terlama" },
-  az: { en: "Title A → Z", id: "Judul A → Z" },
-  za: { en: "Title Z → A", id: "Judul Z → A" },
+  latest: { en: "Latest Journal", id: "Jurnal Terbaru", zh: "最新期刊" },
+  oldest: { en: "Oldest Journal", id: "Jurnal Terlama", zh: "最早期刊" },
+  az: { en: "Title A → Z", id: "Judul A → Z", zh: "标题 A → Z" },
+  za: { en: "Title Z → A", id: "Judul Z → A", zh: "标题 Z → A" },
 };
 
 type Props = {

@@ -4,14 +4,15 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 
-type Locale = "en" | "id";
+type Locale = "en" | "id" | "zh";
 
 const LABELS: Record<Locale, string> = {
   en: "ENGLISH",
   id: "INDONESIA",
+  zh: "简体中文",
 };
 
-const LOCALES: Locale[] = ["en", "id"];
+const LOCALES: Locale[] = ["en", "id", "zh"];
 
 function persistLocaleCookie(locale: Locale) {
   document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=${60 * 60 * 24 * 365}`;
@@ -25,7 +26,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: Locale })
   const selectLocale = (next: Locale) => {
     if (next === currentLang) return;
     const segments = pathname.split("/");
-    if (segments[1] === "en" || segments[1] === "id") {
+    if (segments[1] === "en" || segments[1] === "id" || segments[1] === "zh") {
       segments[1] = next;
     } else {
       segments.splice(1, 0, next);

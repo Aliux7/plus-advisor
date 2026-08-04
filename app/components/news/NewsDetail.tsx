@@ -24,6 +24,11 @@ const LOCAL_LABELS: Record<
     eyebrow: "Jurnal",
     by: "oleh",
   },
+  zh: {
+    latest: "最新期刊",
+    eyebrow: "期刊",
+    by: "作者",
+  },
 };
 
 const TABLE_OPEN_RE = /<table\b/gi;

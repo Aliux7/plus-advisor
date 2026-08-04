@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-const LOCALES = ["en", "id"] as const;
+const LOCALES = ["en", "id", "zh"] as const;
 const DEFAULT_LOCALE = "en";
 
 function getLocale(request: NextRequest): string {
@@ -17,6 +17,7 @@ function getLocale(request: NextRequest): string {
 
   if (preferred) {
     if (preferred.startsWith("id")) return "id";
+    if (preferred.startsWith("zh")) return "zh";
     if (preferred.startsWith("en")) return "en";
   }
 
