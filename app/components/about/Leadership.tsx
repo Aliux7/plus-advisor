@@ -94,25 +94,29 @@ export default function Leadership({ dict }: Props) {
             {(() => {
               const paragraph = dict.paragraphs[2] ?? "";
               const highlight = `"${dict.recognitionHighlight}"`;
-              const idx = paragraph.indexOf(highlight);
-              const before = idx === -1 ? paragraph : paragraph.slice(0, idx);
-              const after =
-                idx === -1 ? "" : paragraph.slice(idx + highlight.length);
-              return (
-                <ScrollReveal
-                  as="p"
-                  variant="fade-up"
-                  delay={400}
-                  duration={1600}
-                  className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.04em] text-navy"
-                >
-                  {before}
-                  {idx !== -1 && (
-                    <strong className="font-bold">{highlight}</strong>
-                  )}
-                  {after}
-                </ScrollReveal>
-              );
+              return paragraph.split("\n").map((part, partIdx) => {
+                const trimmed = part.trim();
+                const idx = trimmed.indexOf(highlight);
+                const before = idx === -1 ? trimmed : trimmed.slice(0, idx);
+                const after =
+                  idx === -1 ? "" : trimmed.slice(idx + highlight.length);
+                return (
+                  <ScrollReveal
+                    key={partIdx}
+                    as="p"
+                    variant="fade-up"
+                    delay={400 + partIdx * 150}
+                    duration={1600}
+                    className="font-raleway font-normal text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.04em] text-navy"
+                  >
+                    {before}
+                    {idx !== -1 && (
+                      <strong className="font-bold">{highlight}</strong>
+                    )}
+                    {after}
+                  </ScrollReveal>
+                );
+              });
             })()}
           </div>
         </div>

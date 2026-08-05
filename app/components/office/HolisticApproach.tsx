@@ -105,13 +105,15 @@ export default function HolisticApproach({ dict }: Props) {
                     style={{ backgroundColor: color }}
                   >
                     <ScrollReveal
-                      as="p"
+                      as="div"
                       variant="fade-up"
                       delay={i * 120 + 200}
                       duration={1600}
-                      className="font-raleway text-[11px] sm:text-[12px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.4] tracking-widest text-white/90"
+                      className="flex flex-col gap-2 md:gap-3 font-raleway text-[11px] sm:text-[12px] md:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.4] tracking-widest text-white/90"
                     >
-                      {phase.body}
+                      {phase.body.split("\n").map((part, partIdx) => (
+                        <p key={partIdx}>{part.trim()}</p>
+                      ))}
                     </ScrollReveal>
                   </div>
                 </div>

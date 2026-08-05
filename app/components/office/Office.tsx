@@ -187,13 +187,15 @@ export default function FamilyOffice({ dict }: Props) {
           {dict.advisoryParagraphs.map((paragraph, i) => (
             <ScrollReveal
               key={i}
-              as="p"
+              as="div"
               variant="fade-up"
               delay={i * 150}
               duration={1600}
-              className="font-raleway font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-[0.02em] text-navy"
+              className="flex flex-col gap-3 md:gap-4 font-raleway font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-[0.02em] text-navy"
             >
-              {paragraph}
+              {paragraph.split("\n").map((part, partIdx) => (
+                <p key={partIdx}>{part.trim()}</p>
+              ))}
             </ScrollReveal>
           ))}
         </div>

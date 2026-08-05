@@ -87,7 +87,7 @@ export default function QuietMind({ dict }: Props) {
           </ScrollReveal>
         </div>
 
-        <div className="absolute -translate-y-1/2 sm:translate-0 right-10 xl:right-20 text-center flex flex-col gap-2 md:gap-3 lg:gap-4">
+        <div className="absolute -translate-y-full sm:translate-0 right-10 xl:right-20 text-center flex flex-col gap-2 md:gap-3 lg:gap-4 min-w-[45%]">
           {dict.lines.map((line, i) => {
             const isFirst = i === 0;
             const isLast = i === dict.lines.length - 1;
@@ -98,7 +98,7 @@ export default function QuietMind({ dict }: Props) {
                 variant="fade-up"
                 delay={300 + i * 150}
                 duration={1800}
-                className="relative font-catalog font-normal text-[18px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[34px] leading-[1.4] tracking-widest text-navy text-start"
+                className="relative font-catalog font-normal text-[22px] sm:text-[27px] md:text-[31px] lg:text-[37px] xl:text-[43px] leading-[1.4] tracking-widest text-navy text-start"
               >
                 {isFirst && (
                   <span className="absolute -translate-x-full scale-150 not-italic">
