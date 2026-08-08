@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { JournalsGridDict, Locale } from "../../[lang]/dictionaries";
-import { getAllPosts, formatPublishedDate, type BlogPost } from "../../lib/posts";
+import {
+  getAllPosts,
+  getHeroPost,
+  formatPublishedDate,
+  type BlogPost,
+} from "../../lib/posts";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 import JournalsFilter from "./JournalsFilter";
@@ -35,13 +40,15 @@ function sortPosts(posts: BlogPost[], sort: SortKey): BlogPost[] {
   }
 }
 
-export default function JournalsGrid({
+export default async function JournalsGrid({
   dict,
   lang,
   page = 1,
   sort = DEFAULT_SORT,
 }: Props) {
-  const allPosts = sortPosts(getAllPosts(), sort);
+  const [everyPost, hero] = await Promise.all([getAllPosts(), getHeroPost()]);
+  const withoutHero = hero ? everyPost.filter((p) => p.id !== hero.id) : everyPost;
+  const allPosts = sortPosts(withoutHero, sort);
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
   const currentPage = Math.min(Math.max(1, page), totalPages);
 

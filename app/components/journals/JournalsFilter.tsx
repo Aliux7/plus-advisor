@@ -62,19 +62,18 @@ export default function JournalsFilter({ lang, currentSort, line1, line2 }: Prop
       >
         <div className="size-14 md:size-16 lg:size-18 rounded-full bg-gold flex items-center justify-center shrink-0">
           <svg
-            width="28"
-            height="28"
             viewBox="0 0 24 24"
             fill="none"
             stroke="white"
-            strokeWidth="3.5"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
+            className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 overflow-visible"
           >
-            <line x1="1" y1="5" x2="23" y2="5" />
-            <line x1="4" y1="12" x2="20" y2="12" />
-            <line x1="7" y1="19" x2="17" y2="19" />
+            <line x1="0" y1="4" x2="24" y2="4" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <line x1="8" y1="20" x2="16" y2="20" />
           </svg>
         </div>
         <p className="text-left font-catalog font-black text-[16px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-[0.15em] text-gold">

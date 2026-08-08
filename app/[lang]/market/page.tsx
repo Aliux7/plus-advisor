@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
 import MarketUpdate from "../../components/market/MarketUpdate";
+import {
+  getMarketEntries,
+  getMarketReportYear,
+} from "../../lib/market-updates-server";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export default async function Market({
@@ -7,7 +11,13 @@ export default async function Market({
 }: PageProps<"/[lang]/market">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { market } = await getDictionary(lang);
+  const [{ market }, entries, reportYear] = await Promise.all([
+    getDictionary(lang),
+    getMarketEntries(),
+    getMarketReportYear(),
+  ]);
 
-  return <MarketUpdate dict={market} />;
+  return (
+    <MarketUpdate dict={market} entries={entries} reportYear={reportYear} />
+  );
 }

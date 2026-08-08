@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { LatestFeaturedDict, Locale } from "../../[lang]/dictionaries";
-import { formatPublishedDate, getAllPosts } from "../../lib/posts";
+import { formatPublishedDate, getHeroPost } from "../../lib/posts";
 import ScrollReveal from "../ScrollReveal";
 import SlidingDivider from "../SlidingDivider";
 
 type Props = { dict: LatestFeaturedDict; lang: Locale };
 
-export default function LatestFeatured({ dict, lang }: Props) {
-  const latest = getAllPosts()[0];
+export default async function LatestFeatured({ dict, lang }: Props) {
+  const latest = await getHeroPost();
+  if (!latest) return null;
 
   return (
     <section

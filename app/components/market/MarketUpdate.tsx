@@ -6,8 +6,6 @@ import type { MarketUpdateDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: MarketUpdateDict };
-
 const PERIOD_CATEGORY_KEYS = ["daily", "weekly", "monthly", "semester", "yearly"] as const;
 type PeriodCategoryKey = (typeof PERIOD_CATEGORY_KEYS)[number];
 
@@ -21,11 +19,25 @@ type InsightCategoryKey = (typeof INSIGHT_CATEGORY_KEYS)[number];
 
 type CategoryKey = PeriodCategoryKey | InsightCategoryKey;
 
+export type MarketEntryProp = {
+  id: string;
+  categoryKey: CategoryKey;
+  label: string;
+  pdfUrl: string;
+  order: number;
+};
+
+type Props = {
+  dict: MarketUpdateDict;
+  entries: Record<CategoryKey, MarketEntryProp[]>;
+  reportYear: string;
+};
+
 const isPeriodCategory = (key: CategoryKey): key is PeriodCategoryKey =>
   (PERIOD_CATEGORY_KEYS as readonly string[]).includes(key);
 
-export default function MarketUpdate({ dict }: Props) {
-  const [category, setCategory] = useState<CategoryKey>("monthly");
+export default function MarketUpdate({ dict, entries, reportYear }: Props) {
+  const [category, setCategory] = useState<CategoryKey>("daily");
   const [periodIndex, setPeriodIndex] = useState(0);
 
   const selectCategory = (key: CategoryKey) => {
@@ -33,17 +45,14 @@ export default function MarketUpdate({ dict }: Props) {
     setPeriodIndex(0);
   };
 
+  const categoryEntries = entries[category] ?? [];
   const periodLabels = isPeriodCategory(category)
-    ? category === "daily"
-      ? dict.days
-      : category === "weekly"
-      ? dict.weeks
-      : category === "monthly"
-      ? dict.months
-      : category === "semester"
-      ? dict.semesters
-      : dict.years
+    ? categoryEntries.map((e) => e.label)
     : null;
+  const selectedEntry = isPeriodCategory(category)
+    ? categoryEntries[periodIndex]
+    : categoryEntries[0];
+  const downloadHref = selectedEntry?.pdfUrl ?? "";
 
   return (
     <section
@@ -172,7 +181,7 @@ export default function MarketUpdate({ dict }: Props) {
                     />
                   </div>
                   <p className="mt-4 font-catalog font-normal italic text-[20px] sm:text-[22px] md:text-[24px] xl:text-[26px] leading-[1.5] tracking-[0.1em] text-gold">
-                    {dict.reportYear}
+                    {reportYear}
                   </p>
                 </div>
 
@@ -274,12 +283,23 @@ export default function MarketUpdate({ dict }: Props) {
               )}
 
               <div className="mt-10 lg:mt-auto lg:pt-6">
-                <a
-                  href="#"
-                  className="inline-flex justify-center items-center text-center rounded-[15px] w-[164px] h-[38px] font-saira font-normal text-[16px] md:text-[18px] leading-none tracking-normal text-navy border border-navy hover:bg-navy hover:text-white transition-colors duration-300 ease-in-out"
-                >
-                  {dict.downloadPdf}
-                </a>
+                {downloadHref ? (
+                  <a
+                    href={downloadHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex justify-center items-center text-center rounded-[15px] w-[164px] h-[38px] font-saira font-normal text-[16px] md:text-[18px] leading-none tracking-normal text-navy border border-navy hover:bg-navy hover:text-white transition-colors duration-300 ease-in-out"
+                  >
+                    {dict.downloadPdf}
+                  </a>
+                ) : (
+                  <span
+                    aria-disabled
+                    className="inline-flex justify-center items-center text-center rounded-[15px] w-[164px] h-[38px] font-saira font-normal text-[16px] md:text-[18px] leading-none tracking-normal text-navy/40 border border-navy/40 cursor-not-allowed"
+                  >
+                    {dict.downloadPdf}
+                  </span>
+                )}
               </div>
             </ScrollReveal>
           </div>

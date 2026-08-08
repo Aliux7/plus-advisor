@@ -112,7 +112,7 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const searchIndex = getSearchIndex();
+  const searchIndex = await getSearchIndex();
 
   return (
     <html

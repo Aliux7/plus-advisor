@@ -9,8 +9,8 @@ const FEATURED_LIMIT = 4;
 
 type Props = { dict: FeaturedJournalsDict; lang: Locale };
 
-export default function FeaturedJournals({ dict, lang }: Props) {
-  const posts = getAllPosts().slice(0, FEATURED_LIMIT);
+export default async function FeaturedJournals({ dict, lang }: Props) {
+  const posts = (await getAllPosts()).slice(0, FEATURED_LIMIT);
 
   return (
     <section

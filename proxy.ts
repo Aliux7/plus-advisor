@@ -24,8 +24,21 @@ function getLocale(request: NextRequest): string {
   return DEFAULT_LOCALE;
 }
 
+function isAdminHost(host: string): boolean {
+  const hostname = host.split(":")[0]?.toLowerCase() ?? "";
+  return hostname === "admin.localhost" || hostname.startsWith("admin.");
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get("host") ?? "";
+
+  if (isAdminHost(host)) {
+    if (pathname.startsWith("/admin")) return;
+    const url = request.nextUrl.clone();
+    url.pathname = `/admin${pathname === "/" ? "" : pathname}`;
+    return NextResponse.rewrite(url);
+  }
 
   const hasLocale = LOCALES.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
