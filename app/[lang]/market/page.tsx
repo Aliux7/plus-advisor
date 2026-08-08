@@ -6,6 +6,8 @@ import {
 } from "../../lib/market-updates-server";
 import { getDictionary, hasLocale } from "../dictionaries";
 
+export const dynamic = "force-dynamic";
+
 export default async function Market({
   params,
 }: PageProps<"/[lang]/market">) {
