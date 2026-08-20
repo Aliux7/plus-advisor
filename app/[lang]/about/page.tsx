@@ -7,12 +7,13 @@ import MountainQuote from "../../components/about/MountainQuote";
 import MindsetPlanning from "../../components/about/MindsetPlanning";
 import StarValue from "../../components/about/StarValue";
 import IntegrityCompliance from "../../components/about/IntegrityCompliance";
+import WhistleBlower from "../../components/WhistleBlower";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export default async function About({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { about } = await getDictionary(lang);
+  const { about, whistleBlower } = await getDictionary(lang);
 
   return (
     <>
@@ -24,6 +25,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
       <MindsetPlanning dict={about.mindsetPlanning} />
       <StarValue dict={about.starValue} />
       <IntegrityCompliance dict={about.integrityCompliance} />
+      <WhistleBlower dict={whistleBlower} />
     </>
   );
 }

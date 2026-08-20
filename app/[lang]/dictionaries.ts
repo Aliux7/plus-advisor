@@ -1,35 +1,51 @@
 import "server-only";
+import type enDict from "./dictionaries/en.json";
 
-const dictionaries = {
+const bundled = {
   en: () => import("./dictionaries/en.json").then((m) => m.default),
   id: () => import("./dictionaries/id.json").then((m) => m.default),
   zh: () => import("./dictionaries/zh.json").then((m) => m.default),
 };
 
-export type Locale = keyof typeof dictionaries;
+export type Locale = keyof typeof bundled;
 
-export const LOCALES = Object.keys(dictionaries) as Locale[];
+export const LOCALES = Object.keys(bundled) as Locale[];
 
 export const DEFAULT_LOCALE: Locale = "en";
 
 export const hasLocale = (locale: string): locale is Locale =>
-  locale in dictionaries;
+  locale in bundled;
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export type Dictionary = typeof enDict;
 
-export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+/** Reads the bundled JSON dictionary (used as fallback + admin seed). */
+export const getBundledDictionary = async (
+  locale: Locale,
+): Promise<Dictionary> => (await bundled[locale]()) as Dictionary;
+
+/**
+ * Reads the dictionary for a locale — Firestore first, bundled JSON as
+ * fallback. Delegated to a lazy import to avoid a circular type dep.
+ */
+export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
+  const { getContentForLocale } = await import("../lib/content-server");
+  return getContentForLocale(locale);
+};
 
 /** Shared page-section dictionaries — home and about use the same shape. */
 export type PageDictionary = Dictionary["home"];
 export type HeroDict = PageDictionary["hero"];
 export type FamilyLegacyDict = PageDictionary["familyLegacy"];
-export type WealthPlanningDict = PageDictionary["wealthPlanning"];
 export type BeyondFinancialAdviceDict = PageDictionary["beyondFinancialAdvice"];
 export type QuoteDict = PageDictionary["quote"];
 export type FeaturedJournalsDict = PageDictionary["featuredJournals"];
 
+/** Shared slider used by both Home and Office pages. */
+export type OurServicePillarsDict = Dictionary["ourServicePillars"];
+
 export type HeaderDict = Dictionary["header"];
 export type FooterDict = Dictionary["footer"];
+export type WhistleBlowerDict = Dictionary["whistleBlower"];
 
 /** About-page section shapes (only where they diverge from the home shape). */
 export type AboutPlusAdvisorDict = Dictionary["about"]["aboutPlusAdvisor"];
@@ -49,7 +65,6 @@ export type OurValuesDict = Dictionary["stories"]["ourValues"];
 /** Office-page section shapes. */
 export type OfficeHeroDict = Dictionary["office"]["hero"];
 export type FamilyOfficeDict = Dictionary["office"]["familyOffice"];
-export type ServicePillarsDict = Dictionary["office"]["servicePillars"];
 export type AscentDict = Dictionary["office"]["ascent"];
 export type HolisticApproachDict = Dictionary["office"]["holisticApproach"];
 export type QuietMindDict = Dictionary["office"]["quietMind"];
@@ -64,4 +79,3 @@ export type MarketUpdateDict = Dictionary["market"];
 
 /** News-detail page shape. */
 export type NewsDetailDict = Dictionary["news"];
-export type NewsHeroDict = Dictionary["news"]["hero"];

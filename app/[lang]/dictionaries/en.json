@@ -36,7 +36,8 @@
     "hero": {
       "eyebrow": "PLUS Advisor",
       "titleLine1": "Nurturing Legacies,",
-      "titleLine2": "Providing Peace of Mind."
+      "titleLine2": "Providing Peace of Mind.",
+      "background": "/home/hero-video.mp4"
     },
     "familyLegacy": {
       "titlePrefix": "A Commitment to",
@@ -44,61 +45,6 @@
       "body": "PLUS Advisor stands beside families where responsibility grows and decisions carry weight. Through clarity, due care, and independent advisory, we help protect what matters and sustain peace of mind across generations.",
       "cta": "Read More",
       "footnote": "We guide how your wealth is preserved and passed on across generations—through estate and succession planning aligned with your family’s long-term vision."
-    },
-    "wealthPlanning": {
-      "cta": "Read More",
-      "prev": "Previous",
-      "next": "Next",
-      "slides": [
-        {
-          "number": "01",
-          "title": "Wealth Planning",
-          "subtitle": "Structuring What Is Meant to Be Carried Forward",
-          "body": "We provide guidance in shaping how what you have built is preserved and passed on—through estate planning, including lifetime gifting, life insurance, prenuptial arrangements, and wills, as well as succession planning to support business continuity. Each step is aligned with your intentions and the long-term direction of the family.",
-          "image": "/home/slides/01-wealth-planning.webp",
-          "imageAlt": "Hot air balloons over ancient temple ruins in Bagan, Myanmar"
-        },
-        {
-          "number": "02",
-          "title": "Wealth Management",
-          "subtitle": "Shaping Direction and Sustaining Growth",
-          "body": "We provide thoughtful guidance in managing investments with clarity and discipline—covering investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Each decision is considered within a broader perspective, balancing growth with long-term stability.",
-          "image": "/home/slides/02-wealth-management.webp",
-          "imageAlt": "Mount Agung during eruption at sunset over rice fields, Bali"
-        },
-        {
-          "number": "03",
-          "title": "Tax Planning",
-          "subtitle": "Navigating Complexity with Structure and Clarity",
-          "body": "We provide considered guidance across tax-related matters—covering tax filings, real estate structures, international relocation, and cross-border tax considerations. Each recommendation is shaped with care, ensuring alignment with regulatory requirements while supporting long-term clarity and efficiency.",
-          "image": "/home/slides/03-tax-planning.webp",
-          "imageAlt": "Man carrying rice seedlings across terraces in Sa Pa, Vietnam"
-        },
-        {
-          "number": "04",
-          "title": "Family Governance",
-          "subtitle": "Building Alignment Across Generations",
-          "body": "We provide guidance in shaping governance structures that support clarity, communication, and continuity within the family. This includes the formation of family councils, constitutions, and assemblies—designed to help align perspectives, support decision-making, and sustain shared values over time.",
-          "image": "/home/slides/04-family-governance.webp",
-          "imageAlt": "People carrying offerings through a rice paddy"
-        },
-        {
-          "number": "05",
-          "title": "Trust & Corporate Services",
-          "subtitle": "Structuring Ownership with Clarity and Continuity",
-          "body": "We provide guidance in establishing and maintaining structures that support ownership, protection, and long-term continuity. This includes corporate incorporation, trust administration, real estate considerations, ownership structuring, family shareholding, nominee arrangements, and specialized assets such as aircraft and yachts. Each structure is approached with care—ensuring it remains aligned with broader objectives and evolving needs.",
-          "image": "/home/slides/05-trust-corporate.webp",
-          "imageAlt": "Fishermen on the Li River at dawn"
-        },
-        {
-          "number": "06",
-          "title": "Charity & Philanthropy",
-          "subtitle": "Giving with Purpose and Intention",
-          "body": "We provide guidance in shaping meaningful approaches to giving—through the development of giving strategies and the establishment of grant-making foundations. Each step is considered with care, ensuring that contributions reflect the values of the family and create lasting impact over time.",
-          "image": "/home/slides/06-charity-philanthropy.webp",
-          "imageAlt": "Seagulls in flight at Inle Lake, Myanmar"
-        }
-      ]
     },
     "beyondFinancialAdvice": {
       "eyebrow": "PLUS Advisor",
@@ -146,32 +92,75 @@
       "titleAccent": "Journals",
       "body": "Through Our Journals, we share perspectives and experiences that go beyond numbers—exploring the philosophy, values, and lessons within the family’s journey.",
       "cta": "See All",
-      "readMore": "Read More",
-      "items": [
-        {
-          "date": "21 October 2022",
-          "title": "Single vs Multi Family Office: Which One Is Right for You?"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "Single vs Multi Family Office: Which One Is Right for You?"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "Single vs Multi Family Office: Which One Is Right for You?"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "Single vs Multi Family Office: Which One Is Right for You?"
-        }
-      ]
+      "readMore": "Read More"
     }
+  },
+  "ourServicePillars": {
+    "cta": "Read More",
+    "prev": "Previous",
+    "next": "Next",
+    "office": {
+      "titleLine1": "Our Service",
+      "titleLine2": "Pillars",
+      "intro": "We guide families through financial complexity with a clear, disciplined approach—protecting today's stability and ensuring tomorrow's legacy."
+    },
+    "slides": [
+      {
+        "number": "01",
+        "title": "Wealth Planning",
+        "subtitle": "Structuring What Is Meant to Be Carried Forward",
+        "body": "We provide guidance in shaping how what you have built is preserved and passed on—through estate planning, including lifetime gifting, life insurance, prenuptial arrangements, and wills, as well as succession planning to support business continuity. Each step is aligned with your intentions and the long-term direction of the family.",
+        "image": "/home/slides/01-wealth-planning.webp",
+        "imageAlt": "Hot air balloons over ancient temple ruins in Bagan, Myanmar"
+      },
+      {
+        "number": "02",
+        "title": "Wealth Management",
+        "subtitle": "Shaping Direction and Sustaining Growth",
+        "body": "We provide thoughtful guidance in managing investments with clarity and discipline—covering investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Each decision is considered within a broader perspective, balancing growth with long-term stability.",
+        "image": "/home/slides/02-wealth-management.webp",
+        "imageAlt": "Mount Agung during eruption at sunset over rice fields, Bali"
+      },
+      {
+        "number": "03",
+        "title": "Tax Planning",
+        "subtitle": "Navigating Complexity with Structure and Clarity",
+        "body": "We provide considered guidance across tax-related matters—covering tax filings, real estate structures, international relocation, and cross-border tax considerations. Each recommendation is shaped with care, ensuring alignment with regulatory requirements while supporting long-term clarity and efficiency.",
+        "image": "/home/slides/03-tax-planning.webp",
+        "imageAlt": "Man carrying rice seedlings across terraces in Sa Pa, Vietnam"
+      },
+      {
+        "number": "04",
+        "title": "Family Governance",
+        "subtitle": "Building Alignment Across Generations",
+        "body": "We provide guidance in shaping governance structures that support clarity, communication, and continuity within the family. This includes the formation of family councils, constitutions, and assemblies—designed to help align perspectives, support decision-making, and sustain shared values over time.",
+        "image": "/home/slides/04-family-governance.webp",
+        "imageAlt": "People carrying offerings through a rice paddy"
+      },
+      {
+        "number": "05",
+        "title": "Trust & Corporate Services",
+        "subtitle": "Structuring Ownership with Clarity and Continuity",
+        "body": "We provide guidance in establishing and maintaining structures that support ownership, protection, and long-term continuity. This includes corporate incorporation, trust administration, real estate considerations, ownership structuring, family shareholding, nominee arrangements, and specialized assets such as aircraft and yachts. Each structure is approached with care—ensuring it remains aligned with broader objectives and evolving needs.",
+        "image": "/home/slides/05-trust-corporate.webp",
+        "imageAlt": "Fishermen on the Li River at dawn"
+      },
+      {
+        "number": "06",
+        "title": "Charity & Philanthropy",
+        "subtitle": "Giving with Purpose and Intention",
+        "body": "We provide guidance in shaping meaningful approaches to giving—through the development of giving strategies and the establishment of grant-making foundations. Each step is considered with care, ensuring that contributions reflect the values of the family and create lasting impact over time.",
+        "image": "/home/slides/06-charity-philanthropy.webp",
+        "imageAlt": "Seagulls in flight at Inle Lake, Myanmar"
+      }
+    ]
   },
   "about": {
     "hero": {
       "eyebrow": "About Us",
       "titleLine1": "A Commitment",
-      "titleLine2": "to Family Legacy"
+      "titleLine2": "to Family Legacy",
+      "background": "/about/about-video.mp4"
     },
     "aboutPlusAdvisor": {
       "title": "About Plus Advisor",
@@ -192,6 +181,7 @@
         "Her recent recognition as the \"Top Wealth Management Service Provider in APAC 2024\", awarded by Financial Service Review, reflects the trust she has cultivated over time. For Priskilla, true success is not defined solely by growth, but by the ability to live with a peaceful mind. This belief continues to shape PLUS Advisor's family-first approach, where every step is guided with care, offering continuity, quiet confidence, and a thoughtfully assured experience."
       ],
       "recognitionHighlight": "Top Wealth Management Service Provider in APAC 2024",
+      "portrait": "/about/priskilla-portrait.webp",
       "portraitAlt": "Priskilla Lusina, CEO and founder of PLUS Advisor",
       "memberOfLabel": "Member of"
     },
@@ -292,79 +282,14 @@
           "role": "Client"
         }
       ]
-    },
-    "beyondFinancialAdvice": {
-      "eyebrow": "PLUS Advisor",
-      "title": "Our Commitments",
-      "cta": "Read More",
-      "pillars": [
-        {
-          "number": "01",
-          "title": "Independence",
-          "lead": "Advice without conflict.",
-          "description": "We do not sell products. Our income is aligned with the families we serve—so every recommendation is measured against their long-term interests alone."
-        },
-        {
-          "number": "02",
-          "title": "Discretion",
-          "lead": "Every conversation stays with us.",
-          "description": "The trust of the families we work with is the foundation of everything we do. Confidentiality is treated with the seriousness of a fiduciary duty."
-        },
-        {
-          "number": "03",
-          "title": "Continuity",
-          "lead": "Steady across generations.",
-          "description": "Our engagements are designed to outlast any single decision, advisor, or market cycle—providing a stable point of reference as the family and its needs evolve."
-        },
-        {
-          "number": "04",
-          "title": "Clarity",
-          "lead": "Sound advice, plainly delivered.",
-          "description": "Complex structures should never obscure the reasoning behind them. We take the time to explain each step so the family stays in control of every decision."
-        },
-        {
-          "number": "05",
-          "title": "Care",
-          "lead": "Beyond financial numbers.",
-          "description": "We recognize that wealth carries meaning, memory, and responsibility. Every recommendation is shaped with that fuller picture in mind."
-        }
-      ]
-    },
-    "quote": {
-      "text": "In every family lies a story worth preserving; our role is simply to help write the next chapter with care.",
-      "author": "PLUS Advisor"
-    },
-    "featuredJournals": {
-      "titlePrefix": "From Our",
-      "titleAccent": "Journals",
-      "body": "Perspectives, reflections, and lessons from our work alongside families—shared to open a wider conversation about stewardship and legacy.",
-      "cta": "See All",
-      "readMore": "Read More",
-      "items": [
-        {
-          "date": "21 October 2022",
-          "title": "Why an Independent Family Office Matters"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "Building Governance That Lasts Generations"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "The Quiet Discipline of Long-Term Wealth"
-        },
-        {
-          "date": "21 October 2022",
-          "title": "Values Before Vehicles: A Note on Structuring"
-        }
-      ]
     }
   },
   "stories": {
     "hero": {
       "eyebrow": "Our Stories",
       "titleLine1": "Endless Care for",
-      "titleLine2": "Timeless Legacies"
+      "titleLine2": "Timeless Legacies",
+      "background": "/stories/hero-video.mp4"
     },
     "ourStory": {
       "paragraphs": [
@@ -443,8 +368,7 @@
       "eyebrow": "Family Office",
       "titleLine1": "Strategic Guidance for",
       "titleLine2": "Families Across Generations",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
+      "background": "/office/hero-video.mp4"
     },
     "familyOffice": {
       "title": "Family Office",
@@ -460,11 +384,6 @@
         "This approach is reflected across a comprehensive range of advisory areas. In wealth planning, we provide guidance on estate planning—including lifetime gifting, life insurance, prenuptial arrangements, and wills—as well as succession planning to support the continuity of family businesses. In wealth management, we advise on investment strategy and asset allocation, private equity considerations, consolidated reporting, and independent investment advice. Our tax planning support includes guidance on tax filings, real estate structuring, international relocation, and planning across double tax treaty frameworks.",
         "We also advise on family governance, including the establishment of family councils, constitutions, and assemblies to support clarity in communication and decision-making. Through trust and corporate considerations, we provide advice on corporate structuring, trust administration, real estate management, ownership structures, family shareholding, as well as specialized assets. Beyond this, we support families in charity and philanthropy, including giving strategies and the formation of grant-making foundations, ensuring that impact is carried forward with intention."
       ]
-    },
-    "servicePillars": {
-      "titleLine1": "Our Service",
-      "titleLine2": "Pillars",
-      "intro": "We guide families through financial complexity with a clear, disciplined approach—protecting today's stability and ensuring tomorrow's legacy."
     },
     "ascent": {
       "titleLine1": "Our Ascent Is Guided by",
@@ -538,64 +457,21 @@
   "journals": {
     "hero": {
       "title": "Our Journals",
-      "body": "Discover thoughtful perspectives on the key decisions that impact your wealth and your family's future.",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
+      "body": "Discover thoughtful perspectives on the key decisions that impact your wealth and your family's future."
     },
     "latestFeatured": {
       "title": "Latest & Featured",
       "description": "A curated view on the topics that shape informed financial and family decisions.",
-      "featured": {
-        "date": "21 October 2022",
-        "title": "Single or Multi-Family Office? Understanding What Suits You Best"
-      },
       "readMore": "Read More"
     },
     "grid": {
       "filterLine1": "Filter By Topic",
       "filterLine2": "Or Date Published",
-      "readMore": "Read More",
-      "items": [
-        {
-          "date": "21 October 2022",
-          "title": "Single or Multi-Family Office? Understanding What Suits You Best"
-        },
-        {
-          "date": "23 October 2022",
-          "title": "Tax Audit Preparation: How to Navigate a Tax Review with Confidence"
-        },
-        {
-          "date": "24 October 2022",
-          "title": "Private Equity or Public Markets? Finding the Right Fit for Family Investors"
-        },
-        {
-          "date": "25 October 2022",
-          "title": "Building Governance That Lasts Generations"
-        },
-        {
-          "date": "26 October 2022",
-          "title": "The Quiet Discipline of Long-Term Wealth"
-        },
-        {
-          "date": "27 October 2022",
-          "title": "Values Before Vehicles: A Note on Structuring"
-        },
-        {
-          "date": "28 October 2022",
-          "title": "Why an Independent Family Office Matters"
-        },
-        {
-          "date": "29 October 2022",
-          "title": "Estate Planning Across Borders: A Careful Approach"
-        },
-        {
-          "date": "30 October 2022",
-          "title": "Philanthropy with Purpose: Foundations That Last"
-        }
-      ]
+      "readMore": "Read More"
     }
   },
   "market": {
+    "visible": true,
     "eyebrow": "Market Update",
     "titleLine1": "Measured insights",
     "titleLine2": "in an ever-changing market.",
@@ -617,7 +493,17 @@
       "equity": "Equity Insight",
       "macroPulse": "Macro Pulse"
     },
-    "description": "A deeper review of the month's economic movements: cross-asset performance, and capital market themes shaping the investment environment. This report includes commentary and reflections on shifts to help build a clearer view of market direction and the opportunities for long-term investors.",
+    "description": {
+      "daily": "A concise daily recap of market moves, key headlines, and short-term signals to keep decision-makers oriented from open to close.",
+      "weekly": "A weekly digest of shifts across asset classes and the themes shaping the days ahead — designed for a steady, disciplined view.",
+      "monthly": "A deeper review of the month's economic movements: cross-asset performance, and capital market themes shaping the investment environment. This report includes commentary and reflections on shifts to help build a clearer view of market direction and the opportunities for long-term investors.",
+      "semester": "A six-month review of macro themes, portfolio positioning, and structural shifts — providing context for mid-cycle decisions.",
+      "yearly": "An annual outlook covering major trends, portfolio insights, and long-term reflections that shape planning for the year ahead.",
+      "mutualFunds": "Commentary on mutual fund performance, positioning, and manager insights across strategies and geographies.",
+      "fixedIncome": "A focused view on interest rates, credit spreads, and fixed income opportunities across duration and credit quality.",
+      "equity": "Equity market commentary covering sector performance, valuation signals, and thematic ideas for long-term investors.",
+      "macroPulse": "A snapshot of the macroeconomic backdrop — growth, inflation, policy, and liquidity — framing the investment environment."
+    },
     "days": [
       "Mon",
       "Tue",
@@ -674,17 +560,6 @@
     "downloadPdf": "Download PDF"
   },
   "news": {
-    "hero": {
-      "eyebrow": "SINGLE / MULTI FAMILY OFFICE",
-      "titleLine1": "Single vs Multi Family Office:",
-      "titleLine2": "Which One Is Right for You?",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
-    },
-    "backLabel": "Back to Journals",
-    "eyebrow": "SINGLE / MULTI FAMILY OFFICE",
-    "title": "Single vs Multi Family Office: Which One Is Right for You?",
-    "heroImage": "/journals/latest.png",
     "sidebar": {
       "date": "22 October 2025",
       "author": "By Sindy Larisa",
@@ -694,49 +569,12 @@
       "copyLabel": "Copy link",
       "copiedLabel": "Link copied",
       "emailLabel": "Share via email"
-    },
-    "body": [
-      {
-        "type": "paragraph",
-        "text": "As family wealth in Indonesia continues to grow, more families are recognising the need to manage assets, businesses, governance, and legacy in a professional way. A family office offers an integrated service that addresses financial and cross-generational needs under one roof."
-      },
-      {
-        "type": "paragraph",
-        "text": "But not every family office is the same. Broadly, there are two models: Single Family Office (SFO) and Multi Family Office (MFO). Each has its own strengths, structure, and approach — so it's worth understanding which one best fits your family's circumstances."
-      },
-      {
-        "type": "heading",
-        "text": "What Is a Single Family Office (SFO)?"
-      },
-      {
-        "type": "paragraph",
-        "text": "A Single Family Office is an exclusive structure built to serve one family only. It is typically established by families with a high level of wealth complexity, sizeable assets, and strong governance needs."
-      },
-      {
-        "type": "subheading",
-        "text": "SFO Characteristics:"
-      },
-      {
-        "type": "list",
-        "items": [
-          "100% focus on a single family.",
-          "In-house team and dedicated services.",
-          "Broad freedom in shaping strategy.",
-          "Full control over every decision."
-        ]
-      },
-      {
-        "type": "subheading",
-        "text": "SFO Advantages:"
-      },
-      {
-        "type": "list",
-        "items": [
-          "Maximum privacy — data, structure, and decisions stay fully within the family.",
-          "Highly personal service — every offering is designed around the family's goals, values, and preferences.",
-          "Full control — the family holds direct authority over strategy and execution."
-        ]
-      }
-    ]
+    }
+  },
+  "whistleBlower": {
+    "visible": true,
+    "url": "https://plusadvisor.co.id/whistle-blowing",
+    "line1": "WHISTLE",
+    "line2": "BLOWING"
   }
 }

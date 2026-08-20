@@ -1,21 +1,17 @@
 import Image from "next/image";
 import type { OfficeHeroDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
+import HeroBackground from "../HeroBackground";
 
 type Props = { dict: OfficeHeroDict };
 
 export default function Hero({ dict }: Props) {
   return (
     <section data-scroll-section className="relative pt-0">
-      <video
-        src="/office/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        aria-label="Jakarta city skyline"
-        className="block h-screen w-full object-cover"
+      <HeroBackground
+        src={dict.background ?? ""}
+        fallback="/office/hero-video.mp4"
+        ariaLabel="Family Office"
       />
 
       <div className="absolute flex flex-col items-start justify-end top-0 h-screen z-10 w-full px-5 sm:px-10 xl:px-20 pb-8 md:pb-10 xl:pb-14">
@@ -56,29 +52,6 @@ export default function Hero({ dict }: Props) {
             height={35}
             className="w-4 md:w-5 xl:w-5.5 h-auto"
           />
-        </ScrollReveal>
-
-        <ScrollReveal
-          variant="zoom-in"
-          delay={1100}
-          duration={1400}
-          className="cursor-pointer absolute right-5 sm:right-10 xl:right-20 bottom-6 sm:bottom-8 md:bottom-10 xl:bottom-14 size-18 sm:size-20 md:size-22 xl:size-25"
-        >
-          <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur-md bg-white/75 hover:bg-white rounded-full font-catalog font-black transition-colors ease-in-out duration-500">
-            <Image
-              src="/home/whistle-icon.webp"
-              alt=""
-              width={110}
-              height={110}
-              className="w-10 sm:w-12 md:w-13 xl:w-15 h-auto -mt-1 xl:-mt-2 -mb-2 xl:-mb-3"
-            />
-            <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-              {dict.whistleLine1}
-            </p>
-            <p className="text-center text-[8px] md:text-[9px] xl:text-[10px] leading-[1.4] tracking-[0.25em] text-[#88643B]">
-              {dict.whistleLine2}
-            </p>
-          </div>
         </ScrollReveal>
       </div>
     </section>

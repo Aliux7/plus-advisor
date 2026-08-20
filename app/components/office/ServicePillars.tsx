@@ -2,24 +2,20 @@
 
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
-import type {
-  ServicePillarsDict,
-  WealthPlanningDict,
-} from "../../[lang]/dictionaries";
+import type { OurServicePillarsDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
 type Props = {
-  dict: ServicePillarsDict;
-  slidesDict: WealthPlanningDict;
+  dict: OurServicePillarsDict;
 };
 
 const OUT_DURATION = 400;
 const IN_DURATION = 700;
 const SLIDE_DURATION = 700;
 
-export default function ServicePillars({ dict, slidesDict }: Props) {
-  const { slides, prev, next } = slidesDict;
+export default function ServicePillars({ dict }: Props) {
+  const { slides, prev, next, office } = dict;
   const total = slides.length;
   const [index, setIndex] = useState(0);
   const [displayIndex, setDisplayIndex] = useState(0);
@@ -77,9 +73,9 @@ export default function ServicePillars({ dict, slidesDict }: Props) {
             duration={1800}
             className="flex sm:block font-catalog font-black text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
           >
-            {dict.titleLine1}
+            {office.titleLine1}
             <span className="block pl-2 sm:pl-16 md:pl-20 lg:pl-28 xl:pl-36">
-              {dict.titleLine2}
+              {office.titleLine2}
             </span>
           </ScrollReveal>
 
@@ -90,7 +86,7 @@ export default function ServicePillars({ dict, slidesDict }: Props) {
             duration={1800}
             className="font-raleway font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-widest text-navy mt-4"
           >
-            {dict.intro}
+            {office.intro}
           </ScrollReveal>
         </div>
 

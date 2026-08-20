@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
-import type { WealthPlanningDict, Locale } from "../../[lang]/dictionaries";
+import type { OurServicePillarsDict, Locale } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
 
-type Props = { dict: WealthPlanningDict; lang: Locale };
+type Props = { dict: OurServicePillarsDict; lang: Locale };
 
 const OUT_DURATION = 400;
 const IN_DURATION = 700;

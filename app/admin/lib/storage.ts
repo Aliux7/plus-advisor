@@ -95,3 +95,26 @@ export async function deleteStorageObject(path: string): Promise<void> {
   const storageRef = ref(getFirebaseStorageInstance(), path);
   await deleteObject(storageRef);
 }
+
+const VIDEO_MIME_PREFIX = "video/";
+
+/**
+ * Upload any image or video the admin picks. Images are routed through
+ * uploadImage() so they get the same WebP conversion the other forms
+ * use; videos are uploaded raw (browser transcoding isn't practical).
+ */
+export async function uploadMedia(
+  file: File,
+  folder: string,
+): Promise<string> {
+  if (file.type.startsWith("image/")) {
+    return uploadImage(file, folder);
+  }
+  if (file.type.startsWith(VIDEO_MIME_PREFIX)) {
+    const path = `${folder}/${Date.now()}-${sanitize(file.name)}`;
+    const storageRef = ref(getFirebaseStorageInstance(), path);
+    await uploadBytes(storageRef, file, { contentType: file.type });
+    return getDownloadURL(storageRef);
+  }
+  throw new Error("File must be an image or video.");
+}

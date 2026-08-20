@@ -19,6 +19,8 @@ export default async function Market({
     getMarketReportYear(),
   ]);
 
+  if (!market.visible) notFound();
+
   return (
     <MarketUpdate dict={market} entries={entries} reportYear={reportYear} />
   );

@@ -6,6 +6,7 @@ import { useAuth } from "./AuthProvider";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", exact: true },
+  { href: "/admin/content", label: "Site Content" },
   { href: "/admin/journal", label: "Journal" },
   { href: "/admin/market-update", label: "Market Update" },
   { href: "/admin/whitelist", label: "Whitelist" },

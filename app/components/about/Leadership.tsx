@@ -131,7 +131,7 @@ export default function Leadership({ dict }: Props) {
           >
             <div className="relative w-full h-full overflow-hidden rounded-md shadow-xl">
               <Image
-                src="/about/priskilla-portrait.webp"
+                src={dict.portrait || "/about/priskilla-portrait.webp"}
                 alt={dict.portraitAlt}
                 fill
                 sizes="(min-width: 1024px) 420px, (min-width: 640px) 90vw, 100vw"

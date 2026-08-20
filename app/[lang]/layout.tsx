@@ -93,6 +93,10 @@ export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
 
+// Re-render every request so CMS edits go live instantly.
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: LayoutProps<"/[lang]">): Promise<Metadata> {
@@ -122,7 +126,12 @@ export default async function LangLayout({
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>
           <div id="top" className="flex flex-1 flex-col overflow-x-clip">
-            <Header dict={dict.header} lang={lang} searchIndex={searchIndex} />
+            <Header
+              dict={dict.header}
+              lang={lang}
+              searchIndex={searchIndex}
+              marketVisible={dict.market.visible}
+            />
             <main className="flex flex-1 flex-col">{children}</main>
             <Footer dict={dict.footer} lang={lang} />
           </div>

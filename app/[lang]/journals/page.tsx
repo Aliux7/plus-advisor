@@ -3,6 +3,7 @@ import Hero from "../../components/journals/Hero";
 import LatestFeatured from "../../components/journals/LatestFeatured";
 import JournalsGrid from "../../components/journals/JournalsGrid";
 import { DEFAULT_SORT, isSortKey } from "../../components/journals/journalSort";
+import WhistleBlower from "../../components/WhistleBlower";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export default async function Journals({
@@ -11,7 +12,7 @@ export default async function Journals({
 }: PageProps<"/[lang]/journals">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { journals } = await getDictionary(lang);
+  const { journals, whistleBlower } = await getDictionary(lang);
 
   const { page, sort } = await searchParams;
   const rawPage = Array.isArray(page) ? page[0] : page;
@@ -31,6 +32,7 @@ export default async function Journals({
         page={currentPage}
         sort={currentSort}
       />
+      <WhistleBlower dict={whistleBlower} />
     </>
   );
 }

@@ -12,11 +12,17 @@ type Props = {
   dict: HeaderDict;
   lang: Locale;
   searchIndex: SearchablePost[];
+  marketVisible: boolean;
 };
 
 const MAX_RESULTS = 6;
 
-export default function Header({ dict, lang, searchIndex }: Props) {
+export default function Header({
+  dict,
+  lang,
+  searchIndex,
+  marketVisible,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -29,7 +35,9 @@ export default function Header({ dict, lang, searchIndex }: Props) {
     { label: dict.nav.stories, href: `/${lang}/stories` },
     { label: dict.nav.familyOffice, href: `/${lang}/office` },
     { label: dict.nav.journals, href: `/${lang}/journals` },
-    { label: dict.nav.marketUpdate, href: `/${lang}/market` },
+    ...(marketVisible
+      ? [{ label: dict.nav.marketUpdate, href: `/${lang}/market` }]
+      : []),
   ];
 
   const results = useMemo(() => {

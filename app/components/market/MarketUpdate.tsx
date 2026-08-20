@@ -255,7 +255,7 @@ export default function MarketUpdate({ dict, entries, reportYear }: Props) {
               </div>
 
               <p className="mt-7.5 lg:mt-8 max-w-2xl font-raleway font-semibold text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[1.4] tracking-[0.03em] text-navy/80">
-                {dict.description}
+                {dict.description[category]}
               </p>
 
               <div className="mt-11 lg:mt-11.5 border-t border-navy" />

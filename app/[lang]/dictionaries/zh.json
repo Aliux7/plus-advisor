@@ -36,7 +36,8 @@
     "hero": {
       "eyebrow": "PLUS Advisor",
       "titleLine1": "传承恒久,",
-      "titleLine2": "安心无忧。"
+      "titleLine2": "安心无忧。",
+      "background": "/home/hero-video.mp4"
     },
     "familyLegacy": {
       "titlePrefix": "承诺家族传承,",
@@ -44,61 +45,6 @@
       "body": "当责任愈发深重、每一个决定都关乎未来之时，PLUS Advisor 始终陪伴在家族身边。 凭借清晰的洞察、细致的关怀，以及独立客观的专业建议，我们协助守护珍视的一切，让财富与家族传承得以延续，并为世代带来长久的安心。",
       "cta": "阅读更多",
       "footnote": "我们指导您的财富如何在世代之间得到保存与传承——通过与家族长期愿景相契合的遗产与继承规划。"
-    },
-    "wealthPlanning": {
-      "cta": "阅读更多",
-      "prev": "上一页",
-      "next": "下一页",
-      "slides": [
-        {
-          "number": "01",
-          "title": "财富规划",
-          "subtitle": "为值得世代传承的财富，建立稳健而长远的规划。",
-          "body": "我们协助您妥善规划财富的保全与传承，通过契合家族长远愿景的遗产规划与传承安排，确保财富有序延续，惠及世代。",
-          "image": "/home/slides/01-wealth-planning.webp",
-          "imageAlt": "缅甸蒲甘古老庙宇上空的热气球"
-        },
-        {
-          "number": "02",
-          "title": "财富管理",
-          "subtitle": "把握方向,持续增长",
-          "body": "我们在管理投资方面提供审慎的指导,秉持清晰与纪律——涵盖投资策略与资产配置、私募股权考量、综合报告以及独立的投资建议。每一项决策都置于更广阔的视野中,兼顾增长与长期稳定。",
-          "image": "/home/slides/02-wealth-management.webp",
-          "imageAlt": "巴厘岛,阿贡火山喷发时夕阳下的稻田"
-        },
-        {
-          "number": "03",
-          "title": "税务规划",
-          "subtitle": "以结构与清晰,应对复杂局面",
-          "body": "我们在税务相关事务方面提供深思熟虑的指导——涵盖税务申报、房地产架构、国际迁居以及跨境税务考量。每一项建议都经过细致考量,既确保符合监管要求,也支持长期的清晰与效率。",
-          "image": "/home/slides/03-tax-planning.webp",
-          "imageAlt": "越南沙巴,一名男子在梯田间搬运秧苗"
-        },
-        {
-          "number": "04",
-          "title": "家族治理",
-          "subtitle": "构建跨世代的共识",
-          "body": "我们在建立治理架构方面提供指导,以支持家族内部的清晰、沟通与延续。这包括家族委员会、家族章程和家族大会的组建——旨在协调各方观点、支持决策制定,并在时间的推移中维系共同的价值观。",
-          "image": "/home/slides/04-family-governance.webp",
-          "imageAlt": "人们捧着祭品穿过稻田"
-        },
-        {
-          "number": "05",
-          "title": "信托与公司服务",
-          "subtitle": "以清晰与延续构建所有权",
-          "body": "我们在建立与维护支持所有权、保护与长期延续的架构方面提供指导。这包括公司注册、信托管理、房地产考量、所有权架构、家族股权、代持安排,以及飞机、游艇等特殊资产。每一项架构均经过精心构建——确保始终与更广泛的目标及不断演变的需求保持一致。",
-          "image": "/home/slides/05-trust-corporate.webp",
-          "imageAlt": "拂晓时分漓江上的渔夫"
-        },
-        {
-          "number": "06",
-          "title": "慈善与公益",
-          "subtitle": "以目的与意向进行付出",
-          "body": "我们在塑造有意义的公益路径方面提供指导——包括捐赠策略的制定以及资助型基金会的设立。每一步都经过审慎考量,确保付出反映家族的价值观,并在时间的流转中留下持久的影响。",
-          "image": "/home/slides/06-charity-philanthropy.webp",
-          "imageAlt": "缅甸茵莱湖上飞翔的海鸥"
-        }
-      ]
     },
     "beyondFinancialAdvice": {
       "eyebrow": "PLUS Advisor",
@@ -146,32 +92,75 @@
       "titleAccent": "专栏",
       "body": "通过我们的专栏，我们分享超越数字本身的洞见与实践经验，探讨家族传承背后的理念、价值观，以及在世代延续旅程中所积累的智慧与启发。",
       "cta": "查看全部",
-      "readMore": "阅读更多",
-      "items": [
-        {
-          "date": "2022年10月21日",
-          "title": "单一家族办公室还是联合家族办公室:哪一种更适合您?"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "单一家族办公室还是联合家族办公室:哪一种更适合您?"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "单一家族办公室还是联合家族办公室:哪一种更适合您?"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "单一家族办公室还是联合家族办公室:哪一种更适合您?"
-        }
-      ]
+      "readMore": "阅读更多"
     }
+  },
+  "ourServicePillars": {
+    "cta": "阅读更多",
+    "prev": "上一页",
+    "next": "下一页",
+    "office": {
+      "titleLine1": "我们的服务体系",
+      "titleLine2": "",
+      "intro": "我们以清晰且严谨的方法，引导家族应对财富管理中的复杂挑战，守护当下的稳健，并确保未来传承得以延续。"
+    },
+    "slides": [
+      {
+        "number": "01",
+        "title": "财富规划",
+        "subtitle": "为值得世代传承的财富，建立稳健而长远的规划。",
+        "body": "我们协助您妥善规划财富的保全与传承，通过契合家族长远愿景的遗产规划与传承安排，确保财富有序延续，惠及世代。",
+        "image": "/home/slides/01-wealth-planning.webp",
+        "imageAlt": "缅甸蒲甘古老庙宇上空的热气球"
+      },
+      {
+        "number": "02",
+        "title": "财富管理",
+        "subtitle": "把握方向,持续增长",
+        "body": "我们在管理投资方面提供审慎的指导,秉持清晰与纪律——涵盖投资策略与资产配置、私募股权考量、综合报告以及独立的投资建议。每一项决策都置于更广阔的视野中,兼顾增长与长期稳定。",
+        "image": "/home/slides/02-wealth-management.webp",
+        "imageAlt": "巴厘岛,阿贡火山喷发时夕阳下的稻田"
+      },
+      {
+        "number": "03",
+        "title": "税务规划",
+        "subtitle": "以结构与清晰,应对复杂局面",
+        "body": "我们在税务相关事务方面提供深思熟虑的指导——涵盖税务申报、房地产架构、国际迁居以及跨境税务考量。每一项建议都经过细致考量,既确保符合监管要求,也支持长期的清晰与效率。",
+        "image": "/home/slides/03-tax-planning.webp",
+        "imageAlt": "越南沙巴,一名男子在梯田间搬运秧苗"
+      },
+      {
+        "number": "04",
+        "title": "家族治理",
+        "subtitle": "构建跨世代的共识",
+        "body": "我们在建立治理架构方面提供指导,以支持家族内部的清晰、沟通与延续。这包括家族委员会、家族章程和家族大会的组建——旨在协调各方观点、支持决策制定,并在时间的推移中维系共同的价值观。",
+        "image": "/home/slides/04-family-governance.webp",
+        "imageAlt": "人们捧着祭品穿过稻田"
+      },
+      {
+        "number": "05",
+        "title": "信托与公司服务",
+        "subtitle": "以清晰与延续构建所有权",
+        "body": "我们在建立与维护支持所有权、保护与长期延续的架构方面提供指导。这包括公司注册、信托管理、房地产考量、所有权架构、家族股权、代持安排,以及飞机、游艇等特殊资产。每一项架构均经过精心构建——确保始终与更广泛的目标及不断演变的需求保持一致。",
+        "image": "/home/slides/05-trust-corporate.webp",
+        "imageAlt": "拂晓时分漓江上的渔夫"
+      },
+      {
+        "number": "06",
+        "title": "慈善与公益",
+        "subtitle": "以目的与意向进行付出",
+        "body": "我们在塑造有意义的公益路径方面提供指导——包括捐赠策略的制定以及资助型基金会的设立。每一步都经过审慎考量,确保付出反映家族的价值观,并在时间的流转中留下持久的影响。",
+        "image": "/home/slides/06-charity-philanthropy.webp",
+        "imageAlt": "缅甸茵莱湖上飞翔的海鸥"
+      }
+    ]
   },
   "about": {
     "hero": {
       "eyebrow": "关于我们",
       "titleLine1": "对家族传承的",
-      "titleLine2": "承诺"
+      "titleLine2": "承诺",
+      "background": "/about/about-video.mp4"
     },
     "aboutPlusAdvisor": {
       "title": "关于 PLUS Advisor",
@@ -192,6 +181,7 @@
         "她近期荣获 Financial Service Review 颁发的 \"2024 亚太地区卓越财富管理服务提供商（Top Wealth Management Service Provider in APAC 2024）\"，这一殊荣不仅体现了业界的认可，更彰显了她多年来所建立的专业信誉与客户信任。\n 在 Priskilla 看来，真正的成功，并非仅以财富增长来衡量，更在于拥有一份长久而安然的内心平静。这一信念持续塑造着 PLUS Advisor 以家族为核心的服务理念，以细致入微的关怀陪伴每一个重要阶段，为家族带来持续传承、从容笃定，以及值得长久信赖的财富管理体验。"
       ],
       "recognitionHighlight": "2024 亚太地区卓越财富管理服务提供商（Top Wealth Management Service Provider in APAC 2024）",
+      "portrait": "/about/priskilla-portrait.webp",
       "portraitAlt": "Priskilla Lusina,PLUS Advisor 首席执行官兼创始人",
       "memberOfLabel": "所属会员"
     },
@@ -291,79 +281,14 @@
           "role": "客户"
         }
       ]
-    },
-    "beyondFinancialAdvice": {
-      "eyebrow": "PLUS Advisor",
-      "title": "我们的承诺",
-      "cta": "阅读更多",
-      "pillars": [
-        {
-          "number": "01",
-          "title": "独立性",
-          "lead": "无利益冲突的建议。",
-          "description": "我们不销售产品。我们的收入与所服务的家族利益一致——因此每一项建议仅以他们的长期利益为衡量。"
-        },
-        {
-          "number": "02",
-          "title": "审慎保密",
-          "lead": "每一次交流都仅留于我们之间。",
-          "description": "所服务家族的信任是我们一切工作的基石。保密被视为具有受托责任般的严肃事项。"
-        },
-        {
-          "number": "03",
-          "title": "延续性",
-          "lead": "跨越世代的稳定守护。",
-          "description": "我们的合作旨在超越单一决策、任何一位顾问或某个市场周期——在家族及其需求不断演变时,始终提供稳定的参照。"
-        },
-        {
-          "number": "04",
-          "title": "清晰度",
-          "lead": "妥善的建议,朴素地传达。",
-          "description": "复杂的架构不应遮蔽其背后的理由。我们花时间解释每一步,让家族始终掌握每一项决定的主动权。"
-        },
-        {
-          "number": "05",
-          "title": "关怀之心",
-          "lead": "超越财务数字的用心。",
-          "description": "我们深知财富承载着意义、记忆与责任。每一项建议都以更完整的图景加以塑造。"
-        }
-      ]
-    },
-    "quote": {
-      "text": "每一个家族都藏着一段值得守护的故事;我们的角色,只是用心地帮忙写下下一章。",
-      "author": "PLUS Advisor"
-    },
-    "featuredJournals": {
-      "titlePrefix": "来自我们的",
-      "titleAccent": "期刊",
-      "body": "来自我们陪伴家族过程中的观点、反思与体悟——愿以此展开关于守护与传承更广阔的对话。",
-      "cta": "查看全部",
-      "readMore": "阅读更多",
-      "items": [
-        {
-          "date": "2022年10月21日",
-          "title": "为何独立的家族办公室至关重要"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "构建代代相传的治理体系"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "长期财富背后的静默纪律"
-        },
-        {
-          "date": "2022年10月21日",
-          "title": "价值先于工具:关于架构的一些思考"
-        }
-      ]
     }
   },
   "stories": {
     "hero": {
       "eyebrow": "我们的故事",
       "titleLine1": "以恒久关怀,",
-      "titleLine2": "守护世代传承"
+      "titleLine2": "守护世代传承",
+      "background": "/stories/hero-video.mp4"
     },
     "ourStory": {
       "paragraphs": [
@@ -442,8 +367,7 @@
       "eyebrow": "家族办公室",
       "titleLine1": "跨越世代的",
       "titleLine2": "家族战略引领",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
+      "background": "/office/hero-video.mp4"
     },
     "familyOffice": {
       "title": "家族办公室",
@@ -459,11 +383,6 @@
         "这一理念贯穿于我们全面的顾问服务领域之中。 \n 在财富规划方面，我们为家族提供遗产规划相关指导，包括生前赠与、人寿保险、婚前协议安排以及遗嘱规划等，同时协助制定财富传承策略，以支持家族企业的持续发展与延续。 \n 在财富管理方面，我们提供投资策略与资产配置建议、私募股权投资考量、整合式资产报告，以及独立投资顾问服务，帮助家族以更全面的视角审视并管理其财富。\n 在税务规划方面，我们协助家族处理税务申报、不动产架构规划、国际迁移安排，以及基于双重税收协定框架下的跨境税务规划，确保财富规划能够在合规与长远目标之间取得平衡。",
         "我们亦为家族治理提供专业支持，包括协助建立家族委员会、家族宪章以及家族会议机制，以促进沟通清晰与决策有序。\n 在信托与企业架构领域，我们提供关于企业架构规划、信托管理、不动产管理、所有权结构、家族持股安排、代持架构以及特殊资产管理等方面的专业指导，协助家族建立稳健且可持续的财富结构。\n 除此之外，我们亦陪伴家族开展慈善与公益规划，包括制定捐赠策略及设立慈善基金会，确保家族所创造的影响力能够以明确的方向与长远的意义持续传承。"
       ]
-    },
-    "servicePillars": {
-      "titleLine1": "我们的服务体系",
-      "titleLine2": "",
-      "intro": "我们以清晰且严谨的方法，引导家族应对财富管理中的复杂挑战，守护当下的稳健，并确保未来传承得以延续。"
     },
     "ascent": {
       "titleLine1": "我们的前行之路,",
@@ -537,64 +456,21 @@
   "journals": {
     "hero": {
       "title": "我们的札记",
-      "body": "探索影响财富与家族未来的重要议题，汲取深思熟虑的洞察与观点。",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
+      "body": "探索影响财富与家族未来的重要议题，汲取深思熟虑的洞察与观点。"
     },
     "latestFeatured": {
       "title": "最新精选",
       "description": "精选汇聚影响财富与家族决策的重要议题，提供深度洞察与思考。 ",
-      "featured": {
-        "date": "2022年10月21日",
-        "title": "单一还是联合家族办公室?了解哪种最适合您"
-      },
       "readMore": "阅读更多"
     },
     "grid": {
       "filterLine1": "按主题或日期筛选",
       "filterLine2": "",
-      "readMore": "阅读更多",
-      "items": [
-        {
-          "date": "2022年10月21日",
-          "title": "单一还是联合家族办公室?了解哪种最适合您"
-        },
-        {
-          "date": "2022年10月23日",
-          "title": "税务审计准备:如何从容地应对税务审查"
-        },
-        {
-          "date": "2022年10月24日",
-          "title": "私募股权还是公开市场?为家族投资者找到合适的选择"
-        },
-        {
-          "date": "2022年10月25日",
-          "title": "构建代代相传的治理体系"
-        },
-        {
-          "date": "2022年10月26日",
-          "title": "长期财富背后的静默纪律"
-        },
-        {
-          "date": "2022年10月27日",
-          "title": "价值先于工具:关于架构的一些思考"
-        },
-        {
-          "date": "2022年10月28日",
-          "title": "为何独立的家族办公室至关重要"
-        },
-        {
-          "date": "2022年10月29日",
-          "title": "跨境遗产规划:一种审慎的方式"
-        },
-        {
-          "date": "2022年10月30日",
-          "title": "有目的的慈善:长存的基金会"
-        }
-      ]
+      "readMore": "阅读更多"
     }
   },
   "market": {
+    "visible": true,
     "eyebrow": "市场洞察",
     "titleLine1": "瞬息万变的市场中",
     "titleLine2": "保持审慎洞察",
@@ -616,7 +492,17 @@
       "equity": "股票投资洞察",
       "macroPulse": "宏观脉动"
     },
-    "description": "深入回顾本月经济走势、跨资产表现，以及影响投资环境的资本市场主题。报告亦涵盖对市场风险与机遇的分析，为长期投资者提供更具价值的洞察与参考。",
+    "description": {
+      "daily": "A concise daily recap of market moves, key headlines, and short-term signals to keep decision-makers oriented from open to close.",
+      "weekly": "A weekly digest of shifts across asset classes and the themes shaping the days ahead — designed for a steady, disciplined view.",
+      "monthly": "深入回顾本月经济走势、跨资产表现，以及影响投资环境的资本市场主题。报告亦涵盖对市场风险与机遇的分析，为长期投资者提供更具价值的洞察与参考。",
+      "semester": "A six-month review of macro themes, portfolio positioning, and structural shifts — providing context for mid-cycle decisions.",
+      "yearly": "An annual outlook covering major trends, portfolio insights, and long-term reflections that shape planning for the year ahead.",
+      "mutualFunds": "Commentary on mutual fund performance, positioning, and manager insights across strategies and geographies.",
+      "fixedIncome": "A focused view on interest rates, credit spreads, and fixed income opportunities across duration and credit quality.",
+      "equity": "Equity market commentary covering sector performance, valuation signals, and thematic ideas for long-term investors.",
+      "macroPulse": "A snapshot of the macroeconomic backdrop — growth, inflation, policy, and liquidity — framing the investment environment."
+    },
     "days": [
       "周一",
       "周二",
@@ -673,17 +559,6 @@
     "downloadPdf": "下载 PDF"
   },
   "news": {
-    "hero": {
-      "eyebrow": "单一 / 联合 家族办公室",
-      "titleLine1": "单一 vs 联合家族办公室:",
-      "titleLine2": "哪种适合您?",
-      "whistleLine1": "WHISTLE",
-      "whistleLine2": "BLOWING"
-    },
-    "backLabel": "返回期刊",
-    "eyebrow": "单一 / 联合 家族办公室",
-    "title": "单一 vs 联合家族办公室:哪种适合您?",
-    "heroImage": "/journals/latest.png",
     "sidebar": {
       "date": "2025年10月22日",
       "author": "作者:Sindy Larisa",
@@ -693,49 +568,12 @@
       "copyLabel": "复制链接",
       "copiedLabel": "链接已复制",
       "emailLabel": "通过邮件分享"
-    },
-    "body": [
-      {
-        "type": "paragraph",
-        "text": "随着印度尼西亚家族财富持续增长,越来越多的家族意识到需要以专业的方式管理资产、企业、治理与传承。家族办公室提供的整合服务,能在一个屋檐下应对财务与跨代的诸多需求。"
-      },
-      {
-        "type": "paragraph",
-        "text": "然而,并非所有家族办公室都相同。整体而言,主要有两种模式:单一家族办公室(SFO)和联合家族办公室(MFO)。二者各有其优势、架构与方式——因此值得理解哪一种最契合您家族的情况。"
-      },
-      {
-        "type": "heading",
-        "text": "什么是单一家族办公室(SFO)?"
-      },
-      {
-        "type": "paragraph",
-        "text": "单一家族办公室是一种专属架构,仅服务于一个家族。通常由财富复杂度高、资产规模较大且对治理有较高要求的家族设立。"
-      },
-      {
-        "type": "subheading",
-        "text": "单一家族办公室的特点:"
-      },
-      {
-        "type": "list",
-        "items": [
-          "100% 专注于单一家族。",
-          "内部团队与专属服务。",
-          "在制定策略上拥有较大的自由度。",
-          "对每一项决策拥有完全的掌控权。"
-        ]
-      },
-      {
-        "type": "subheading",
-        "text": "单一家族办公室的优势:"
-      },
-      {
-        "type": "list",
-        "items": [
-          "最大程度的隐私——数据、架构与决策完全留在家族内部。",
-          "高度个性化的服务——所有内容均围绕家族的目标、价值观与偏好而设计。",
-          "完全的掌控——家族对策略与执行拥有直接的决定权。"
-        ]
-      }
-    ]
+    }
+  },
+  "whistleBlower": {
+    "visible": true,
+    "url": "https://plusadvisor.co.id/whistle-blowing",
+    "line1": "WHISTLE",
+    "line2": "BLOWING"
   }
 }
