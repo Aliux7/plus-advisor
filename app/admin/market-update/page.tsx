@@ -272,6 +272,7 @@ function InlineAddEntry({
       await createMarketEntry({
         categoryKey,
         label: label.trim(),
+        translations: {},
         pdfUrl,
         pdfPath,
         order: nextOrder,

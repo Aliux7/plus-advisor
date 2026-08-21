@@ -18,11 +18,24 @@ export const JOURNAL_COLLECTION = "journals";
 
 export type JournalStatus = "draft" | "published" | "archived";
 
+export type JournalLocale = "en" | "id" | "zh";
+export const JOURNAL_LOCALES: JournalLocale[] = ["en", "id", "zh"];
+
 export type JournalSeo = {
   title: string;
   description: string;
   keywords: string[];
 };
+
+export type JournalLocaleFields = {
+  title: string;
+  content: string;
+  seo: JournalSeo;
+};
+
+export type JournalTranslations = Partial<
+  Record<Exclude<JournalLocale, "en">, JournalLocaleFields>
+>;
 
 export type JournalPost = {
   id: string;
@@ -36,6 +49,7 @@ export type JournalPost = {
   readingTimeMinutes: number | null;
   content: string;
   seo: JournalSeo;
+  translations: JournalTranslations;
   views: number;
   createdAt: Timestamp | null;
   updatedAt: Timestamp | null;
@@ -57,7 +71,43 @@ export const EMPTY_JOURNAL: JournalDraft = {
   readingTimeMinutes: null,
   content: "",
   seo: { title: "", description: "", keywords: [] },
+  translations: {},
 };
+
+export const EMPTY_LOCALE_FIELDS: JournalLocaleFields = {
+  title: "",
+  content: "",
+  seo: { title: "", description: "", keywords: [] },
+};
+
+export function getLocaleFields(
+  draft: Pick<JournalDraft, "title" | "content" | "seo" | "translations">,
+  locale: JournalLocale,
+): JournalLocaleFields {
+  if (locale === "en") {
+    return { title: draft.title, content: draft.content, seo: draft.seo };
+  }
+  return draft.translations[locale] ?? { ...EMPTY_LOCALE_FIELDS };
+}
+
+export function setLocaleFields(
+  draft: JournalDraft,
+  locale: JournalLocale,
+  fields: JournalLocaleFields,
+): JournalDraft {
+  if (locale === "en") {
+    return {
+      ...draft,
+      title: fields.title,
+      content: fields.content,
+      seo: fields.seo,
+    };
+  }
+  return {
+    ...draft,
+    translations: { ...draft.translations, [locale]: fields },
+  };
+}
 
 export function slugify(input: string): string {
   return input
@@ -78,8 +128,32 @@ export function estimateReadingMinutes(html: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
+function normalizeSeo(input: unknown): JournalSeo {
+  const seo = (input as Partial<JournalSeo> | undefined) ?? {};
+  return {
+    title: seo.title ?? "",
+    description: seo.description ?? "",
+    keywords: Array.isArray(seo.keywords) ? seo.keywords : [],
+  };
+}
+
+function normalizeTranslations(input: unknown): JournalTranslations {
+  if (!input || typeof input !== "object") return {};
+  const out: JournalTranslations = {};
+  for (const key of ["id", "zh"] as const) {
+    const raw = (input as Record<string, unknown>)[key];
+    if (!raw || typeof raw !== "object") continue;
+    const t = raw as Record<string, unknown>;
+    out[key] = {
+      title: (t.title as string) ?? "",
+      content: (t.content as string) ?? "",
+      seo: normalizeSeo(t.seo),
+    };
+  }
+  return out;
+}
+
 function mapDoc(id: string, data: Record<string, unknown>): JournalPost {
-  const seo = (data.seo as Partial<JournalSeo> | undefined) ?? {};
   return {
     id,
     title: (data.title as string) ?? "",
@@ -94,11 +168,8 @@ function mapDoc(id: string, data: Record<string, unknown>): JournalPost {
         ? (data.readingTimeMinutes as number)
         : null,
     content: (data.content as string) ?? "",
-    seo: {
-      title: seo.title ?? "",
-      description: seo.description ?? "",
-      keywords: Array.isArray(seo.keywords) ? seo.keywords : [],
-    },
+    seo: normalizeSeo(data.seo),
+    translations: normalizeTranslations(data.translations),
     views: typeof data.views === "number" ? (data.views as number) : 0,
     createdAt: (data.createdAt as Timestamp) ?? null,
     updatedAt: (data.updatedAt as Timestamp) ?? null,

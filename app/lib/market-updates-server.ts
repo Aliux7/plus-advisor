@@ -9,6 +9,7 @@ import {
   getFirestore,
   type Firestore,
 } from "firebase/firestore";
+import type { Locale } from "../[lang]/dictionaries";
 
 export const PERIOD_CATEGORY_KEYS = [
   "daily",
@@ -32,10 +33,16 @@ export type CategoryKey = PeriodCategoryKey | InsightCategoryKey;
 export const isPeriodCategory = (key: CategoryKey): key is PeriodCategoryKey =>
   (PERIOD_CATEGORY_KEYS as readonly string[]).includes(key);
 
+export type MarketEntryTranslations = {
+  id?: { label: string };
+  zh?: { label: string };
+};
+
 export type MarketEntry = {
   id: string;
   categoryKey: CategoryKey;
   label: string;
+  translations: MarketEntryTranslations;
   pdfUrl: string;
   order: number;
 };
@@ -57,24 +64,44 @@ function getDb(): Firestore {
   return getFirestore(getApp());
 }
 
+function normalizeTranslations(input: unknown): MarketEntryTranslations {
+  if (!input || typeof input !== "object") return {};
+  const out: MarketEntryTranslations = {};
+  for (const key of ["id", "zh"] as const) {
+    const raw = (input as Record<string, unknown>)[key];
+    if (!raw || typeof raw !== "object") continue;
+    const label = (raw as Record<string, unknown>).label;
+    if (typeof label === "string") out[key] = { label };
+  }
+  return out;
+}
+
 function mapDoc(id: string, data: Record<string, unknown>): MarketEntry {
   return {
     id,
     categoryKey: (data.categoryKey as CategoryKey) ?? "monthly",
     label: (data.label as string) ?? "",
+    translations: normalizeTranslations(data.translations),
     pdfUrl: (data.pdfUrl as string) ?? "",
     order: typeof data.order === "number" ? (data.order as number) : 0,
   };
 }
 
+function pickLabel(entry: MarketEntry, lang: Locale): string {
+  if (lang === "en") return entry.label;
+  const translated = entry.translations[lang]?.label?.trim();
+  return translated || entry.label;
+}
+
 export const getMarketEntries = cache(
-  async (): Promise<Record<CategoryKey, MarketEntry[]>> => {
+  async (lang: Locale): Promise<Record<CategoryKey, MarketEntry[]>> => {
     const snap = await getDocs(collection(getDb(), "market-updates"));
     const grouped: Record<string, MarketEntry[]> = {};
     for (const d of snap.docs) {
       const entry = mapDoc(d.id, d.data());
       if (!entry.pdfUrl) continue;
-      (grouped[entry.categoryKey] ||= []).push(entry);
+      const localized: MarketEntry = { ...entry, label: pickLabel(entry, lang) };
+      (grouped[entry.categoryKey] ||= []).push(localized);
     }
     for (const key of Object.keys(grouped)) {
       grouped[key].sort((a, b) => a.order - b.order);

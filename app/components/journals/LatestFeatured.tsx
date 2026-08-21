@@ -8,7 +8,7 @@ import SlidingDivider from "../SlidingDivider";
 type Props = { dict: LatestFeaturedDict; lang: Locale };
 
 export default async function LatestFeatured({ dict, lang }: Props) {
-  const latest = await getHeroPost();
+  const latest = await getHeroPost(lang);
   if (!latest) return null;
 
   return (

@@ -1,7 +1,9 @@
 {
   "meta": {
     "title": "PLUS ADVISOR",
-    "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, preserving, protecting, and sustaining their legacy."
+    "description": "PLUS Advisor is a family office in Indonesia, dedicated to guiding families in planning, preserving, protecting, and sustaining their legacy.",
+    "keywords": "family office Indonesia, perencanaan warisan, wealth planning, penasihat keuangan, PLUS Advisor, Jakarta",
+    "ogImage": "/shared/blue-mountain-sand.webp"
   },
   "header": {
     "nav": {
@@ -34,6 +36,12 @@
     "disclaimer": "Informasi ini bersifat edukasi. Keputusan investasi sepenuhnya di tangan investor."
   },
   "home": {
+    "meta": {
+      "title": "Family Office di Indonesia — PLUS Advisor",
+      "description": "PLUS Advisor adalah family office di Indonesia yang membimbing keluarga dalam merencanakan, menyusun, melindungi, dan menjaga keberlanjutan warisan lintas generasi.",
+      "keywords": "family office, perencanaan kekayaan, warisan, PLUS Advisor, Indonesia",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "hero": {
       "eyebrow": "PLUS Advisor",
       "titleLine1": "Menjaga Nilai Berkelanjutan,",
@@ -157,6 +165,12 @@
     ]
   },
   "about": {
+    "meta": {
+      "title": "Tentang Kami — PLUS Advisor Family Office",
+      "description": "Kenali kisah, nilai, dan tim di balik PLUS Advisor — family office swasta yang melayani keluarga di Indonesia.",
+      "keywords": "tentang PLUS Advisor, tim family office, penasihat kekayaan Indonesia",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "hero": {
       "eyebrow": "Tentang Kami",
       "titleLine1": "Pendamping Keluarga dalam",
@@ -286,6 +300,12 @@
     }
   },
   "stories": {
+    "meta": {
+      "title": "Kisah, Visi & Nilai Kami — PLUS Advisor",
+      "description": "Kisah, visi, misi, dan nilai yang memandu PLUS Advisor sebagai family office di Indonesia.",
+      "keywords": "kisah PLUS Advisor, visi, misi, nilai",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "hero": {
       "eyebrow": "Kisah Kami",
       "titleLine1": "Kepedulian Tanpa Batas untuk",
@@ -365,6 +385,12 @@
     }
   },
   "office": {
+    "meta": {
+      "title": "Layanan Family Office — PLUS Advisor",
+      "description": "Pilar-pilar family office PLUS Advisor: perencanaan kekayaan yang holistik, perlindungan, dan keberlanjutan warisan.",
+      "keywords": "layanan family office, manajemen kekayaan, perencanaan warisan",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "hero": {
       "eyebrow": "Family Office",
       "titleLine1": "Pendampingan Strategis bagi",
@@ -456,6 +482,12 @@
     }
   },
   "journals": {
+    "meta": {
+      "title": "Jurnal & Wawasan — PLUS Advisor",
+      "description": "Baca jurnal dan wawasan terbaru dari PLUS Advisor tentang perencanaan kekayaan, warisan keluarga, dan pasar Indonesia.",
+      "keywords": "wawasan kekayaan, jurnal family office, artikel PLUS Advisor, pasar Indonesia",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "hero": {
       "title": "Jurnal Kami",
       "body": "Temukan perspektif yang penuh pertimbangan untuk setiap keputusan penting yang berdampak pada apa yang Anda miliki dan masa depan keluarga Anda."
@@ -472,6 +504,12 @@
     }
   },
   "market": {
+    "meta": {
+      "title": "Pembaruan Pasar — PLUS Advisor",
+      "description": "Pembaruan pasar dan wawasan berkala dari PLUS Advisor tentang pasar keuangan Indonesia, reksa dana, pendapatan tetap, ekuitas, dan tren makro.",
+      "keywords": "pembaruan pasar Indonesia, reksa dana, wawasan makro, pendapatan tetap, PLUS Advisor",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "visible": true,
     "eyebrow": "Market Update",
     "titleLine1": "Insight yang terukur di tengah",
@@ -561,6 +599,12 @@
     "downloadPdf": "Download PDF"
   },
   "contact": {
+    "meta": {
+      "title": "Hubungi Kami — PLUS Advisor",
+      "description": "Hubungi PLUS Advisor. Bicara dengan penasihat family office di Indonesia dan mulai percakapan yang rahasia.",
+      "keywords": "hubungi PLUS Advisor, kontak family office Indonesia",
+      "ogImage": "/shared/blue-mountain-sand.webp"
+    },
     "eyebrow": "Hubungi Kami",
     "title": "Terhubung dengan Advisor",
     "illustration": "/contact/asset.webp",
@@ -577,7 +621,10 @@
       "phonePlaceholder": "Nomor",
       "contactMethod": "Metode Kontak Pilihan*",
       "contactMethodPlaceholder": "Pilih",
-      "contactMethodOptions": ["Email", "Telepon"],
+      "contactMethodOptions": [
+        "Email",
+        "Telepon"
+      ],
       "residences": "Tempat Tinggal*",
       "residencesPlaceholder": "Jakarta",
       "assets": "Untuk membantu kami menyesuaikan pendekatan, mohon bagikan perkiraan kisaran aset yang sedang Anda pertimbangkan untuk diinvestasikan.",

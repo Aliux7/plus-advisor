@@ -46,7 +46,10 @@ export default async function JournalsGrid({
   page = 1,
   sort = DEFAULT_SORT,
 }: Props) {
-  const [everyPost, hero] = await Promise.all([getAllPosts(), getHeroPost()]);
+  const [everyPost, hero] = await Promise.all([
+    getAllPosts(lang),
+    getHeroPost(lang),
+  ]);
   const withoutHero = hero ? everyPost.filter((p) => p.id !== hero.id) : everyPost;
   const allPosts = sortPosts(withoutHero, sort);
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));

@@ -60,10 +60,18 @@ export function isPeriodCategory(key: CategoryKey): key is PeriodCategoryKey {
   return (PERIOD_CATEGORY_KEYS as readonly string[]).includes(key);
 }
 
+export type MarketUpdateLocale = "en" | "id" | "zh";
+export const MARKET_UPDATE_LOCALES: MarketUpdateLocale[] = ["en", "id", "zh"];
+
+export type MarketUpdateTranslations = Partial<
+  Record<Exclude<MarketUpdateLocale, "en">, { label: string }>
+>;
+
 export type MarketUpdateEntry = {
   id: string;
   categoryKey: CategoryKey;
   label: string;
+  translations: MarketUpdateTranslations;
   pdfUrl: string;
   pdfPath: string;
   order: number;
@@ -79,16 +87,50 @@ export type MarketUpdateDraft = Omit<
 export const EMPTY_MARKET_UPDATE: MarketUpdateDraft = {
   categoryKey: "monthly",
   label: "",
+  translations: {},
   pdfUrl: "",
   pdfPath: "",
   order: 0,
 };
+
+export function getMarketLabelFor(
+  draft: Pick<MarketUpdateDraft, "label" | "translations">,
+  locale: MarketUpdateLocale,
+): string {
+  if (locale === "en") return draft.label;
+  return draft.translations[locale]?.label ?? "";
+}
+
+export function setMarketLabelFor(
+  draft: MarketUpdateDraft,
+  locale: MarketUpdateLocale,
+  label: string,
+): MarketUpdateDraft {
+  if (locale === "en") return { ...draft, label };
+  return {
+    ...draft,
+    translations: { ...draft.translations, [locale]: { label } },
+  };
+}
+
+function normalizeTranslations(input: unknown): MarketUpdateTranslations {
+  if (!input || typeof input !== "object") return {};
+  const out: MarketUpdateTranslations = {};
+  for (const key of ["id", "zh"] as const) {
+    const raw = (input as Record<string, unknown>)[key];
+    if (!raw || typeof raw !== "object") continue;
+    const label = (raw as Record<string, unknown>).label;
+    if (typeof label === "string") out[key] = { label };
+  }
+  return out;
+}
 
 function mapDoc(id: string, data: Record<string, unknown>): MarketUpdateEntry {
   return {
     id,
     categoryKey: (data.categoryKey as CategoryKey) ?? "monthly",
     label: (data.label as string) ?? "",
+    translations: normalizeTranslations(data.translations),
     pdfUrl: (data.pdfUrl as string) ?? "",
     pdfPath: (data.pdfPath as string) ?? "",
     order: typeof data.order === "number" ? (data.order as number) : 0,

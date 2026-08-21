@@ -8,10 +8,14 @@ import {
   CATEGORY_LABELS,
   EMPTY_MARKET_UPDATE,
   MARKET_PDF_FOLDER,
+  MARKET_UPDATE_LOCALES,
+  getMarketLabelFor,
   isPeriodCategory,
+  setMarketLabelFor,
   type CategoryKey,
   type MarketUpdateDraft,
   type MarketUpdateEntry,
+  type MarketUpdateLocale,
 } from "../lib/market-updates";
 import { deleteStorageObject, uploadPdf } from "../lib/storage";
 
@@ -21,11 +25,21 @@ type Props = {
   onSubmit: (draft: MarketUpdateDraft) => Promise<void>;
 };
 
+const LOCALE_LABELS: Record<MarketUpdateLocale, string> = {
+  en: "English",
+  id: "Indonesian",
+  zh: "中文",
+};
+
 function toDraft(initial?: MarketUpdateEntry): MarketUpdateDraft {
-  if (!initial) return { ...EMPTY_MARKET_UPDATE };
+  if (!initial) return { ...EMPTY_MARKET_UPDATE, translations: {} };
   return {
     categoryKey: initial.categoryKey,
     label: initial.label,
+    translations: {
+      ...(initial.translations.id ? { id: { ...initial.translations.id } } : {}),
+      ...(initial.translations.zh ? { zh: { ...initial.translations.zh } } : {}),
+    },
     pdfUrl: initial.pdfUrl,
     pdfPath: initial.pdfPath,
     order: initial.order,
@@ -35,8 +49,10 @@ function toDraft(initial?: MarketUpdateEntry): MarketUpdateDraft {
 export default function MarketUpdateForm({ mode, initial, onSubmit }: Props) {
   const router = useRouter();
   const [draft, setDraft] = useState<MarketUpdateDraft>(() => toDraft(initial));
+  const [labelLocale, setLabelLocale] = useState<MarketUpdateLocale>("en");
   const [uploading, setUploading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [translating, setTranslating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -46,6 +62,41 @@ export default function MarketUpdateForm({ mode, initial, onSubmit }: Props) {
     key: K,
     value: MarketUpdateDraft[K],
   ) => setDraft((d) => ({ ...d, [key]: value }));
+
+  const updateLabel = (label: string) =>
+    setDraft((d) => setMarketLabelFor(d, labelLocale, label));
+
+  const handleTranslateFromEn = async () => {
+    if (labelLocale === "en") return;
+    const en = draft.label.trim();
+    if (!en) {
+      setError("Fill in the English label first.");
+      return;
+    }
+    setError(null);
+    setTranslating(true);
+    try {
+      const res = await fetch("/api/translate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: en,
+          target: labelLocale,
+          source: "en",
+          format: "plain",
+        }),
+      });
+      const data = (await res.json()) as { translated?: string; error?: string };
+      if (!res.ok || typeof data.translated !== "string") {
+        throw new Error(data.error || `Translate failed (${res.status})`);
+      }
+      setDraft((d) => setMarketLabelFor(d, labelLocale, data.translated!));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Translation failed.");
+    } finally {
+      setTranslating(false);
+    }
+  };
 
   const handlePdfUpload = async (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -73,7 +124,8 @@ export default function MarketUpdateForm({ mode, initial, onSubmit }: Props) {
     e.preventDefault();
     setError(null);
     if (isPeriod && !draft.label.trim()) {
-      setError("Label is required for period categories.");
+      setError("English label is required for period categories.");
+      setLabelLocale("en");
       return;
     }
     if (!draft.pdfUrl) {
@@ -82,9 +134,16 @@ export default function MarketUpdateForm({ mode, initial, onSubmit }: Props) {
     }
     setSubmitting(true);
     try {
+      // Trim translations and drop empty locales so Firestore stays clean.
+      const cleanTranslations: MarketUpdateDraft["translations"] = {};
+      for (const loc of ["id", "zh"] as const) {
+        const t = draft.translations[loc]?.label.trim();
+        if (t) cleanTranslations[loc] = { label: t };
+      }
       await onSubmit({
         ...draft,
         label: draft.label.trim(),
+        translations: cleanTranslations,
       });
       router.push("/admin/market-update");
       router.refresh();
@@ -140,16 +199,75 @@ export default function MarketUpdateForm({ mode, initial, onSubmit }: Props) {
       </Field>
 
       {isPeriod && (
-        <Field label="Label *">
-          <Input
-            value={draft.label}
-            onChange={(v) => update("label", v)}
-            placeholder={placeholderForCategory(draft.categoryKey)}
-          />
-          <p className="mt-1 text-xs text-neutral-500">
-            Shown as a chip on the client under {CATEGORY_LABELS[draft.categoryKey]}.
-          </p>
-        </Field>
+        <div className="rounded-lg border border-neutral-200 bg-white">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-200 px-4 py-3">
+            <div role="tablist" aria-label="Label language" className="flex gap-1">
+              {MARKET_UPDATE_LOCALES.map((loc) => {
+                const isActive = loc === labelLocale;
+                const hasContent =
+                  loc === "en"
+                    ? Boolean(draft.label.trim())
+                    : Boolean(draft.translations[loc]?.label.trim());
+                return (
+                  <button
+                    key={loc}
+                    role="tab"
+                    aria-selected={isActive}
+                    type="button"
+                    onClick={() => setLabelLocale(loc)}
+                    className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
+                      isActive
+                        ? "bg-navy text-white"
+                        : "bg-white text-navy hover:bg-neutral-100"
+                    }`}
+                  >
+                    {LOCALE_LABELS[loc]}
+                    {!hasContent && loc !== "en" && (
+                      <span className="ml-1.5 text-[10px] uppercase opacity-60">
+                        empty
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+            {labelLocale !== "en" && (
+              <button
+                type="button"
+                onClick={() => void handleTranslateFromEn()}
+                disabled={translating || !draft.label.trim()}
+                className="rounded-md border border-navy/30 bg-white px-3 py-1.5 text-xs font-medium text-navy hover:bg-navy/5 disabled:opacity-40"
+                title={
+                  draft.label.trim()
+                    ? "Auto-fill this tab from English"
+                    : "Fill in the English tab first"
+                }
+              >
+                {translating ? "Translating…" : "Translate from English"}
+              </button>
+            )}
+          </div>
+          <div className="p-4">
+            <Field
+              label={
+                labelLocale === "en"
+                  ? "Label *"
+                  : `Label (${LOCALE_LABELS[labelLocale]})`
+              }
+            >
+              <Input
+                value={getMarketLabelFor(draft, labelLocale)}
+                onChange={(v) => updateLabel(v)}
+                placeholder={placeholderForCategory(draft.categoryKey)}
+              />
+              <p className="mt-1 text-xs text-neutral-500">
+                Shown as a chip on the client under{" "}
+                {CATEGORY_LABELS[draft.categoryKey]}. Falls back to English if a
+                locale is empty.
+              </p>
+            </Field>
+          </div>
+        </div>
       )}
 
       <Field label="PDF *">

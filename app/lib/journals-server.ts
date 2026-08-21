@@ -13,6 +13,18 @@ import {
   type Firestore,
 } from "firebase/firestore";
 
+export type FirestoreJournalSeo = {
+  title: string;
+  description: string;
+  keywords: string[];
+};
+
+export type FirestoreJournalLocale = {
+  title: string;
+  content: string;
+  seo: FirestoreJournalSeo;
+};
+
 export type FirestoreJournal = {
   id: string;
   title: string;
@@ -25,7 +37,11 @@ export type FirestoreJournal = {
   coverImage: string;
   readingTimeMinutes: number | null;
   content: string;
-  seo: { title: string; description: string; keywords: string[] };
+  seo: FirestoreJournalSeo;
+  translations: {
+    id?: FirestoreJournalLocale;
+    zh?: FirestoreJournalLocale;
+  };
 };
 
 const firebaseConfig = {
@@ -45,8 +61,34 @@ function getDb(): Firestore {
   return getFirestore(getApp());
 }
 
+function normalizeSeo(input: unknown): FirestoreJournalSeo {
+  const seo = (input as Partial<FirestoreJournalSeo> | undefined) ?? {};
+  return {
+    title: seo.title ?? "",
+    description: seo.description ?? "",
+    keywords: Array.isArray(seo.keywords) ? seo.keywords : [],
+  };
+}
+
+function normalizeTranslations(
+  input: unknown,
+): FirestoreJournal["translations"] {
+  if (!input || typeof input !== "object") return {};
+  const out: FirestoreJournal["translations"] = {};
+  for (const key of ["id", "zh"] as const) {
+    const raw = (input as Record<string, unknown>)[key];
+    if (!raw || typeof raw !== "object") continue;
+    const t = raw as Record<string, unknown>;
+    out[key] = {
+      title: (t.title as string) ?? "",
+      content: (t.content as string) ?? "",
+      seo: normalizeSeo(t.seo),
+    };
+  }
+  return out;
+}
+
 function mapDoc(id: string, data: Record<string, unknown>): FirestoreJournal {
-  const seo = (data.seo as Partial<FirestoreJournal["seo"]> | undefined) ?? {};
   return {
     id,
     title: (data.title as string) ?? "",
@@ -68,11 +110,8 @@ function mapDoc(id: string, data: Record<string, unknown>): FirestoreJournal {
         ? (data.readingTimeMinutes as number)
         : null,
     content: (data.content as string) ?? "",
-    seo: {
-      title: seo.title ?? "",
-      description: seo.description ?? "",
-      keywords: Array.isArray(seo.keywords) ? seo.keywords : [],
-    },
+    seo: normalizeSeo(data.seo),
+    translations: normalizeTranslations(data.translations),
   };
 }
 

@@ -12,7 +12,17 @@ import {
 import LocomotiveScrollProvider from "../components/LocomotiveScrollProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import JsonLd from "../components/JsonLd";
 import { getSearchIndex } from "../lib/posts";
+import {
+  absoluteUrl,
+  buildLocaleAlternates,
+  buildOpenGraph,
+  buildOrganizationLd,
+  buildTwitter,
+  buildWebsiteLd,
+  getSiteUrl,
+} from "../lib/seo";
 
 // Font variables are intentionally opaque (single letters) so devtools /
 // WhatFont-style inspectors don't leak the underlying typeface identities.
@@ -119,9 +129,54 @@ export async function generateMetadata({
   const { lang } = await params;
   const locale = hasLocale(lang) ? lang : DEFAULT_LOCALE;
   const dict = await getDictionary(locale);
+  const title = dict.meta.title;
+  const description = dict.meta.description;
+  const ogImage = dict.meta.ogImage || "/shared/blue-mountain-sand.webp";
   return {
-    title: dict.meta.title,
-    description: dict.meta.description,
+    metadataBase: new URL(getSiteUrl()),
+    title: {
+      default: title,
+      template: `%s — ${title}`,
+    },
+    description,
+    keywords: dict.meta.keywords,
+    applicationName: "PLUS Advisor",
+    generator: "Next.js",
+    authors: [{ name: "PLUS Advisor" }],
+    creator: "PLUS Advisor",
+    publisher: "PLUS Advisor",
+    formatDetection: { email: false, address: false, telephone: false },
+    icons: {
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+      ],
+      apple: [{ url: "/icon.svg" }],
+      shortcut: ["/icon.svg"],
+    },
+    alternates: buildLocaleAlternates("", locale),
+    openGraph: buildOpenGraph({
+      title,
+      description,
+      image: ogImage,
+      path: "",
+      locale,
+      type: "website",
+    }),
+    twitter: buildTwitter({ title, description, image: ogImage }),
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+    other: {
+      "og:image:secure_url": absoluteUrl(ogImage),
+    },
   };
 }
 
@@ -132,7 +187,7 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const searchIndex = await getSearchIndex();
+  const searchIndex = await getSearchIndex(lang);
 
   return (
     <html
@@ -140,6 +195,8 @@ export default async function LangLayout({
       className={`${fontA.variable} ${fontB.variable} ${fontC.variable} ${fontD.variable} ${fontE.variable} ${fontF.variable} ${fontG.variable} ${fontH.variable} ${fontI.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={buildOrganizationLd()} />
+        <JsonLd data={buildWebsiteLd()} />
         <LocomotiveScrollProvider>
           <div id="top" className="flex flex-1 flex-col overflow-x-clip">
             <Header

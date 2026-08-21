@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "../../components/about/Hero";
 import AboutPlusAdvisor from "../../components/about/AboutPlusAdvisor";
@@ -9,6 +10,23 @@ import StarValue from "../../components/about/StarValue";
 import IntegrityCompliance from "../../components/about/IntegrityCompliance";
 import WhistleBlower from "../../components/WhistleBlower";
 import { getDictionary, hasLocale } from "../dictionaries";
+import { buildPageMetadata } from "../../lib/seo";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/about">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const { about } = await getDictionary(lang);
+  return buildPageMetadata({
+    locale: lang,
+    path: "/about",
+    title: about.meta.title,
+    description: about.meta.description,
+    keywords: about.meta.keywords,
+    ogImage: about.meta.ogImage,
+  });
+}
 
 export default async function About({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;

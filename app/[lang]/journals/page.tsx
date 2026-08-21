@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "../../components/journals/Hero";
 import LatestFeatured from "../../components/journals/LatestFeatured";
@@ -5,6 +6,23 @@ import JournalsGrid from "../../components/journals/JournalsGrid";
 import { DEFAULT_SORT, isSortKey } from "../../components/journals/journalSort";
 import WhistleBlower from "../../components/WhistleBlower";
 import { getDictionary, hasLocale } from "../dictionaries";
+import { buildPageMetadata } from "../../lib/seo";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/journals">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  const { journals } = await getDictionary(lang);
+  return buildPageMetadata({
+    locale: lang,
+    path: "/journals",
+    title: journals.meta.title,
+    description: journals.meta.description,
+    keywords: journals.meta.keywords,
+    ogImage: journals.meta.ogImage,
+  });
+}
 
 export default async function Journals({
   params,

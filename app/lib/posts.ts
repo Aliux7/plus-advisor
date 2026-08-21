@@ -5,6 +5,7 @@ import {
   getPublishedJournalById,
   getPublishedJournals,
   type FirestoreJournal,
+  type FirestoreJournalLocale,
 } from "./journals-server";
 
 export type BlogPost = {
@@ -36,10 +37,41 @@ function stripHtml(html: string): string {
     .trim();
 }
 
-function toBlogPost(journal: FirestoreJournal): BlogPost {
-  const text = stripHtml(journal.content);
+function pickLocale(
+  journal: FirestoreJournal,
+  lang: Locale,
+): FirestoreJournalLocale {
+  const en: FirestoreJournalLocale = {
+    title: journal.title,
+    content: journal.content,
+    seo: journal.seo,
+  };
+  if (lang === "en") return en;
+  const translation = journal.translations[lang];
+  // Fall back to EN when the locale has no title AND no content.
+  if (!translation) return en;
+  const hasTitle = translation.title.trim();
+  const hasContent = translation.content.trim();
+  if (!hasTitle && !hasContent) return en;
+  return {
+    title: hasTitle ? translation.title : journal.title,
+    content: hasContent ? translation.content : journal.content,
+    seo: {
+      title: translation.seo.title || journal.seo.title,
+      description: translation.seo.description || journal.seo.description,
+      keywords:
+        translation.seo.keywords.length > 0
+          ? translation.seo.keywords
+          : journal.seo.keywords,
+    },
+  };
+}
+
+function toBlogPost(journal: FirestoreJournal, lang: Locale): BlogPost {
+  const localized = pickLocale(journal, lang);
+  const text = stripHtml(localized.content);
   const words = text ? text.split(" ").length : 0;
-  const excerpt = journal.seo.description || text.slice(0, 200);
+  const excerpt = localized.seo.description || text.slice(0, 200);
   const readingMinutes =
     journal.readingTimeMinutes ?? Math.max(1, Math.round(words / 200));
   const dateIso = (journal.publishedAt ?? journal.updatedAt ?? new Date())
@@ -48,7 +80,7 @@ function toBlogPost(journal: FirestoreJournal): BlogPost {
     id: journal.id,
     url: `/journals/${journal.slug || journal.id}`,
     slug: journal.slug || journal.id,
-    title: journal.title,
+    title: localized.title,
     date_published: dateIso,
     date_modified: (journal.updatedAt ?? journal.publishedAt ?? new Date())
       .toISOString(),
@@ -56,43 +88,50 @@ function toBlogPost(journal: FirestoreJournal): BlogPost {
     excerpt,
     featured_image: journal.coverImage,
     word_count: words,
-    content_html: journal.content,
+    content_html: localized.content,
     content_text: text,
     featured: journal.featured,
     reading_minutes: readingMinutes,
   };
 }
 
-export const getAllPosts = cache(async (): Promise<BlogPost[]> => {
+export const getAllPosts = cache(async (lang: Locale): Promise<BlogPost[]> => {
   const journals = await getPublishedJournals();
-  return journals.map(toBlogPost);
+  return journals.map((j) => toBlogPost(j, lang));
 });
 
 // Hero post = latest featured post; if none are featured, the latest post overall.
 // getAllPosts is already sorted publishedAt desc, so .find() returns the latest featured.
-export const getHeroPost = cache(async (): Promise<BlogPost | undefined> => {
-  const posts = await getAllPosts();
-  return posts.find((p) => p.featured) ?? posts[0];
-});
+export const getHeroPost = cache(
+  async (lang: Locale): Promise<BlogPost | undefined> => {
+    const posts = await getAllPosts(lang);
+    return posts.find((p) => p.featured) ?? posts[0];
+  },
+);
 
 export type SearchablePost = Pick<
   BlogPost,
   "id" | "slug" | "title" | "featured_image"
 >;
 
-export const getSearchIndex = cache(async (): Promise<SearchablePost[]> => {
-  const posts = await getAllPosts();
-  return posts.map(({ id, slug, title, featured_image }) => ({
-    id,
-    slug,
-    title,
-    featured_image,
-  }));
-});
+export const getSearchIndex = cache(
+  async (lang: Locale): Promise<SearchablePost[]> => {
+    const posts = await getAllPosts(lang);
+    return posts.map(({ id, slug, title, featured_image }) => ({
+      id,
+      slug,
+      title,
+      featured_image,
+    }));
+  },
+);
 
-export async function getPostById(id: string): Promise<BlogPost | undefined> {
+export async function getPostById(
+  id: string,
+  lang: Locale,
+): Promise<BlogPost | undefined> {
   const journal = await getPublishedJournalById(id);
-  return journal ? toBlogPost(journal) : undefined;
+  return journal ? toBlogPost(journal, lang) : undefined;
 }
 
 const AUTHOR_LABELS: Record<string, string> = {

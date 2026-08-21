@@ -33,6 +33,9 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get("host") ?? "";
 
+  // API routes bypass locale rewriting entirely.
+  if (pathname.startsWith("/api/")) return;
+
   if (isAdminHost(host)) {
     if (pathname.startsWith("/admin")) return;
     const url = request.nextUrl.clone();
@@ -52,5 +55,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|.*\\..*).*)"],
+  matcher: ["/((?!_next|api|.*\\..*).*)"],
 };

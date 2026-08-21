@@ -6,11 +6,16 @@ import { useRouter } from "next/navigation";
 import RichTextEditor from "./RichTextEditor";
 import {
   EMPTY_JOURNAL,
+  EMPTY_LOCALE_FIELDS,
+  JOURNAL_LOCALES,
   estimateReadingMinutes,
   fromDateInputValue,
+  getLocaleFields,
+  setLocaleFields,
   slugify,
   toDateInputValue,
   type JournalDraft,
+  type JournalLocale,
   type JournalPost,
   type JournalStatus,
 } from "../lib/journals";
@@ -27,6 +32,12 @@ const STATUS_OPTIONS: { value: JournalStatus; label: string }[] = [
   { value: "published", label: "Published" },
   { value: "archived", label: "Archived" },
 ];
+
+const LOCALE_LABELS: Record<JournalLocale, string> = {
+  en: "English",
+  id: "Indonesian",
+  zh: "中文",
+};
 
 const SEO_TITLE_MAX = 60;
 const SEO_DESC_MAX = 160;
@@ -60,7 +71,7 @@ function deriveSeoKeywords(title: string): string[] {
 }
 
 function toDraft(initial?: JournalPost): JournalDraft {
-  if (!initial) return { ...EMPTY_JOURNAL };
+  if (!initial) return { ...EMPTY_JOURNAL, translations: {} };
   return {
     title: initial.title,
     slug: initial.slug,
@@ -72,69 +83,133 @@ function toDraft(initial?: JournalPost): JournalDraft {
     readingTimeMinutes: initial.readingTimeMinutes,
     content: initial.content,
     seo: { ...initial.seo },
+    translations: {
+      ...(initial.translations.id
+        ? { id: { ...initial.translations.id, seo: { ...initial.translations.id.seo } } }
+        : {}),
+      ...(initial.translations.zh
+        ? { zh: { ...initial.translations.zh, seo: { ...initial.translations.zh.seo } } }
+        : {}),
+    },
   };
 }
+
+type LocaleFlags = Record<JournalLocale, boolean>;
+const flagsFromInitial = (
+  draft: JournalDraft,
+  key: "title" | "description" | "keywords",
+): LocaleFlags => ({
+  en:
+    key === "keywords"
+      ? draft.seo.keywords.length > 0
+      : Boolean(draft.seo[key]),
+  id:
+    key === "keywords"
+      ? Boolean(draft.translations.id?.seo.keywords.length)
+      : Boolean(draft.translations.id?.seo[key]),
+  zh:
+    key === "keywords"
+      ? Boolean(draft.translations.zh?.seo.keywords.length)
+      : Boolean(draft.translations.zh?.seo[key]),
+});
+
+const keywordsInputFromDraft = (draft: JournalDraft): Record<JournalLocale, string> => ({
+  en: (draft.seo.keywords ?? []).join(", "),
+  id: (draft.translations.id?.seo.keywords ?? []).join(", "),
+  zh: (draft.translations.zh?.seo.keywords ?? []).join(", "),
+});
 
 export default function JournalForm({ mode, initial, onSubmit }: Props) {
   const router = useRouter();
   const [draft, setDraft] = useState<JournalDraft>(() => toDraft(initial));
-  const [keywordsInput, setKeywordsInput] = useState(() =>
-    (initial?.seo.keywords ?? []).join(", "),
+  const [activeLocale, setActiveLocale] = useState<JournalLocale>("en");
+  const [keywordsInput, setKeywordsInput] = useState<Record<JournalLocale, string>>(
+    () => keywordsInputFromDraft(toDraft(initial)),
   );
   const [slugTouched, setSlugTouched] = useState(!!initial?.slug);
-  const [seoTitleTouched, setSeoTitleTouched] = useState(
-    !!initial?.seo.title,
+  const [seoTitleTouched, setSeoTitleTouched] = useState<LocaleFlags>(() =>
+    flagsFromInitial(toDraft(initial), "title"),
   );
-  const [seoDescTouched, setSeoDescTouched] = useState(
-    !!initial?.seo.description,
+  const [seoDescTouched, setSeoDescTouched] = useState<LocaleFlags>(() =>
+    flagsFromInitial(toDraft(initial), "description"),
   );
-  const [seoKeywordsTouched, setSeoKeywordsTouched] = useState(
-    !!initial?.seo.keywords?.length,
+  const [seoKeywordsTouched, setSeoKeywordsTouched] = useState<LocaleFlags>(() =>
+    flagsFromInitial(toDraft(initial), "keywords"),
   );
   const [seoOpen, setSeoOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [uploadingCover, setUploadingCover] = useState(false);
+  const [translating, setTranslating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const coverFileInputRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => {
-    if (seoTitleTouched) return;
-    const next = deriveSeoTitle(draft.title);
-    setDraft((d) =>
-      d.seo.title === next ? d : { ...d, seo: { ...d.seo, title: next } },
-    );
-  }, [draft.title, seoTitleTouched]);
+  const current = useMemo(
+    () => getLocaleFields(draft, activeLocale),
+    [draft, activeLocale],
+  );
 
   useEffect(() => {
-    if (seoDescTouched) return;
-    const next = deriveSeoDescription(draft.content);
+    if (seoTitleTouched[activeLocale]) return;
+    const next = deriveSeoTitle(current.title);
+    if (current.seo.title === next) return;
     setDraft((d) =>
-      d.seo.description === next
-        ? d
-        : { ...d, seo: { ...d.seo, description: next } },
+      setLocaleFields(d, activeLocale, {
+        ...getLocaleFields(d, activeLocale),
+        seo: { ...getLocaleFields(d, activeLocale).seo, title: next },
+      }),
     );
-  }, [draft.content, seoDescTouched]);
+  }, [current.title, current.seo.title, seoTitleTouched, activeLocale]);
 
   useEffect(() => {
-    if (seoKeywordsTouched) return;
-    const next = deriveSeoKeywords(draft.title).join(", ");
-    setKeywordsInput((prev) => (prev === next ? prev : next));
-  }, [draft.title, seoKeywordsTouched]);
+    if (seoDescTouched[activeLocale]) return;
+    const next = deriveSeoDescription(current.content);
+    if (current.seo.description === next) return;
+    setDraft((d) =>
+      setLocaleFields(d, activeLocale, {
+        ...getLocaleFields(d, activeLocale),
+        seo: {
+          ...getLocaleFields(d, activeLocale).seo,
+          description: next,
+        },
+      }),
+    );
+  }, [current.content, current.seo.description, seoDescTouched, activeLocale]);
+
+  useEffect(() => {
+    if (seoKeywordsTouched[activeLocale]) return;
+    const next = deriveSeoKeywords(current.title).join(", ");
+    setKeywordsInput((prev) =>
+      prev[activeLocale] === next ? prev : { ...prev, [activeLocale]: next },
+    );
+  }, [current.title, seoKeywordsTouched, activeLocale]);
 
   const estimatedRead = useMemo(
     () => estimateReadingMinutes(draft.content),
     [draft.content],
   );
 
-  const update = <K extends keyof JournalDraft>(key: K, value: JournalDraft[K]) =>
-    setDraft((d) => ({ ...d, [key]: value }));
+  const updateShared = <K extends keyof JournalDraft>(
+    key: K,
+    value: JournalDraft[K],
+  ) => setDraft((d) => ({ ...d, [key]: value }));
+
+  const updateLocaleField = (patch: Partial<typeof current>) => {
+    setDraft((d) => {
+      const cur = getLocaleFields(d, activeLocale);
+      return setLocaleFields(d, activeLocale, { ...cur, ...patch });
+    });
+  };
 
   const handleTitleChange = (title: string) => {
-    setDraft((d) => ({
-      ...d,
-      title,
-      slug: slugTouched ? d.slug : slugify(title),
-    }));
+    if (activeLocale === "en") {
+      setDraft((d) => ({
+        ...d,
+        title,
+        slug: slugTouched ? d.slug : slugify(title),
+      }));
+    } else {
+      updateLocaleField({ title });
+    }
   };
 
   const handleCoverUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,7 +220,7 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
     setUploadingCover(true);
     try {
       const url = await uploadImage(file, "journal/covers");
-      update("coverImage", url);
+      updateShared("coverImage", url);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed.");
     } finally {
@@ -153,23 +228,113 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
     }
   };
 
+  const translateText = async (
+    text: string,
+    target: JournalLocale,
+    format: "plain" | "html",
+  ): Promise<string> => {
+    if (!text.trim()) return "";
+    const res = await fetch("/api/translate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, target, source: "en", format }),
+    });
+    const data = (await res.json()) as { translated?: string; error?: string };
+    if (!res.ok || typeof data.translated !== "string") {
+      throw new Error(data.error || `Translate failed (${res.status})`);
+    }
+    return data.translated;
+  };
+
+  const handleTranslateFromEn = async () => {
+    if (activeLocale === "en") return;
+    setError(null);
+    setTranslating(true);
+    try {
+      const enFields = getLocaleFields(draft, "en");
+      const [title, content, seoTitle, seoDesc] = await Promise.all([
+        translateText(enFields.title, activeLocale, "plain"),
+        translateText(enFields.content, activeLocale, "html"),
+        translateText(enFields.seo.title, activeLocale, "plain"),
+        translateText(enFields.seo.description, activeLocale, "plain"),
+      ]);
+      const translatedKeywords = await Promise.all(
+        enFields.seo.keywords.map((k) => translateText(k, activeLocale, "plain")),
+      );
+      setDraft((d) =>
+        setLocaleFields(d, activeLocale, {
+          title,
+          content,
+          seo: {
+            title: seoTitle,
+            description: seoDesc,
+            keywords: translatedKeywords.filter(Boolean),
+          },
+        }),
+      );
+      setKeywordsInput((prev) => ({
+        ...prev,
+        [activeLocale]: translatedKeywords.filter(Boolean).join(", "),
+      }));
+      // Mark as touched so auto-derive doesn't overwrite the translation.
+      setSeoTitleTouched((f) => ({ ...f, [activeLocale]: true }));
+      setSeoDescTouched((f) => ({ ...f, [activeLocale]: true }));
+      setSeoKeywordsTouched((f) => ({ ...f, [activeLocale]: true }));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Translation failed.");
+    } finally {
+      setTranslating(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     if (!draft.title.trim()) {
-      setError("Title is required.");
+      setError("English title is required.");
+      setActiveLocale("en");
       return;
     }
     setSubmitting(true);
     try {
-      const keywords = keywordsInput
-        .split(",")
-        .map((t) => t.trim())
-        .filter(Boolean);
+      // Fold keywordsInput back into each locale's SEO.
+      const withKeywords = JOURNAL_LOCALES.reduce<JournalDraft>((acc, loc) => {
+        const fields = getLocaleFields(acc, loc);
+        const kws = keywordsInput[loc]
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean);
+        // Skip writing empty non-EN locales so we don't create noise in Firestore.
+        if (
+          loc !== "en" &&
+          !fields.title.trim() &&
+          !fields.content.trim() &&
+          !fields.seo.title.trim() &&
+          !fields.seo.description.trim() &&
+          kws.length === 0
+        ) {
+          return {
+            ...acc,
+            translations: { ...acc.translations, [loc]: undefined },
+          };
+        }
+        return setLocaleFields(acc, loc, {
+          ...fields,
+          seo: { ...fields.seo, keywords: kws },
+        });
+      }, draft);
+
+      // Strip any undefined translation slots so Firestore stays clean.
+      const cleanTranslations = Object.fromEntries(
+        Object.entries(withKeywords.translations).filter(
+          ([, v]) => v !== undefined,
+        ),
+      ) as JournalDraft["translations"];
+
       await onSubmit({
-        ...draft,
-        slug: draft.slug || slugify(draft.title),
-        seo: { ...draft.seo, keywords },
+        ...withKeywords,
+        translations: cleanTranslations,
+        slug: withKeywords.slug || slugify(withKeywords.title),
       });
       router.push("/admin/journal");
       router.refresh();
@@ -201,20 +366,159 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
         </div>
       )}
 
-      <Field label="Title *">
-        <Input
-          value={draft.title}
-          onChange={handleTitleChange}
-          placeholder="Journal title"
-        />
-      </Field>
+      <div className="rounded-lg border border-neutral-200 bg-white">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-200 px-4 py-3">
+          <div role="tablist" aria-label="Language" className="flex gap-1">
+            {JOURNAL_LOCALES.map((loc) => {
+              const isActive = loc === activeLocale;
+              const hasContent =
+                loc === "en"
+                  ? Boolean(draft.title.trim() || draft.content.trim())
+                  : Boolean(
+                      draft.translations[loc]?.title.trim() ||
+                        draft.translations[loc]?.content.trim(),
+                    );
+              return (
+                <button
+                  key={loc}
+                  role="tab"
+                  aria-selected={isActive}
+                  type="button"
+                  onClick={() => setActiveLocale(loc)}
+                  className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
+                    isActive
+                      ? "bg-navy text-white"
+                      : "bg-white text-navy hover:bg-neutral-100"
+                  }`}
+                >
+                  {LOCALE_LABELS[loc]}
+                  {!hasContent && loc !== "en" && (
+                    <span className="ml-1.5 text-[10px] uppercase opacity-60">
+                      empty
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+          {activeLocale !== "en" && (
+            <button
+              type="button"
+              onClick={() => void handleTranslateFromEn()}
+              disabled={translating || !draft.title.trim()}
+              className="rounded-md border border-navy/30 bg-white px-3 py-1.5 text-xs font-medium text-navy hover:bg-navy/5 disabled:opacity-40"
+              title={
+                draft.title.trim()
+                  ? `Auto-fill this tab from English`
+                  : "Fill in the English tab first"
+              }
+            >
+              {translating ? "Translating…" : "Translate from English"}
+            </button>
+          )}
+        </div>
+
+        <div className="space-y-6 p-4">
+          <Field
+            label={
+              activeLocale === "en" ? "Title *" : `Title (${LOCALE_LABELS[activeLocale]})`
+            }
+          >
+            <Input
+              value={current.title}
+              onChange={handleTitleChange}
+              placeholder="Journal title"
+            />
+          </Field>
+
+          <Field label="Content">
+            <RichTextEditor
+              key={activeLocale}
+              value={current.content}
+              onChange={(v) => updateLocaleField({ content: v })}
+            />
+          </Field>
+
+          <div className="rounded-lg border border-neutral-200 bg-white">
+            <button
+              type="button"
+              onClick={() => setSeoOpen((v) => !v)}
+              className="flex w-full items-center justify-between px-4 py-3 text-sm font-medium"
+            >
+              <span>SEO Fields ({LOCALE_LABELS[activeLocale]})</span>
+              <span className="text-neutral-500">{seoOpen ? "▲" : "▼"}</span>
+            </button>
+            {seoOpen && (
+              <div className="space-y-4 border-t border-neutral-200 p-4">
+                <Field label="SEO Title">
+                  <Input
+                    value={current.seo.title}
+                    onChange={(v) => {
+                      setSeoTitleTouched((f) => ({ ...f, [activeLocale]: true }));
+                      updateLocaleField({
+                        seo: { ...current.seo, title: v },
+                      });
+                    }}
+                  />
+                  <AutoHint
+                    touched={seoTitleTouched[activeLocale]}
+                    onReset={() =>
+                      setSeoTitleTouched((f) => ({ ...f, [activeLocale]: false }))
+                    }
+                    autoText={`Auto from Title (max ${SEO_TITLE_MAX} chars)`}
+                  />
+                </Field>
+                <Field label="SEO Description">
+                  <textarea
+                    value={current.seo.description}
+                    onChange={(e) => {
+                      setSeoDescTouched((f) => ({ ...f, [activeLocale]: true }));
+                      updateLocaleField({
+                        seo: { ...current.seo, description: e.target.value },
+                      });
+                    }}
+                    rows={3}
+                    className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500"
+                  />
+                  <AutoHint
+                    touched={seoDescTouched[activeLocale]}
+                    onReset={() =>
+                      setSeoDescTouched((f) => ({ ...f, [activeLocale]: false }))
+                    }
+                    autoText={`Auto from Content (max ${SEO_DESC_MAX} chars)`}
+                  />
+                </Field>
+                <Field label="SEO Keywords (comma separated)">
+                  <Input
+                    value={keywordsInput[activeLocale]}
+                    onChange={(v) => {
+                      setSeoKeywordsTouched((f) => ({ ...f, [activeLocale]: true }));
+                      setKeywordsInput((prev) => ({ ...prev, [activeLocale]: v }));
+                    }}
+                  />
+                  <AutoHint
+                    touched={seoKeywordsTouched[activeLocale]}
+                    onReset={() =>
+                      setSeoKeywordsTouched((f) => ({
+                        ...f,
+                        [activeLocale]: false,
+                      }))
+                    }
+                    autoText="Auto from Title (significant words)"
+                  />
+                </Field>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
 
       <Field label="Slug">
         <Input
           value={draft.slug}
           onChange={(v) => {
             setSlugTouched(true);
-            update("slug", v);
+            updateShared("slug", v);
           }}
           placeholder="journal-slug"
         />
@@ -224,14 +528,16 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
         <Field label="Author">
           <Input
             value={draft.author}
-            onChange={(v) => update("author", v)}
+            onChange={(v) => updateShared("author", v)}
             placeholder="Author name"
           />
         </Field>
         <Field label="Status">
           <select
             value={draft.status}
-            onChange={(e) => update("status", e.target.value as JournalStatus)}
+            onChange={(e) =>
+              updateShared("status", e.target.value as JournalStatus)
+            }
             className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500"
           >
             {STATUS_OPTIONS.map((o) => (
@@ -249,7 +555,7 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
             type="date"
             value={toDateInputValue(draft.publishedAt)}
             onChange={(e) =>
-              update("publishedAt", fromDateInputValue(e.target.value))
+              updateShared("publishedAt", fromDateInputValue(e.target.value))
             }
             className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500"
           />
@@ -258,7 +564,7 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
           <label className="flex items-center gap-3 text-sm text-neutral-700">
             <button
               type="button"
-              onClick={() => update("featured", !draft.featured)}
+              onClick={() => updateShared("featured", !draft.featured)}
               className={`relative h-6 w-11 rounded-full transition-colors ${
                 draft.featured ? "bg-navy" : "bg-neutral-300"
               }`}
@@ -281,7 +587,7 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
         <div className="flex gap-2">
           <Input
             value={draft.coverImage}
-            onChange={(v) => update("coverImage", v)}
+            onChange={(v) => updateShared("coverImage", v)}
             placeholder="https://… or upload a file"
             type="url"
           />
@@ -322,80 +628,14 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
               : String(draft.readingTimeMinutes)
           }
           onChange={(v) =>
-            update("readingTimeMinutes", v === "" ? null : Number(v))
+            updateShared("readingTimeMinutes", v === "" ? null : Number(v))
           }
           placeholder={String(estimatedRead)}
         />
         <p className="mt-1 text-xs text-neutral-500">
-          Override: {estimatedRead} min (auto-estimated from content)
+          Override: {estimatedRead} min (auto-estimated from English content)
         </p>
       </Field>
-
-      <Field label="Content">
-        <RichTextEditor
-          value={draft.content}
-          onChange={(v) => update("content", v)}
-        />
-      </Field>
-
-      <div className="rounded-lg border border-neutral-200 bg-white">
-        <button
-          type="button"
-          onClick={() => setSeoOpen((v) => !v)}
-          className="flex w-full items-center justify-between px-4 py-3 text-sm font-medium"
-        >
-          <span>SEO Fields</span>
-          <span className="text-neutral-500">{seoOpen ? "▲" : "▼"}</span>
-        </button>
-        {seoOpen && (
-          <div className="space-y-4 border-t border-neutral-200 p-4">
-            <Field label="SEO Title">
-              <Input
-                value={draft.seo.title}
-                onChange={(v) => {
-                  setSeoTitleTouched(true);
-                  update("seo", { ...draft.seo, title: v });
-                }}
-              />
-              <AutoHint
-                touched={seoTitleTouched}
-                onReset={() => setSeoTitleTouched(false)}
-                autoText={`Auto from Title (max ${SEO_TITLE_MAX} chars)`}
-              />
-            </Field>
-            <Field label="SEO Description">
-              <textarea
-                value={draft.seo.description}
-                onChange={(e) => {
-                  setSeoDescTouched(true);
-                  update("seo", { ...draft.seo, description: e.target.value });
-                }}
-                rows={3}
-                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-neutral-500 focus:ring-1 focus:ring-neutral-500"
-              />
-              <AutoHint
-                touched={seoDescTouched}
-                onReset={() => setSeoDescTouched(false)}
-                autoText={`Auto from Content (max ${SEO_DESC_MAX} chars)`}
-              />
-            </Field>
-            <Field label="SEO Keywords (comma separated)">
-              <Input
-                value={keywordsInput}
-                onChange={(v) => {
-                  setSeoKeywordsTouched(true);
-                  setKeywordsInput(v);
-                }}
-              />
-              <AutoHint
-                touched={seoKeywordsTouched}
-                onReset={() => setSeoKeywordsTouched(false)}
-                autoText="Auto from Title (significant words)"
-              />
-            </Field>
-          </div>
-        )}
-      </div>
 
       <div className="flex items-center justify-between">
         <Link
