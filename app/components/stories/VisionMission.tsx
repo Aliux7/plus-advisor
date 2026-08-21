@@ -68,7 +68,7 @@ export default function VisionMission({ dict }: Props) {
                 >
                   <h2
                     style={{ fontFamily: "var(--font-catalog)" }}
-                    className="font-black text-white text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em]"
+                    className="font-bold text-white text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em]"
                   >
                     {panel.title}
                   </h2>

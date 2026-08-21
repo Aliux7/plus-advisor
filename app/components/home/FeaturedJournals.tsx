@@ -44,7 +44,7 @@ export default async function FeaturedJournals({ dict, lang }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.2] tracking-widest text-gold"
+            className="font-catalog font-bold text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.2] tracking-widest text-gold"
           >
             {dict.titlePrefix}
             <br />
@@ -136,7 +136,7 @@ export default async function FeaturedJournals({ dict, lang }: Props) {
               <p className="mt-3 md:mt-4 font-catalog font-normal text-[14px] sm:text-[16px] md:text-[17px] lg:text-[19px] leading-normal tracking-widest text-navy">
                 {formatPublishedDate(post.date_published, lang)}
               </p>
-              <h3 className="mt-2 max-w-xs font-catalog font-black text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
+              <h3 className="mt-2 max-w-xs font-catalog font-bold text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
                 {post.title}
               </h3>
               <Link

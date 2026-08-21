@@ -33,7 +33,13 @@ const FALLBACK: Record<Locale, ContentTree> = {
  * Media-style shared fields — one input across languages plus an
  * upload button and inline preview.
  */
-const MEDIA_KEYS = new Set(["image", "background", "heroImage", "portrait"]);
+const MEDIA_KEYS = new Set([
+  "image",
+  "background",
+  "heroImage",
+  "portrait",
+  "illustration",
+]);
 
 /**
  * Shared plain-text fields (URLs, toggles) — one input across
@@ -64,6 +70,7 @@ const KEY_LABELS: Record<string, string> = {
   office: "Family Office",
   journals: "Journals",
   market: "Market Update",
+  contact: "Contact Us",
   news: "News",
   hero: "Hero",
   nav: "Navigation",
@@ -98,6 +105,22 @@ const KEY_LABELS: Record<string, string> = {
   quietMind: "Quiet Mind",
   latestFeatured: "Latest & Featured",
   grid: "Grid / List",
+  eyebrow: "Eyebrow (small label above the title)",
+  title: "Title",
+  illustration: "Illustration (shared across languages)",
+  illustrationAlt: "Illustration alt text (for accessibility)",
+  watermark: "Watermark text",
+  form: "Form field labels",
+  name: "Name field label",
+  email: "Email field label",
+  phone: "Phone number field label",
+  contactMethod: "Preferred contact method field label",
+  residences: "Residences field label",
+  assets: "Assets question label",
+  readyAdvisor: "\"Ready for advisor\" checkbox label",
+  preferConversation: "\"Prefer conversation\" checkbox label",
+  message: "Message field label",
+  submit: "Submit button text",
 };
 
 function humanize(key: string): string {

@@ -9,7 +9,8 @@
       "stories": "Our Stories",
       "familyOffice": "Family Office",
       "journals": "Our Journals",
-      "marketUpdate": "Market Update"
+      "marketUpdate": "Market Update",
+      "contact": "Hubungi Kami"
     },
     "searchLabel": "Search",
     "searchPlaceholder": "Cari jurnal…",
@@ -558,6 +559,50 @@
       "2017"
     ],
     "downloadPdf": "Download PDF"
+  },
+  "contact": {
+    "eyebrow": "Hubungi Kami",
+    "title": "Terhubung dengan Advisor",
+    "illustration": "/contact/asset.webp",
+    "illustrationAlt": "",
+    "watermark": "PLUS ADVISOR",
+    "form": {
+      "name": "Nama*",
+      "firstNamePlaceholder": "Nama Depan",
+      "lastNamePlaceholder": "Nama Belakang",
+      "email": "Email*",
+      "emailPlaceholder": "Nama@email.com",
+      "phone": "Nomor Telepon",
+      "phoneCountryCode": "+62",
+      "phonePlaceholder": "Nomor",
+      "contactMethod": "Metode Kontak Pilihan*",
+      "contactMethodPlaceholder": "Pilih",
+      "contactMethodOptions": ["Email", "Telepon"],
+      "residences": "Tempat Tinggal*",
+      "residencesPlaceholder": "Jakarta",
+      "assets": "Untuk membantu kami menyesuaikan pendekatan, mohon bagikan perkiraan kisaran aset yang sedang Anda pertimbangkan untuk diinvestasikan.",
+      "assetsPlaceholder": "Pilih",
+      "assetsOptions": [
+        "$3-10JT",
+        "$10-25JT",
+        "$25-50JT",
+        "$50-100JT",
+        "$100JT+"
+      ],
+      "readyAdvisor": "Jika Anda siap melangkah lebih jauh, mohon centang kotak di bawah dan bagikan beberapa detail tambahan agar kami dapat memperkenalkan Anda kepada Private Advisor yang sesuai dengan kebutuhan Anda.",
+      "preferConversation": "Saya lebih memilih untuk membagikan detail ini melalui percakapan langsung.",
+      "message": "Pesan",
+      "messagePlaceholder": "Pesan Anda",
+      "submit": "Kirim",
+      "errors": {
+        "required": "Kolom ini wajib diisi.",
+        "email": "Masukkan alamat email yang valid.",
+        "phone": "Masukkan nomor telepon yang valid.",
+        "select": "Silakan pilih salah satu opsi.",
+        "submitFailed": "Terjadi kesalahan. Silakan coba lagi.",
+        "successMessage": "Terima kasih — kami akan segera menghubungi Anda."
+      }
+    }
   },
   "news": {
     "sidebar": {

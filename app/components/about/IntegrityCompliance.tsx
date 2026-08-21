@@ -80,7 +80,7 @@ export default function IntegrityCompliance({ dict }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="font-catalog font-black text-[22px] sm:text-[24px] md:text-[26px] lg:text-[28px] xl:text-[32px] leading-[1.4] tracking-normal text-gold"
+            className="font-catalog font-bold text-[22px] sm:text-[24px] md:text-[26px] lg:text-[28px] xl:text-[32px] leading-[1.4] tracking-normal text-gold"
           >
             {dict.title}
           </ScrollReveal>

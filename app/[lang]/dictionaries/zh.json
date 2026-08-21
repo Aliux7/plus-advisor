@@ -9,7 +9,8 @@
       "stories": "我们的故事",
       "familyOffice": "家族办公室",
       "journals": "洞见与专栏",
-      "marketUpdate": "市场动态"
+      "marketUpdate": "市场动态",
+      "contact": "联系我们"
     },
     "searchLabel": "搜索",
     "searchPlaceholder": "搜索期刊…",
@@ -557,6 +558,50 @@
       "2017"
     ],
     "downloadPdf": "下载 PDF"
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "与顾问建立联系",
+    "illustration": "/contact/asset.webp",
+    "illustrationAlt": "",
+    "watermark": "PLUS ADVISOR",
+    "form": {
+      "name": "姓名*",
+      "firstNamePlaceholder": "名",
+      "lastNamePlaceholder": "姓",
+      "email": "电子邮箱*",
+      "emailPlaceholder": "Name@email.com",
+      "phone": "电话号码",
+      "phoneCountryCode": "+62",
+      "phonePlaceholder": "号码",
+      "contactMethod": "首选联系方式*",
+      "contactMethodPlaceholder": "选择",
+      "contactMethodOptions": ["电子邮箱", "电话"],
+      "residences": "居住地*",
+      "residencesPlaceholder": "雅加达",
+      "assets": "为了更好地定制我们的方案，请分享您计划投资的资产的大致范围。",
+      "assetsPlaceholder": "选择",
+      "assetsOptions": [
+        "$3-10MM",
+        "$10-25MM",
+        "$25-50MM",
+        "$50-100MM",
+        "$100MM+"
+      ],
+      "readyAdvisor": "如果您已准备好迈出下一步，请勾选下方选项并分享一些额外信息，以便我们为您介绍最适合的私人顾问。",
+      "preferConversation": "我更倾向于在会谈中分享这些细节。",
+      "message": "留言",
+      "messagePlaceholder": "您的留言",
+      "submit": "提交",
+      "errors": {
+        "required": "此项为必填。",
+        "email": "请输入有效的电子邮箱地址。",
+        "phone": "请输入有效的电话号码。",
+        "select": "请选择一个选项。",
+        "submitFailed": "出错了，请重试。",
+        "successMessage": "感谢您 — 我们将尽快与您联系。"
+      }
+    }
   },
   "news": {
     "sidebar": {

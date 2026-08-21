@@ -34,7 +34,7 @@ export default function Hero({ eyebrow, title, image }: Props) {
           variant="fade-up"
           delay={700}
           duration={1800}
-          className="max-w-5xl font-catalog text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] font-black leading-normal tracking-widest text-white"
+          className="max-w-5xl font-catalog text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] font-bold leading-normal tracking-widest text-white"
         >
           {title}
         </ScrollReveal>

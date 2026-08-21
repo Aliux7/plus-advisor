@@ -24,7 +24,7 @@ export default function StarValue({ dict }: Props) {
           variant="fade-up"
           delay={0}
           duration={1800}
-          className="mb-2 font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+          className="mb-2 font-catalog font-bold text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
         >
           {dict.titlePrefix}{" "}
           <span className="">{dict.titleAccent}</span>

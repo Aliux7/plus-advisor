@@ -273,7 +273,7 @@ function JournalCard({
         {formatPublishedDate(post.date_published, lang)}
       </p>
 
-      <h3 className="mt-2 md:mt-3 max-w-sm font-catalog font-black text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
+      <h3 className="mt-2 md:mt-3 max-w-sm font-catalog font-bold text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] leading-normal tracking-widest text-navy">
         {post.title}
       </h3>
 

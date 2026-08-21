@@ -79,3 +79,6 @@ export type MarketUpdateDict = Dictionary["market"];
 
 /** News-detail page shape. */
 export type NewsDetailDict = Dictionary["news"];
+
+/** Contact-page section shape. */
+export type ContactDict = Dictionary["contact"];

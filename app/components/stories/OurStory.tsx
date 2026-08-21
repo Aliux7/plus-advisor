@@ -141,7 +141,7 @@ export default function OurStory({ dict }: Props) {
                     className={`pointer-events-none object-contain ${visual.scale}`}
                   />
                 </div>
-                <h3 className="mt-1 font-catalog font-black text-[24px] sm:text-[26px] md:text-[28px] lg:text-[30px] xl:text-[32px] leading-[1.4] tracking-[0.15em] text-gold">
+                <h3 className="mt-1 font-catalog font-bold text-[24px] sm:text-[26px] md:text-[28px] lg:text-[30px] xl:text-[32px] leading-[1.4] tracking-[0.15em] text-gold">
                   {card.title}
                 </h3>
                 <p className="mt-10 md:mt-16 lg:mt-24 font-raleway font-normal text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-widest text-navy md:max-w-xs">

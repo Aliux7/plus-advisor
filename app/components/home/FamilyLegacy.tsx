@@ -128,7 +128,7 @@ export default function FamilyLegacy({ dict, lang }: Props) {
               variant="fade-up"
               delay={0}
               duration={1800}
-              className="font-catalog font-black text-[22px] sm:text-[26px] md:text-[28px] xl:text-[32px] leading-[1.2] tracking-[0.08em] text-[#88643B]"
+              className="font-catalog font-bold text-[22px] sm:text-[26px] md:text-[28px] xl:text-[32px] leading-[1.2] tracking-[0.08em] text-[#88643B]"
             >
               {dict.titlePrefix}
               <br />

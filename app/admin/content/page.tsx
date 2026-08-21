@@ -57,6 +57,11 @@ const SECTIONS: { key: string; label: string; blurb: string }[] = [
     blurb: "Section labels and category names on the market update page.",
   },
   {
+    key: "contact",
+    label: "Contact Us page",
+    blurb: "Eyebrow, title, illustration, form field labels, and submit button copy.",
+  },
+  {
     key: "news",
     label: "News detail page",
     blurb: "Labels used on individual journal / news article pages.",

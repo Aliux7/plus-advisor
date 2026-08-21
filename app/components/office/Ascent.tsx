@@ -84,7 +84,7 @@ export default function Ascent({ dict }: Props) {
               variant="fade-up"
               delay={0}
               duration={1800}
-              className="font-catalog font-black text-[20px] sm:text-[22px] md:text-[26px] lg:text-[29px] xl:text-[32px] leading-[1.4] tracking-[0.2em] text-gold"
+              className="font-catalog font-bold text-[20px] sm:text-[22px] md:text-[26px] lg:text-[29px] xl:text-[32px] leading-[1.4] tracking-[0.2em] text-gold"
             >
               {dict.titleLine1}
               <span className="block">{dict.titleLine2}</span>

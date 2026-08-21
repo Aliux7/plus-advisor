@@ -27,7 +27,7 @@ export default function OurValues({ dict }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="font-catalog font-black text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+            className="font-catalog font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
           >
             {dict.title}
           </ScrollReveal>
@@ -67,7 +67,7 @@ export default function OurValues({ dict }: Props) {
                   />
                 </div>
 
-                <h3 className="mt-2 font-catalog font-black text-[22px] sm:text-[24px] md:text-[26px] lg:text-[28px] xl:text-[30px] leading-[1.4] tracking-[0.15em] text-gold">
+                <h3 className="mt-2 font-catalog font-bold text-[22px] sm:text-[24px] md:text-[26px] lg:text-[28px] xl:text-[30px] leading-[1.4] tracking-[0.15em] text-gold">
                   {value.title}
                 </h3>
 

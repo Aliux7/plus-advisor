@@ -78,7 +78,7 @@ export default function Footer({ dict, lang }: Props) {
               variant="fade-up"
               delay={400}
               duration={1600}
-              className="max-w-sm font-catalog font-black text-[10px] leading-[1.89] tracking-widest text-white"
+              className="max-w-sm font-catalog font-bold text-[10px] leading-[1.89] tracking-widest text-white"
             >
               {dict.whistleBody}
             </ScrollReveal>
@@ -107,7 +107,7 @@ export default function Footer({ dict, lang }: Props) {
               variant="fade-up"
               delay={100}
               duration={1400}
-              className="font-catalog font-black text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
+              className="font-catalog font-bold text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
             >
               {dict.companyHeading}
             </ScrollReveal>
@@ -141,7 +141,7 @@ export default function Footer({ dict, lang }: Props) {
               variant="fade-up"
               delay={150}
               duration={1400}
-              className="font-catalog font-black text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
+              className="font-catalog font-bold text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
             >
               {dict.contactHeading}
             </ScrollReveal>
@@ -174,7 +174,7 @@ export default function Footer({ dict, lang }: Props) {
               variant="fade-up"
               delay={450}
               duration={1400}
-              className="mt-8 md:mt-11.5 font-catalog font-black text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
+              className="mt-8 md:mt-11.5 font-catalog font-bold text-[12px] md:text-[14px] leading-normal tracking-widest text-white"
             >
               {dict.socialHeading}
             </ScrollReveal>

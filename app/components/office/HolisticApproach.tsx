@@ -91,7 +91,7 @@ export default function HolisticApproach({ dict }: Props) {
                       <p className="font-catalog font-normal italic text-[16px] sm:text-[18px] md:text-[19px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-[0.15em] text-white">
                         {phase.number}
                       </p>
-                      <h3 className="font-catalog font-black text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[30px] leading-[1.4] tracking-[0.15em] text-white">
+                      <h3 className="font-catalog font-bold text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[30px] leading-[1.4] tracking-[0.15em] text-white">
                         {phase.title}
                       </h3>
                       <p className=" mt-2 md:mt-3 font-catalog font-bold text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.4] tracking-[0.25em] text-white">

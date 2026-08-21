@@ -16,6 +16,7 @@ const SECTION_LABELS: Record<string, string> = {
   office: "Family Office page",
   journals: "Journals page",
   market: "Market Update page",
+  contact: "Contact Us page",
   news: "News detail page",
 };
 

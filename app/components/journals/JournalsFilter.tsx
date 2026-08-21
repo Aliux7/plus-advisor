@@ -76,7 +76,7 @@ export default function JournalsFilter({ lang, currentSort, line1, line2 }: Prop
             <line x1="8" y1="20" x2="16" y2="20" />
           </svg>
         </div>
-        <p className="text-left font-catalog font-black text-[16px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-[0.15em] text-gold">
+        <p className="text-left font-catalog font-bold text-[16px] sm:text-[17px] md:text-[19px] lg:text-[20px] xl:text-[22px] leading-[1.4] tracking-[0.15em] text-gold">
           {line1}
           <br />
           {line2}
@@ -99,7 +99,7 @@ export default function JournalsFilter({ lang, currentSort, line1, line2 }: Prop
                 onClick={() => selectSort(key)}
                 className={`w-full text-left px-5 py-2.5 font-catalog text-[14px] md:text-[15px] tracking-widest transition-colors cursor-pointer ${
                   isActive
-                    ? "text-gold bg-gold/10 font-black"
+                    ? "text-gold bg-gold/10 font-bold"
                     : "text-navy hover:bg-gold/5 hover:text-gold"
                 }`}
               >

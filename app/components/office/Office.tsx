@@ -37,7 +37,7 @@ export default function FamilyOffice({ dict }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="font-catalog font-black text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+            className="font-catalog font-bold text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
           >
             {dict.title}
           </ScrollReveal>

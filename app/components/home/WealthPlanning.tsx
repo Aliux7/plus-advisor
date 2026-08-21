@@ -72,7 +72,7 @@ export default function WealthPlanning({ dict, lang }: Props) {
           >
             <p
               style={textStyle(0)}
-              className="font-catalog font-black text-[14px] sm:text-[16px] md:text-[18px] xl:text-[20px] leading-[1.2] tracking-widest text-gold"
+              className="font-catalog font-bold text-[14px] sm:text-[16px] md:text-[18px] xl:text-[20px] leading-[1.2] tracking-widest text-gold"
             >
               {slide.number}
             </p>
@@ -81,7 +81,7 @@ export default function WealthPlanning({ dict, lang }: Props) {
           <ScrollReveal variant="fade-up" delay={100} duration={1800}>
             <h2
               style={textStyle(120)}
-              className="font-catalog font-black text-[22px] sm:text-[26px] md:text-[28px] xl:text-[32px] leading-[1.2] tracking-widest text-gold w-full lg:w-5/6"
+              className="font-catalog font-bold text-[22px] sm:text-[26px] md:text-[28px] xl:text-[32px] leading-[1.2] tracking-widest text-gold w-full lg:w-5/6"
             >
               {slide.title}
             </h2>

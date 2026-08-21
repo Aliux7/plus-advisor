@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  Geist,
-  Geist_Mono,
-  Cormorant_Garamond,
-  Raleway,
-  Saira,
-  IBM_Plex_Sans_Condensed,
-} from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -22,71 +14,95 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getSearchIndex } from "../lib/posts";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Font variables are intentionally opaque (single letters) so devtools /
+// WhatFont-style inspectors don't leak the underlying typeface identities.
+// Tailwind aliases (font-catalog, font-raleway, …) map to these in globals.css.
+// All faces are self-hosted from /app/fonts to avoid exposing family names via
+// next/font/google's generated CSS.
+const fontA = localFont({
+  variable: "--font-a",
+  display: "swap",
+  src: [{ path: "../fonts/a-400.woff2", weight: "400", style: "normal" }],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const fontB = localFont({
+  variable: "--font-b",
+  display: "swap",
+  src: [{ path: "../fonts/b-400.woff2", weight: "400", style: "normal" }],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const saira = Saira({
-  variable: "--font-saira",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-// Check unused remode TODO
-const ibmPlexSansCondensed = IBM_Plex_Sans_Condensed({
-  variable: "--font-ibm-plex-sans-condensed",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const catalog = localFont({
-  variable: "--font-catalog",
+const fontC = localFont({
+  variable: "--font-c",
   display: "swap",
   src: [
-    { path: "../fonts/Catalog-Regular.otf", weight: "400", style: "normal" },
-    { path: "../fonts/Catalog-Italic.otf", weight: "400", style: "italic" },
-    { path: "../fonts/Catalog-Bold.otf", weight: "700", style: "normal" },
-    { path: "../fonts/Catalog-Black.otf", weight: "900", style: "normal" },
+    { path: "../fonts/c-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/c-400.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/c-400.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/c-400.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/c-400i.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/c-400i.woff2", weight: "500", style: "italic" },
+    { path: "../fonts/c-400i.woff2", weight: "600", style: "italic" },
+    { path: "../fonts/c-400i.woff2", weight: "700", style: "italic" },
   ],
 });
 
-const gothamCondensed = localFont({
-  variable: "--font-gotham-condensed",
+const fontD = localFont({
+  variable: "--font-d",
   display: "swap",
   src: [
-    {
-      path: "../fonts/Gotham-Condensed-Book-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
+    { path: "../fonts/d-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/d-300.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/d-300.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/d-300.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/d-300.woff2", weight: "700", style: "normal" },
   ],
 });
 
-const gotham = localFont({
-  variable: "--font-gotham",
+const fontE = localFont({
+  variable: "--font-e",
   display: "swap",
   src: [
-    { path: "../fonts/Gotham-Regular.otf", weight: "400", style: "normal" },
+    { path: "../fonts/e-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/e-300.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/e-300.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/e-300.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/e-300.woff2", weight: "700", style: "normal" },
   ],
+});
+
+const fontF = localFont({
+  variable: "--font-f",
+  display: "swap",
+  src: [
+    { path: "../fonts/f-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/f-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/f-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/f-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/f-700.woff2", weight: "700", style: "normal" },
+  ],
+});
+
+const fontG = localFont({
+  variable: "--font-g",
+  display: "swap",
+  src: [
+    { path: "../fonts/g-400.otf", weight: "400", style: "normal" },
+    { path: "../fonts/g-400i.otf", weight: "400", style: "italic" },
+    { path: "../fonts/g-700.otf", weight: "700", style: "normal" },
+    { path: "../fonts/g-900.otf", weight: "900", style: "normal" },
+  ],
+});
+
+const fontH = localFont({
+  variable: "--font-h",
+  display: "swap",
+  src: [{ path: "../fonts/h-400.otf", weight: "400", style: "normal" }],
+});
+
+const fontI = localFont({
+  variable: "--font-i",
+  display: "swap",
+  src: [{ path: "../fonts/i-400.otf", weight: "400", style: "normal" }],
 });
 
 export async function generateStaticParams() {
@@ -121,7 +137,7 @@ export default async function LangLayout({
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${raleway.variable} ${saira.variable} ${ibmPlexSansCondensed.variable} ${catalog.variable} ${gothamCondensed.variable} ${gotham.variable} h-full antialiased`}
+      className={`${fontA.variable} ${fontB.variable} ${fontC.variable} ${fontD.variable} ${fontE.variable} ${fontF.variable} ${fontG.variable} ${fontH.variable} ${fontI.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LocomotiveScrollProvider>

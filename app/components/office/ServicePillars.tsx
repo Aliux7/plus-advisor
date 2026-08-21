@@ -71,7 +71,7 @@ export default function ServicePillars({ dict }: Props) {
             variant="fade-up"
             delay={0}
             duration={1800}
-            className="flex sm:block font-catalog font-black text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
+            className="flex sm:block font-catalog font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[38px] xl:text-[44px] leading-[1.4] tracking-[0.15em] text-gold"
           >
             {office.titleLine1}
             <span className="block pl-2 sm:pl-16 md:pl-20 lg:pl-28 xl:pl-36">
@@ -145,7 +145,7 @@ export default function ServicePillars({ dict }: Props) {
             >
               <p
                 style={textStyle(0)}
-                className="font-catalog font-black text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-normal tracking-widest text-gold"
+                className="font-catalog font-bold text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] leading-normal tracking-widest text-gold"
               >
                 {slide.number}
               </p>
@@ -154,7 +154,7 @@ export default function ServicePillars({ dict }: Props) {
             <ScrollReveal variant="fade-up" delay={100} duration={1800}>
               <h3
                 style={textStyle(120)}
-                className="font-catalog font-black text-[20px] sm:text-[22px] md:text-[26px] lg:text-[29px] xl:text-[32px] leading-normal tracking-widest text-gold"
+                className="font-catalog font-bold text-[20px] sm:text-[22px] md:text-[26px] lg:text-[29px] xl:text-[32px] leading-normal tracking-widest text-gold"
               >
                 {slide.title}
               </h3>

@@ -74,7 +74,7 @@ export default function BeyondFinancialAdvice({ dict, lang }: Props) {
               <p className="mb-2 md:mb-3 font-catalog font-normal italic text-[12px] sm:text-[14px] md:text-[16px] leading-[1.4] tracking-[0.15em] text-white">
                 {pillar.number}
               </p>
-              <h3 className="font-catalog font-black text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[1.4] tracking-[0.15em] text-white">
+              <h3 className="font-catalog font-bold text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[1.4] tracking-[0.15em] text-white">
                 {pillar.title}
               </h3>
               <p className="mt-4 md:mt-6 font-raleway font-bold text-[11px] md:text-[12px] leading-[1.4] tracking-[0.15em] text-white">

@@ -62,7 +62,7 @@ export default function NewsDetail({ dict, lang, post }: Props) {
 
           <aside className="order-1 lg:order-2 bg-white lg:shadow-[0px_4px_4px_0px_#00000040] w-full lg:w-96 xl:w-110 2xl:w-120 shrink-0">
             <div className="lg:sticky lg:top-10 px-5 sm:px-10 lg:px-8 xl:px-10 py-8 sm:py-10 lg:py-16 xl:py-20">
-              <h2 className="font-catalog font-black text-navy text-[20px] md:text-[24px] xl:text-[28px] leading-[1.35] tracking-widest">
+              <h2 className="font-catalog font-bold text-navy text-[20px] md:text-[24px] xl:text-[28px] leading-[1.35] tracking-widest">
                 {post.title}
               </h2>
               <ShareButtons
@@ -89,7 +89,7 @@ export default function NewsDetail({ dict, lang, post }: Props) {
                 </span>
               </div>
 
-              {/* <h3 className="mt-10 font-catalog font-black text-[18px] md:text-[20px] tracking-widest text-navy uppercase">
+              {/* <h3 className="mt-10 font-catalog font-bold text-[18px] md:text-[20px] tracking-widest text-navy uppercase">
                 {labels.latest}
               </h3>
               <div className="mt-6 flex flex-col gap-6">
@@ -112,7 +112,7 @@ export default function NewsDetail({ dict, lang, post }: Props) {
                       <p className="font-raleway text-[11px] md:text-[12px] tracking-widest text-navy/60">
                         {formatPublishedDate(r.date_published, lang)}
                       </p>
-                      <h4 className="mt-1 font-catalog font-black text-[14px] md:text-[15px] leading-snug text-navy line-clamp-3 group-hover:text-gold transition-colors">
+                      <h4 className="mt-1 font-catalog font-bold text-[14px] md:text-[15px] leading-snug text-navy line-clamp-3 group-hover:text-gold transition-colors">
                         {r.title}
                       </h4>
                     </div>

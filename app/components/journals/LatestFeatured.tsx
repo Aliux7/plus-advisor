@@ -24,7 +24,7 @@ export default async function LatestFeatured({ dict, lang }: Props) {
               variant="fade-up"
               delay={0}
               duration={1800}
-              className="pr-10 font-catalog font-black text-[20px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[34px] leading-[1.4] tracking-[0.15em] text-white"
+              className="pr-10 font-catalog font-bold text-[20px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[34px] leading-[1.4] tracking-[0.15em] text-white"
             >
               {dict.title}
             </ScrollReveal>

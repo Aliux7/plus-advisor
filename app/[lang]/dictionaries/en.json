@@ -9,7 +9,8 @@
       "stories": "Our Stories",
       "familyOffice": "Family Office",
       "journals": "Our Journals",
-      "marketUpdate": "Market Update"
+      "marketUpdate": "Market Update",
+      "contact": "Contact Us"
     },
     "searchLabel": "Search",
     "searchPlaceholder": "Search journals…",
@@ -558,6 +559,50 @@
       "2017"
     ],
     "downloadPdf": "Download PDF"
+  },
+  "contact": {
+    "eyebrow": "Contact Us",
+    "title": "Connect with an Advisor",
+    "illustration": "/contact/asset.webp",
+    "illustrationAlt": "",
+    "watermark": "PLUS ADVISOR",
+    "form": {
+      "name": "Name*",
+      "firstNamePlaceholder": "First Name",
+      "lastNamePlaceholder": "Last Name",
+      "email": "Email*",
+      "emailPlaceholder": "Name@email.com",
+      "phone": "Phone Number",
+      "phoneCountryCode": "+62",
+      "phonePlaceholder": "Number",
+      "contactMethod": "Preferred Contact Method*",
+      "contactMethodPlaceholder": "Select",
+      "contactMethodOptions": ["Email", "Phone"],
+      "residences": "Residences*",
+      "residencesPlaceholder": "Jakarta",
+      "assets": "To better tailor our approach, could you share an approximate range of assets you're considering investing?",
+      "assetsPlaceholder": "Select",
+      "assetsOptions": [
+        "$3-10MM",
+        "$10-25MM",
+        "$25-50MM",
+        "$50-100MM",
+        "$100MM+"
+      ],
+      "readyAdvisor": "If you're ready to take the next step, please check the box below and share a few additional details so we can introduce you to a Private Advisor suited to your needs.",
+      "preferConversation": "I'd prefer to share these details during a conversation.",
+      "message": "Message",
+      "messagePlaceholder": "Your Message",
+      "submit": "Submit",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Please enter a valid email address.",
+        "phone": "Please enter a valid phone number.",
+        "select": "Please select an option.",
+        "submitFailed": "Something went wrong. Please try again.",
+        "successMessage": "Thank you — we'll be in touch shortly."
+      }
+    }
   },
   "news": {
     "sidebar": {

@@ -167,7 +167,7 @@ export default function MarketUpdate({ dict, entries, reportYear }: Props) {
                   </ScrollReveal>
                 </div>
                 <div className="flex-1">
-                  <p className="font-catalog font-black text-[20px] sm:text-[22px] md:text-[24px] xl:text-[26px] leading-[1.5] tracking-[0.1em] text-navy">
+                  <p className="font-catalog font-bold text-[20px] sm:text-[22px] md:text-[24px] xl:text-[26px] leading-[1.5] tracking-[0.1em] text-navy">
                     {dict.reportTitle}
                   </p>
                   <div className="mt-1 relative w-full h-6 md:h-7">

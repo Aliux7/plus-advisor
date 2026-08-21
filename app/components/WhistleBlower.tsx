@@ -24,7 +24,7 @@ export default function WhistleBlower({ dict }: Props) {
         {...(isExternal
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
-        className="w-full h-full flex flex-col justify-center items-center backdrop-blur-md bg-white/75 hover:bg-white rounded-full font-catalog font-black transition-colors ease-in-out duration-500"
+        className="w-full h-full flex flex-col justify-center items-center backdrop-blur-md bg-white/75 hover:bg-white rounded-full font-catalog font-bold transition-colors ease-in-out duration-500"
       >
         <Image
           src="/home/whistle-icon.webp"

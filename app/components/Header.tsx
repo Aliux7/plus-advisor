@@ -38,6 +38,7 @@ export default function Header({
     ...(marketVisible
       ? [{ label: dict.nav.marketUpdate, href: `/${lang}/market` }]
       : []),
+    { label: dict.nav.contact, href: `/${lang}/contact` },
   ];
 
   const results = useMemo(() => {
@@ -140,7 +141,7 @@ export default function Header({
   return (
     <header
       data-scroll-section
-      className="fixed top-0 z-50 w-full font-catalog font-black text-sm leading-normal tracking-widest"
+      className="fixed top-0 z-50 w-full font-catalog font-bold text-sm leading-normal tracking-widest"
     >
       <div
         className={`flex items-center justify-between gap-6 h-20 xl:h-24 px-5 sm:px-10 xl:px-20 transition-[background-color,backdrop-filter] duration-300 ease-in-out ${
