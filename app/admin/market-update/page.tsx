@@ -18,6 +18,7 @@ import {
   type MarketUpdateEntry,
 } from "../lib/market-updates";
 import { deleteStorageObject, uploadPdf } from "../lib/storage";
+import { revalidateMarketUpdates } from "../../lib/revalidate";
 
 export default function MarketUpdateListPage() {
   const [entries, setEntries] = useState<MarketUpdateEntry[] | null>(null);
@@ -67,6 +68,7 @@ export default function MarketUpdateListPage() {
       if (entry.pdfPath) {
         deleteStorageObject(entry.pdfPath).catch(() => {});
       }
+      await revalidateMarketUpdates();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Delete failed.");
     } finally {
@@ -79,6 +81,7 @@ export default function MarketUpdateListPage() {
     setReportYearSaved(false);
     try {
       await saveMarketSettings({ reportYear: reportYear.trim() });
+      await revalidateMarketUpdates();
       setReportYearSaved(true);
       window.setTimeout(() => setReportYearSaved(false), 2000);
     } catch (err) {
@@ -277,6 +280,7 @@ function InlineAddEntry({
         pdfPath,
         order: nextOrder,
       });
+      await revalidateMarketUpdates();
       onCreated();
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Save failed.";
@@ -453,6 +457,7 @@ function EntriesList({
 
     try {
       await reorderMarketEntries(updates);
+      await revalidateMarketUpdates();
     } catch (err) {
       onError(err instanceof Error ? err.message : "Reorder failed.");
       setLocalRows(rows);

@@ -1,5 +1,5 @@
 import "server-only";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
 import {
   collection,
@@ -10,6 +10,7 @@ import {
   type Firestore,
 } from "firebase/firestore";
 import type { Locale } from "../[lang]/dictionaries";
+import { CACHE_TAGS, CACHE_TTL_SECONDS } from "./cache-tags";
 
 export const PERIOD_CATEGORY_KEYS = [
   "daily",
@@ -93,8 +94,9 @@ function pickLabel(entry: MarketEntry, lang: Locale): string {
   return translated || entry.label;
 }
 
-export const getMarketEntries = cache(
+export const getMarketEntries = unstable_cache(
   async (lang: Locale): Promise<Record<CategoryKey, MarketEntry[]>> => {
+    console.log("[cache-miss] getMarketEntries", lang);
     const snap = await getDocs(collection(getDb(), "market-updates"));
     const grouped: Record<string, MarketEntry[]> = {};
     for (const d of snap.docs) {
@@ -116,16 +118,22 @@ export const getMarketEntries = cache(
     }
     return result;
   },
+  ["market-entries"],
+  { tags: [CACHE_TAGS.marketUpdates], revalidate: CACHE_TTL_SECONDS },
 );
 
-export const getMarketReportYear = cache(async (): Promise<string> => {
-  const snap = await getDoc(doc(getDb(), "settings", "market"));
-  if (!snap.exists()) return String(new Date().getFullYear());
-  const data = snap.data();
-  const year =
-    typeof data.reportYear === "string" && data.reportYear
-      ? data.reportYear
-      : String(new Date().getFullYear());
-  return year;
-});
-
+export const getMarketReportYear = unstable_cache(
+  async (): Promise<string> => {
+    console.log("[cache-miss] getMarketReportYear");
+    const snap = await getDoc(doc(getDb(), "settings", "market"));
+    if (!snap.exists()) return String(new Date().getFullYear());
+    const data = snap.data();
+    const year =
+      typeof data.reportYear === "string" && data.reportYear
+        ? data.reportYear
+        : String(new Date().getFullYear());
+    return year;
+  },
+  ["market-report-year"],
+  { tags: [CACHE_TAGS.marketUpdates], revalidate: CACHE_TTL_SECONDS },
+);

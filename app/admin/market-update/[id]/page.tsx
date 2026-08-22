@@ -9,6 +9,7 @@ import {
   type MarketUpdateDraft,
   type MarketUpdateEntry,
 } from "../../lib/market-updates";
+import { revalidateMarketUpdates } from "../../../lib/revalidate";
 
 export default function EditMarketUpdatePage() {
   const params = useParams<{ id: string }>();
@@ -45,6 +46,7 @@ export default function EditMarketUpdatePage() {
 
   const handleSubmit = async (draft: MarketUpdateDraft) => {
     await updateMarketEntry(entry.id, draft);
+    await revalidateMarketUpdates();
   };
 
   return <MarketUpdateForm mode="edit" initial={entry} onSubmit={handleSubmit} />;

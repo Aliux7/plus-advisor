@@ -1,5 +1,5 @@
 import "server-only";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
 import {
   collection,
@@ -12,6 +12,7 @@ import {
   where,
   type Firestore,
 } from "firebase/firestore";
+import { CACHE_TAGS, CACHE_TTL_SECONDS } from "./cache-tags";
 
 export type FirestoreJournalSeo = {
   title: string;
@@ -25,14 +26,16 @@ export type FirestoreJournalLocale = {
   seo: FirestoreJournalSeo;
 };
 
+// Dates are serialized as ISO strings — `unstable_cache` JSON-encodes the
+// return value, so `Date` instances would be lost across cache hits.
 export type FirestoreJournal = {
   id: string;
   title: string;
   slug: string;
   author: string;
   status: "draft" | "published" | "archived";
-  publishedAt: Date | null;
-  updatedAt: Date | null;
+  publishedAt: string | null;
+  updatedAt: string | null;
   featured: boolean;
   coverImage: string;
   readingTimeMinutes: number | null;
@@ -59,6 +62,10 @@ function getApp(): FirebaseApp {
 
 function getDb(): Firestore {
   return getFirestore(getApp());
+}
+
+function timestampToIso(input: unknown): string | null {
+  return input instanceof Timestamp ? input.toDate().toISOString() : null;
 }
 
 function normalizeSeo(input: unknown): FirestoreJournalSeo {
@@ -95,14 +102,8 @@ function mapDoc(id: string, data: Record<string, unknown>): FirestoreJournal {
     slug: (data.slug as string) ?? "",
     author: (data.author as string) ?? "",
     status: (data.status as FirestoreJournal["status"]) ?? "draft",
-    publishedAt:
-      data.publishedAt instanceof Timestamp
-        ? (data.publishedAt as Timestamp).toDate()
-        : null,
-    updatedAt:
-      data.updatedAt instanceof Timestamp
-        ? (data.updatedAt as Timestamp).toDate()
-        : null,
+    publishedAt: timestampToIso(data.publishedAt),
+    updatedAt: timestampToIso(data.updatedAt),
     featured: Boolean(data.featured),
     coverImage: (data.coverImage as string) ?? "",
     readingTimeMinutes:
@@ -115,24 +116,30 @@ function mapDoc(id: string, data: Record<string, unknown>): FirestoreJournal {
   };
 }
 
-export const getPublishedJournals = cache(async (): Promise<FirestoreJournal[]> => {
-  const q = query(
-    collection(getDb(), "journals"),
-    where("status", "==", "published"),
-  );
-  const snap = await getDocs(q);
-  const journals = snap.docs.map((d) => mapDoc(d.id, d.data()));
-  // Sort in-memory to avoid needing a composite Firestore index.
-  journals.sort((a, b) => {
-    const bT = b.publishedAt?.getTime() ?? 0;
-    const aT = a.publishedAt?.getTime() ?? 0;
-    return bT - aT;
-  });
-  return journals;
-});
+export const getPublishedJournals = unstable_cache(
+  async (): Promise<FirestoreJournal[]> => {
+    console.log("[cache-miss] getPublishedJournals fetching Firestore");
+    const q = query(
+      collection(getDb(), "journals"),
+      where("status", "==", "published"),
+    );
+    const snap = await getDocs(q);
+    const journals = snap.docs.map((d) => mapDoc(d.id, d.data()));
+    // Sort in-memory to avoid needing a composite Firestore index.
+    journals.sort((a, b) => {
+      const bT = b.publishedAt ? Date.parse(b.publishedAt) : 0;
+      const aT = a.publishedAt ? Date.parse(a.publishedAt) : 0;
+      return bT - aT;
+    });
+    return journals;
+  },
+  ["published-journals"],
+  { tags: [CACHE_TAGS.journals], revalidate: CACHE_TTL_SECONDS },
+);
 
-export const getPublishedJournalById = cache(
+export const getPublishedJournalById = unstable_cache(
   async (id: string): Promise<FirestoreJournal | null> => {
+    console.log("[cache-miss] getPublishedJournalById", id);
     const trySlug = async () => {
       const q = query(
         collection(getDb(), "journals"),
@@ -151,4 +158,6 @@ export const getPublishedJournalById = cache(
     }
     return trySlug();
   },
+  ["published-journal-by-id"],
+  { tags: [CACHE_TAGS.journals], revalidate: CACHE_TTL_SECONDS },
 );

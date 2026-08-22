@@ -1,5 +1,5 @@
 import "server-only";
-import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { getApps, initializeApp, type FirebaseApp } from "firebase/app";
 import {
   doc,
@@ -8,6 +8,7 @@ import {
   type Firestore,
 } from "firebase/firestore";
 import type { Dictionary, Locale } from "../[lang]/dictionaries";
+import { CACHE_TAGS, CACHE_TTL_SECONDS } from "./cache-tags";
 
 export const CONTENT_COLLECTION = "site-content";
 
@@ -64,8 +65,9 @@ function mergeWithSchema<T>(base: T, override: unknown): T {
   return override as T;
 }
 
-export const getContentForLocale = cache(
+export const getContentForLocale = unstable_cache(
   async (locale: Locale): Promise<Dictionary> => {
+    console.log("[cache-miss] getContentForLocale", locale);
     const fallback = await loadFallback(locale);
     try {
       const snap = await getDoc(doc(getDb(), CONTENT_COLLECTION, locale));
@@ -80,4 +82,6 @@ export const getContentForLocale = cache(
     }
     return fallback;
   },
+  ["site-content-by-locale"],
+  { tags: [CACHE_TAGS.siteContent], revalidate: CACHE_TTL_SECONDS },
 );

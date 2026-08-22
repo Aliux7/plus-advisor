@@ -9,6 +9,7 @@ import {
   type JournalDraft,
   type JournalPost,
 } from "../../lib/journals";
+import { revalidateJournals } from "../../../lib/revalidate";
 
 export default function EditJournalPage() {
   const params = useParams<{ id: string }>();
@@ -43,6 +44,7 @@ export default function EditJournalPage() {
 
   const handleSubmit = async (draft: JournalDraft) => {
     await updateJournal(post.id, draft);
+    await revalidateJournals();
   };
 
   return <JournalForm mode="edit" initial={post} onSubmit={handleSubmit} />;

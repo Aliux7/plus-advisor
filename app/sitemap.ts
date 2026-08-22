@@ -18,8 +18,9 @@ const STATIC_PATHS: {
   { path: "contact", changeFrequency: "yearly", priority: 0.6 },
 ];
 
-// Sitemap should reflect fresh Firestore state on every crawl.
-export const revalidate = 0;
+// Regenerate at most once per day; journal writes call revalidateTag('journals')
+// so crawlers pick up new articles between scheduled revalidations.
+export const revalidate = 86400;
 
 function localeUrls(path: string): Record<string, string> {
   const out: Record<string, string> = {};
@@ -47,17 +48,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let journalEntries: MetadataRoute.Sitemap = [];
   try {
     const journals = await getPublishedJournals();
-    journalEntries = journals.flatMap((j) =>
-      LOCALES.map((loc: Locale) => ({
+    journalEntries = journals.flatMap((j) => {
+      const lastModified = j.updatedAt ?? j.publishedAt ?? now;
+      return LOCALES.map((loc: Locale) => ({
         url: `${site}/${loc}/journals/${j.slug || j.id}`,
-        lastModified: j.updatedAt ?? j.publishedAt ?? now,
+        lastModified,
         changeFrequency: "weekly" as const,
         priority: 0.7,
         alternates: {
           languages: localeUrls(`journals/${j.slug || j.id}`),
         },
-      })),
-    );
+      }));
+    });
   } catch {
     // If Firestore is unreachable, still return the static sitemap so
     // crawlers get something useful.

@@ -8,6 +8,7 @@ import {
   type JournalPost,
   type JournalStatus,
 } from "../lib/journals";
+import { revalidateJournals } from "../../lib/revalidate";
 
 const STATUS_FILTERS: { value: "all" | JournalStatus; label: string }[] = [
   { value: "all", label: "All statuses" },
@@ -62,6 +63,7 @@ export default function JournalListPage() {
     setDeletingId(post.id);
     try {
       await deleteJournal(post.id);
+      await revalidateJournals();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Delete failed.");
     } finally {

@@ -74,16 +74,15 @@ function toBlogPost(journal: FirestoreJournal, lang: Locale): BlogPost {
   const excerpt = localized.seo.description || text.slice(0, 200);
   const readingMinutes =
     journal.readingTimeMinutes ?? Math.max(1, Math.round(words / 200));
-  const dateIso = (journal.publishedAt ?? journal.updatedAt ?? new Date())
-    .toISOString();
+  const nowIso = new Date().toISOString();
+  const dateIso = journal.publishedAt ?? journal.updatedAt ?? nowIso;
   return {
     id: journal.id,
     url: `/journals/${journal.slug || journal.id}`,
     slug: journal.slug || journal.id,
     title: localized.title,
     date_published: dateIso,
-    date_modified: (journal.updatedAt ?? journal.publishedAt ?? new Date())
-      .toISOString(),
+    date_modified: journal.updatedAt ?? journal.publishedAt ?? nowIso,
     author: journal.author,
     excerpt,
     featured_image: journal.coverImage,

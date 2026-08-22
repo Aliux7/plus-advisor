@@ -14,6 +14,7 @@ import {
   type Locale,
 } from "../lib/content";
 import { uploadMedia } from "../lib/storage";
+import { revalidateSiteContent } from "../../lib/revalidate";
 import enFallback from "../../[lang]/dictionaries/en.json";
 import idFallback from "../../[lang]/dictionaries/id.json";
 import zhFallback from "../../[lang]/dictionaries/zh.json";
@@ -244,8 +245,9 @@ export default function ContentEditor({ section }: Props) {
       await Promise.all(
         LOCALES.map((loc) => saveContent(loc, state[loc])),
       );
+      await revalidateSiteContent();
       setInitial(cloneDeep(state));
-      setMessage("Saved. Public site will reflect changes on next page load.");
+      setMessage("Saved. Public site cache invalidated.");
     } catch (err) {
       setMessage(
         err instanceof Error ? `Save failed: ${err.message}` : "Save failed.",

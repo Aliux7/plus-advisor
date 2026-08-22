@@ -8,7 +8,7 @@ import {
 import { getDictionary, hasLocale } from "../dictionaries";
 import { buildPageMetadata } from "../../lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 86400;
 
 export async function generateMetadata({
   params,

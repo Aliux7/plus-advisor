@@ -119,9 +119,9 @@ export async function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
 }
 
-// Re-render every request so CMS edits go live instantly.
-export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// Regenerate at most once per day; CMS writes call revalidateTag(...) to
+// invalidate sooner. See app/lib/revalidate.ts.
+export const revalidate = 86400;
 
 export async function generateMetadata({
   params,
