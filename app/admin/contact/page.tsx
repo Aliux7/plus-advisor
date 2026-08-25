@@ -3,9 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   deleteContactSubmission,
+  getContactSettings,
+  saveContactSettings,
   subscribeToContactSubmissions,
+  DEFAULT_CONTACT_SETTINGS,
   type ContactSubmission,
 } from "../lib/contact";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function formatDate(row: ContactSubmission): string {
   if (!row.submittedAt) return "—";
@@ -152,6 +157,8 @@ export default function ContactSubmissionsPage() {
         )}
       </div>
 
+      <NotifyEmailCard />
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <input
           type="search"
@@ -283,6 +290,117 @@ export default function ContactSubmissionsPage() {
           onClose={() => setSelected(null)}
         />
       )}
+    </div>
+  );
+}
+
+function NotifyEmailCard() {
+  const [email, setEmail] = useState<string>("");
+  const [initialEmail, setInitialEmail] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [status, setStatus] = useState<
+    { kind: "idle" } | { kind: "saved" } | { kind: "error"; message: string }
+  >({ kind: "idle" });
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const settings = await getContactSettings();
+        if (cancelled) return;
+        setEmail(settings.notifyTo);
+        setInitialEmail(settings.notifyTo);
+      } catch (err) {
+        if (cancelled) return;
+        setStatus({
+          kind: "error",
+          message: err instanceof Error ? err.message : "Failed to load setting.",
+        });
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const trimmed = email.trim();
+  const dirty = trimmed !== initialEmail;
+  const valid = EMAIL_RE.test(trimmed);
+
+  const handleSave = async () => {
+    if (!valid || !dirty || saving) return;
+    setSaving(true);
+    setStatus({ kind: "idle" });
+    try {
+      await saveContactSettings({ notifyTo: trimmed });
+      setInitialEmail(trimmed);
+      setStatus({ kind: "saved" });
+      window.setTimeout(
+        () => setStatus((s) => (s.kind === "saved" ? { kind: "idle" } : s)),
+        2500,
+      );
+    } catch (err) {
+      setStatus({
+        kind: "error",
+        message: err instanceof Error ? err.message : "Failed to save.",
+      });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="rounded-lg border border-neutral-200 bg-white p-4">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+        <div className="flex-1">
+          <label
+            htmlFor="notify-email"
+            className="block text-sm font-medium text-navy"
+          >
+            Notification recipient
+          </label>
+          <p className="mt-0.5 text-xs text-navy/60">
+            Every new submission is emailed to this address. Default:{" "}
+            <code className="rounded bg-neutral-100 px-1 py-0.5 text-[11px] text-navy/80">
+              {DEFAULT_CONTACT_SETTINGS.notifyTo}
+            </code>
+          </p>
+          <input
+            id="notify-email"
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (status.kind !== "idle") setStatus({ kind: "idle" });
+            }}
+            disabled={loading}
+            placeholder="info@example.com"
+            className="mt-2 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-gold focus:ring-1 focus:ring-gold disabled:bg-neutral-50 sm:max-w-sm"
+          />
+          {trimmed && !valid && (
+            <p className="mt-1 text-xs text-red-600">
+              Enter a valid email address.
+            </p>
+          )}
+          {status.kind === "saved" && (
+            <p className="mt-1 text-xs text-emerald-600">Saved.</p>
+          )}
+          {status.kind === "error" && (
+            <p className="mt-1 text-xs text-red-600">{status.message}</p>
+          )}
+        </div>
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={loading || saving || !dirty || !valid}
+          className="rounded-md border border-navy bg-navy px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {saving ? "Saving…" : "Save"}
+        </button>
+      </div>
     </div>
   );
 }

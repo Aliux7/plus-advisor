@@ -630,11 +630,14 @@
       "assets": "To better tailor our approach, could you share an approximate range of assets you're considering investing?",
       "assetsPlaceholder": "Select",
       "assetsOptions": [
-        "$3-10MM",
-        "$10-25MM",
-        "$25-50MM",
-        "$50-100MM",
-        "$100MM+"
+        "< Rp5 Miliar",
+        "Rp5-10 Miliar",
+        "Rp10-25 Miliar",
+        "Rp25-50 Miliar",
+        "Rp50-100 Miliar",
+        "Rp100-250 Miliar",
+        "Rp250-500 Miliar",
+        "> Rp500 Miliar"
       ],
       "readyAdvisor": "If you're ready to take the next step, please check the box below and share a few additional details so we can introduce you to a Private Advisor suited to your needs.",
       "preferConversation": "I'd prefer to share these details during a conversation.",

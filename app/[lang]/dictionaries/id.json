@@ -630,11 +630,14 @@
       "assets": "Untuk membantu kami menyesuaikan pendekatan, mohon bagikan perkiraan kisaran aset yang sedang Anda pertimbangkan untuk diinvestasikan.",
       "assetsPlaceholder": "Pilih",
       "assetsOptions": [
-        "$3-10JT",
-        "$10-25JT",
-        "$25-50JT",
-        "$50-100JT",
-        "$100JT+"
+        "< Rp5 Miliar",
+        "Rp5-10 Miliar",
+        "Rp10-25 Miliar",
+        "Rp25-50 Miliar",
+        "Rp50-100 Miliar",
+        "Rp100-250 Miliar",
+        "Rp250-500 Miliar",
+        "> Rp500 Miliar"
       ],
       "readyAdvisor": "Jika Anda siap melangkah lebih jauh, mohon centang kotak di bawah dan bagikan beberapa detail tambahan agar kami dapat memperkenalkan Anda kepada Private Advisor yang sesuai dengan kebutuhan Anda.",
       "preferConversation": "Saya lebih memilih untuk membagikan detail ini melalui percakapan langsung.",

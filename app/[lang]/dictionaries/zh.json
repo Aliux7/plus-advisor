@@ -630,11 +630,14 @@
       "assets": "为了更好地定制我们的方案，请分享您计划投资的资产的大致范围。",
       "assetsPlaceholder": "选择",
       "assetsOptions": [
-        "$3-10MM",
-        "$10-25MM",
-        "$25-50MM",
-        "$50-100MM",
-        "$100MM+"
+        "< Rp5 Miliar",
+        "Rp5-10 Miliar",
+        "Rp10-25 Miliar",
+        "Rp25-50 Miliar",
+        "Rp50-100 Miliar",
+        "Rp100-250 Miliar",
+        "Rp250-500 Miliar",
+        "> Rp500 Miliar"
       ],
       "readyAdvisor": "如果您已准备好迈出下一步，请勾选下方选项并分享一些额外信息，以便我们为您介绍最适合的私人顾问。",
       "preferConversation": "我更倾向于在会谈中分享这些细节。",
