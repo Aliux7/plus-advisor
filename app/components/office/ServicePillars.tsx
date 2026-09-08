@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type TouchEvent } from "react";
 import type { OurServicePillarsDict } from "../../[lang]/dictionaries";
 import ScrollReveal from "../ScrollReveal";
 import Parallax from "../Parallax";
@@ -13,6 +13,7 @@ type Props = {
 const OUT_DURATION = 400;
 const IN_DURATION = 700;
 const SLIDE_DURATION = 700;
+const SWIPE_THRESHOLD = 40;
 
 export default function ServicePillars({ dict }: Props) {
   const { slides, prev, next, office } = dict;
@@ -59,6 +60,37 @@ export default function ServicePillars({ dict }: Props) {
     return o;
   };
 
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const isHorizontalSwipe = useRef(false);
+
+  const onTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    isHorizontalSwipe.current = false;
+  };
+
+  const onTouchMove = (e: TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const dx = e.touches[0].clientX - touchStartX.current;
+    const dy = e.touches[0].clientY - touchStartY.current;
+    if (!isHorizontalSwipe.current && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+      isHorizontalSwipe.current = true;
+    }
+  };
+
+  const onTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (isHorizontalSwipe.current && Math.abs(dx) > SWIPE_THRESHOLD) {
+      if (dx < 0) goNext();
+      else goPrev();
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+    isHorizontalSwipe.current = false;
+  };
+
   return (
     <section
       data-scroll-section
@@ -96,7 +128,12 @@ export default function ServicePillars({ dict }: Props) {
           duration={1800}
           className="mt-4 md:mt-6 xl:mt-8 -mx-5 sm:-mx-10 xl:-mx-20"
         >
-          <div className="relative w-full overflow-hidden h-[42vw] [--slide-step:70vw]">
+          <div
+            className="relative w-full overflow-hidden h-[42vw] [--slide-step:70vw] touch-pan-y select-none"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {slides.map((s, i) => {
               const offset = offsetOf(i);
               const abs = Math.abs(offset);
