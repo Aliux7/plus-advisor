@@ -20,6 +20,7 @@ import {
   type JournalStatus,
 } from "../lib/journals";
 import { uploadImage } from "../lib/storage";
+import { useToast } from "./ToastProvider";
 
 type Props = {
   mode: "create" | "edit";
@@ -121,6 +122,7 @@ const keywordsInputFromDraft = (draft: JournalDraft): Record<JournalLocale, stri
 
 export default function JournalForm({ mode, initial, onSubmit }: Props) {
   const router = useRouter();
+  const toast = useToast();
   const [draft, setDraft] = useState<JournalDraft>(() => toDraft(initial));
   const [activeLocale, setActiveLocale] = useState<JournalLocale>("en");
   const [keywordsInput, setKeywordsInput] = useState<Record<JournalLocale, string>>(
@@ -292,6 +294,7 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
     setError(null);
     if (!draft.title.trim()) {
       setError("English title is required.");
+      toast.error("English title is required.");
       setActiveLocale("en");
       return;
     }
@@ -336,10 +339,19 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
         translations: cleanTranslations,
         slug: withKeywords.slug || slugify(withKeywords.title),
       });
+      toast.success(
+        mode === "create"
+          ? "Journal entry created successfully."
+          : "Journal entry updated successfully.",
+      );
       router.push("/admin/journal");
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Save failed.");
+      const message = err instanceof Error ? err.message : "Save failed.";
+      setError(message);
+      toast.error(
+        `${mode === "create" ? "Failed to create" : "Failed to update"} journal entry: ${message}`,
+      );
     } finally {
       setSubmitting(false);
     }

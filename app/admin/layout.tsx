@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { AuthProvider } from "./components/AuthProvider";
 import AdminShell from "./components/AdminShell";
+import { ToastProvider } from "./components/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,9 @@ export default function AdminLayout({
     >
       <body className="min-h-full bg-neutral-50 text-neutral-900">
         <AuthProvider>
-          <AdminShell>{children}</AdminShell>
+          <ToastProvider>
+            <AdminShell>{children}</AdminShell>
+          </ToastProvider>
         </AuthProvider>
       </body>
     </html>
