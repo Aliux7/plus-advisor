@@ -345,7 +345,6 @@ export default function JournalForm({ mode, initial, onSubmit }: Props) {
           : "Journal entry updated successfully.",
       );
       router.push("/admin/journal");
-      router.refresh();
     } catch (err) {
       const message = err instanceof Error ? err.message : "Save failed.";
       setError(message);
